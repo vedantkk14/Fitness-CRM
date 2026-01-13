@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #F6F7F9;
+  color: #1F2933;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 198px;
+  height: 100vh;
+  position: fixed;
+  background-color: #0F2A30;
+  border-right: 1px solid #0c2227;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 16px;
+  border-bottom: 1px solid #163a42;
+}
+
+.logo-img {
+  width: 100px;
+  height: 75px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #F25C2A;
+  letter-spacing: 0.5px;
+}
+
+.sidebar a {
+  display: block;
+  color: #ffffff;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sidebar a.active {
+  background-color: #F25C2A;
+  color: #ffffff;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #163a42;
+}
+
+.sidebar .settings {
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+/* Main Content */
+.main {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1F2933;
+  margin-bottom: 6px;
+}
+
+.header p {
+  color: #6B7280;
+  font-size: 14px;
+}
+
+/* Add Staff Button */
+.add-btn {
+  background: #F25C2A;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background: #d94f23;
+}
+
+/* Cards Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Avatar + Header */
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  background: #E8EAED;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #1F2933;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1F2933;
+}
+
+.designation {
+  font-size: 13px;
+  color: #6B7280;
+  margin-top: 2px;
+}
+
+/* Staff Info */
+.email,
+.mobile,
+.rating {
+  font-size: 13px;
+  color: #374151;
+  margin: 7px 0;
+}
+
+/* Specialties */
+.special-title {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1F2933;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.tags span {
+  background: #F1F3F8;
+  padding: 7px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1F2933;
+}
+
+/* Divider */
+.card hr {
+  border: none;
+  border-top: 1px solid #E5E7EB;
+  margin: 14px 0;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #6B7280;
+  margin-bottom: 14px;
+}
+
+.footer span:last-child {
+  font-weight: 700;
+  color: #1F2933;
+}
+
+/* View Schedule Button */
+.view-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+  background: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.view-btn:hover {
+  background: #F1F3F8;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    width: 180px;
+  }
+
+  .main {
+    margin-left: 180px;
+  }
+}
