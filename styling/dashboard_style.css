@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f6fa;
+}
+
+.logo {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #ffffff;
+    padding: 10px;
+    position: fixed;
+    height: 100%;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background: #e6f0ff;
+    color: #2d6cdf;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #eee;
+}
+
+.sidebar .settings {
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
+    font-size: 14px;
+    color: #555;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.sub-heading {
+    margin: 10px 0 25px;
+    color: #666;
+}
+
+.cards {
+    margin-left: 200px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.cards .card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.card-title {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.positive {
+    color: green;
+    font-size: 13px;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.chart-box1 {
+    height: 400px;
+    margin-left: 210px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.chart-box2 {
+    margin-right: 12px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.chart-box1 .plots {
+    height: 300px;
+    background: #f1f3f8;
+    border-radius: 8px;
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+
+.chart-box2 .plots {
+    height: 300px;
+    background: #f1f3f8;
+    border-radius: 8px;
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
