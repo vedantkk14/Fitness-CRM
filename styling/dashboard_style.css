@@ -14,12 +14,21 @@ body {
 }
 
 .sidebar {
-    width: 200px;
-    background-color: #ffffff;
-    padding: 10px;
+    width: 198px;
+    height: 100vh;
     position: fixed;
-    height: 100%;
-    border-right: 1px solid #ddd;
+    background: #ffffff;
+    border-right: 1px solid #e6e8ec;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 17px;
+    border-bottom: 1px solid #eee;
 }
 
 .sidebar a {
@@ -72,7 +81,7 @@ body {
 }
 
 .card-title {
-    color: #777;
+    color: #000000;
     margin-bottom: 10px;
 }
 
@@ -123,4 +132,16 @@ body {
     align-items: center;
     justify-content: center;
     color: #777;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.card-icon {
+    font-size: 16px;
+    color: #9ca3af; 
 }

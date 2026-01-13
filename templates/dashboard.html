@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness CRM Dashboard</title>
     <link rel="stylesheet" href="../styling/dashboard_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" >
 </head>
 <body>
 
-    <div class="sidebar">
-        <h2 class="logo">Fitness CRM</h2>
-        <hr>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="logo">FitStudio</span>
+            <i class="fa-solid fa-bars toggle-btn" id="toggleBtn"></i>
+        </div>
         <a class="active" href="#">Dashboard</a>
         <a href="members.html">Members</a>
         <a href="diet_plans.html">Diet Plans</a>
@@ -30,19 +33,28 @@
 
     <div class="cards">
         <div class="card">
-            <div class="card-title">Total Members</div>
+            <div class="card-header">
+                <div class="card-title">Total Members</div>
+                <i class="fa-solid fa-users card-icon"></i>
+            </div>
             <h2>284</h2>
             <span class="positive">+12% from last month</span>
         </div>
 
         <div class="card">
-            <div class="card-title">Active Diet Plans</div>
+            <div class="card-header">
+                <div class="card-title">Active Diet Plans</div>
+                <i class="fa-solid fa-calendar-check card-icon"></i>
+            </div>
             <h2>42</h2>
             <span class="positive">8 plans created this week</span>
         </div>
 
         <div class="card">
-            <div class="card-title">Monthly Revenue</div>
+            <div class="card-header">
+                <div class="card-title">Monthly Revenue</div>
+                <i class="fa-solid fa-dollar-sign card-icon"></i>
+            </div>
             <h2>₹7,200</h2>
             <span class="positive">+22% from last month</span>
         </div>
