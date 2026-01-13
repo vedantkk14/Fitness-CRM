@@ -5,55 +5,78 @@
 }
 
 body {
-    background-color: #f5f6fa;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F6F7F9;
+    color: #1F2933;    
 }
 
-.logo {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
+/* ================= SIDEBAR ================= */
 
 .sidebar {
     width: 198px;
     height: 100vh;
     position: fixed;
-    background: #ffffff;
-    border-right: 1px solid #e6e8ec;
+    background-color: #0F2A30; /* ✅ dark teal */
+    border-right: 1px solid #0c2227;
     transition: width 0.3s ease;
     overflow: hidden;
 }
 
+/* Sidebar header (ONLY ONCE) */
 .sidebar-header {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    padding: 17px;
-    border-bottom: 1px solid #eee;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 16px;
+    border-bottom: 1px solid #163a42;
 }
 
+/* Logo image */
+.logo-img {
+    width: 100px;
+    height: 75px;
+    object-fit: contain;
+    margin-bottom: 6px;
+}
+
+/* Logo text */
+.logo-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #F25C2A; /* ✅ brand orange */
+    letter-spacing: 0.5px;
+}
+
+/* Sidebar links */
 .sidebar a {
     display: block;
-    color: black;
-    padding: 16px;
+    color: #ffffff; /* ✅ white on dark sidebar */
+    padding: 14px 16px;
     text-decoration: none;
+    font-size: 14px;
 }
 
+/* Active link */
 .sidebar a.active {
-    background: #e6f0ff;
-    color: #2d6cdf;
+    background-color: #F25C2A; /* ✅ orange highlight */
+    color: #ffffff;
 }
 
+/* Hover */
 .sidebar a:hover:not(.active) {
-    background-color: #eee;
+    background-color: #163a42;
 }
 
+/* Settings */
 .sidebar .settings {
     position: absolute;
     bottom: 20px;
     left: 16px;
     font-size: 14px;
-    color: #555;
+    color: #cbd5e1;
 }
+
+/* ================= CONTENT ================= */
 
 .content {
     margin-left: 200px;
@@ -62,8 +85,10 @@ body {
 
 .sub-heading {
     margin: 10px 0 25px;
-    color: #666;
+    color: #6B7280;
 }
+
+/* ================= CARDS ================= */
 
 .cards {
     margin-left: 200px;
@@ -74,21 +99,37 @@ body {
 }
 
 .cards .card {
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .card-title {
-    color: #000000;
+    color: #1F2933;
     margin-bottom: 10px;
+    font-weight: 500;
 }
 
 .positive {
-    color: green;
+    color: #16A34A;
     font-size: 13px;
 }
+
+/* Card header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.card-icon {
+    font-size: 16px;
+    color: #F25C2A; /* ✅ brand orange */
+}
+
+/* ================= CHARTS ================= */
 
 .charts {
     display: grid;
@@ -100,48 +141,26 @@ body {
 .chart-box1 {
     height: 400px;
     margin-left: 210px;
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
 }
 
 .chart-box2 {
     margin-right: 12px;
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
 }
 
-.chart-box1 .plots {
-    height: 300px;
-    background: #f1f3f8;
-    border-radius: 8px;
-    margin-top: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777;
-}
-
+.chart-box1 .plots,
 .chart-box2 .plots {
     height: 300px;
-    background: #f1f3f8;
+    background: #F1F3F8;
     border-radius: 8px;
     margin-top: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #777;
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 12px;
-}
-
-.card-icon {
-    font-size: 16px;
-    color: #9ca3af; 
+    color: #6B7280;
 }
