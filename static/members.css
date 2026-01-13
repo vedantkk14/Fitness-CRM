@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F6F7F9;
+    color: #1F2933;
+}
+
+
+.sidebar {
+    width: 198px;
+    height: 100vh;
+    position: fixed;
+    background-color: #0F2A30;
+    border-right: 1px solid #0c2227;
+}
+
+.sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 16px;
+    border-bottom: 1px solid #163a42;
+}
+
+.logo-img {
+    width: 100px;
+    height: 75px;
+    object-fit: contain;
+    margin-bottom: 6px;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #F25C2A;
+    letter-spacing: 0.5px;
+}
+
+.sidebar a {
+    display: block;
+    color: #ffffff;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sidebar a.active {
+    background-color: #F25C2A;
+    color: #ffffff;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #163a42;
+}
+
+.sidebar .settings {
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.sub-heading {
+    margin: 10px 0 25px;
+    color: #6B7280;
+}
+
+
+.members-actions {
+    margin-left: 200px;
+    padding: 0 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.search-wrapper i {
+    color: #6B7280;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.search-wrapper input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: transparent;
+}
+
+
+.add-member-btn {
+    background: #F25C2A;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.add-member-btn:hover {
+    background: #e04f1f;
+}
+
+
+.members-table {
+    margin-left: 200px;
+    padding: 0 20px 30px;
+}
+
+.members-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+
+.members-table th {
+    background: #F1F3F8;
+    padding: 14px;
+    font-size: 14px;
+    text-align: left;
+    color: #1F2933;
+    border-right: 1px solid #E5E7EB;
+}
+
+
+.members-table td {
+    padding: 14px;
+    font-size: 14px;
+    border-bottom: 1px solid #E5E7EB;
+    border-right: 1px solid #E5E7EB;
+}
+
+.members-table th:last-child,
+.members-table td:last-child {
+    border-right: none;
+}
+
+.members-table tr:hover {
+    background-color: #F9FAFB;
+}
+
+
+.active-status {
+    color: #16A34A;
+    font-weight: 500;
+}
+
+.expired-status {
+    color: #DC2626;
+    font-weight: 500;
+}
+
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,42,48,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal:target {
+    display: flex;
+}
+
+.modal-card {
+    background: #ffffff;
+    width: 520px;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    color: #6B7280;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
+.tab-cards {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tab-card {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background: #F1F3F8;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #6B7280;
+}
+
+.tab-card.active-card {
+    background: #F25C2A;
+    color: #ffffff;
+}
+
+
+.form-section label {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.form-section input,
+.form-section textarea {
+    width: 100%;
+    margin-top: 4px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #D1D5DB;
+    font-size: 14px;
+}
+
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.cancel-btn {
+    background: #E5E7EB;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #1F2933;
+}
+
+.save-btn {
+    background: #F25C2A;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+}

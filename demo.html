@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness CRM | Members</title>
+
+    
+    <link rel="stylesheet" href="../static/members.css">
+</head>
+
+<body>
+
+    
+    <div class="sidebar">
+        <h2 class="logo">Fitness CRM</h2>
+        <hr>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a class="active" href="#">Members</a>
+        <a href="diet_plans.html">Diet Plans</a>
+        <a href="staff.html">Staff</a>
+        <a href="membership.html">Membership</a>
+        <a href="reports.html">Reports</a>
+
+        <div class="settings">⚙ Settings</div>
+    </div>
+
+    
+    <div class="content">
+        <h1>Members</h1>
+        <div class="sub-heading">
+            Manage your gym members and their membership details.
+        </div>
+    </div>
+
+    
+    <div class="members-actions">
+        <input type="text" placeholder="Search members..." class="search-box">
+        <button class="add-member-btn">+ Add Member</button>
+    </div>
+
+    
+    <div class="members-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Plan</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Sarah Johnson</td>
+                    <td>sarah@email.com</td>
+                    <td>28</td>
+                    <td>Premium</td>
+                    <td class="active-status">Active</td>
+                    <td>Paid</td>
+                </tr>
+
+                <tr>
+                    <td>Michael Chen</td>
+                    <td>michael@email.com</td>
+                    <td>34</td>
+                    <td>Standard</td>
+                    <td class="expired-status">Expired</td>
+                    <td>Pending</td>
+                </tr>
+
+                <tr>
+                    <td>Emily Clark</td>
+                    <td>emily@email.com</td>
+                    <td>25</td>
+                    <td>Basic</td>
+                    <td class="active-status">Active</td>
+                    <td>Paid</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
