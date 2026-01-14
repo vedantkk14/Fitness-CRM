@@ -9,8 +9,6 @@ body {
   background-color: #F6F7F9;
   color: #1F2933;
 }
-
-/* Sidebar */
 .sidebar {
   width: 198px;
   height: 100vh;
@@ -67,7 +65,7 @@ body {
   color: #cbd5e1;
 }
 
-/* Main Content */
+
 .main {
   margin-left: 200px;
   padding: 20px;
@@ -82,7 +80,7 @@ body {
 }
 
 .header h1 {
-  font-size: 22px;
+  font-size: 35px;
   font-weight: 600;
   color: #1F2933;
   margin-bottom: 6px;
@@ -90,10 +88,10 @@ body {
 
 .header p {
   color: #6B7280;
-  font-size: 14px;
+  font-size: 18px;
 }
 
-/* Add Staff Button */
+
 .add-btn {
   background: #F25C2A;
   color: #ffffff;
@@ -109,22 +107,19 @@ body {
   background: #d94f23;
 }
 
-/* Cards Grid */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-/* Card */
 .card {
   background: #ffffff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(13, 13, 13, 0.05);
 }
 
-/* Avatar + Header */
 .card-top {
   display: flex;
   align-items: center;
@@ -133,9 +128,9 @@ body {
 }
 
 .avatar {
-  width: 52px;
-  height: 52px;
-  background: #E8EAED;
+  width: 55px;
+  height: 55px;
+  background: #cfd3d8;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -145,27 +140,25 @@ body {
 }
 
 .name {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   color: #1F2933;
 }
 
 .designation {
-  font-size: 13px;
+  font-size: 15px;
   color: #6B7280;
   margin-top: 2px;
 }
 
-/* Staff Info */
 .email,
 .mobile,
 .rating {
-  font-size: 13px;
+  font-size: 15px;
   color: #374151;
   margin: 7px 0;
 }
 
-/* Specialties */
 .special-title {
   margin-top: 14px;
   font-size: 13px;
@@ -185,23 +178,21 @@ body {
   background: #F1F3F8;
   padding: 7px 12px;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: #1F2933;
 }
 
-/* Divider */
 .card hr {
   border: none;
   border-top: 1px solid #E5E7EB;
   margin: 14px 0;
 }
 
-/* Footer */
 .footer {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 14px;
   color: #6B7280;
   margin-bottom: 14px;
 }
@@ -211,14 +202,13 @@ body {
   color: #1F2933;
 }
 
-/* View Schedule Button */
 .view-btn {
   width: 100%;
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #E5E7EB;
   background: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -227,7 +217,6 @@ body {
   background: #F1F3F8;
 }
 
-/* Responsive */
 @media (max-width: 1000px) {
   .card-grid {
     grid-template-columns: repeat(2, 1fr);
