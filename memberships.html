@@ -1,228 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Membership Plans | FitStudio CRM</title>
-  <link rel="stylesheet" href="../styling/memberships.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans | JoF Fitness</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/styling/memberships.css">
 </head>
-
 <body>
 
-  
-  <div class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <div class="logo-container">
-        <img src="../logo-light.png" alt="logo" class="logo-img" />
-      </div>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="images/logo-light.png" alt="JOF Logo" class="brand-logo">
+            </div>
+
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span>
+                </a>
+                <a href="members.html" class="nav-link">
+                    <i class="fa-solid fa-users"></i> <span>Members</span>
+                </a>
+                <a href="diet_plans.html" class="nav-link">
+                    <i class="fa-solid fa-carrot"></i> <span>Diet Plans</span>
+                </a>
+                <a href="staff.html" class="nav-link">
+                    <i class="fa-solid fa-clipboard-user"></i> <span>Staff</span>
+                </a>
+                <a href="membership.html" class="nav-link active">
+                    <i class="fa-solid fa-credit-card"></i> <span>Membership</span>
+                </a>
+                <a href="reports.html" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i> <span>Reports</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-link"><i class="fa-solid fa-gear"></i> <span>Settings</span></a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="page-header">
+                <div class="header-text">
+                    <h1>Membership Plans</h1>
+                    <p>Create and manage pricing tiers for your studio.</p>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="btn-secondary">Receive Payments</button>
+                    
+                    <a href="/templates/add_membership.html" class="add-btn">
+                        <i class="fa-solid fa-plus"></i> Create Plan
+                    </a>
+                </div>
+            </header>
+
+            <section class="plans-grid">
+
+                <div class="plan-card">
+                    <div class="color-strip blue"></div>
+                    <div class="plan-header">
+                        <h2>Basic</h2>
+                        <div class="price">
+                            <span class="currency">$</span>29<span class="period">/mo</span>
+                        </div>
+                        <p class="desc">Perfect for beginners getting started with fitness.</p>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat"><i class="fa-solid fa-users"></i> 45 Active</div>
+                        <div class="stat"><i class="fa-regular fa-clock"></i> 8 Classes</div>
+                    </div>
+
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> Access to gym floor</li>
+                        <li><i class="fa-solid fa-check"></i> 8 classes per month</li>
+                        <li><i class="fa-solid fa-check"></i> Locker room access</li>
+                        <li><i class="fa-solid fa-check"></i> Mobile app access</li>
+                    </ul>
+
+                    <div class="plan-footer">
+                        <button class="icon-btn edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="plan-card popular">
+                    <div class="color-strip purple"></div>
+                    <div class="badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h2>Standard</h2>
+                        <div class="price">
+                            <span class="currency">$</span>49<span class="period">/mo</span>
+                        </div>
+                        <p class="desc">Most popular plan for regular fitness enthusiasts.</p>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat"><i class="fa-solid fa-users"></i> 128 Active</div>
+                        <div class="stat"><i class="fa-regular fa-clock"></i> 20 Classes</div>
+                    </div>
+
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> Access to gym floor</li>
+                        <li><i class="fa-solid fa-check"></i> 20 classes per month</li>
+                        <li><i class="fa-solid fa-check"></i> Locker room access</li>
+                        <li><i class="fa-solid fa-check"></i> 1 Personal Training</li>
+                    </ul>
+
+                    <div class="plan-footer">
+                        <button class="icon-btn edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="plan-card">
+                    <div class="color-strip orange"></div>
+                    <div class="plan-header">
+                        <h2>Premium</h2>
+                        <div class="price">
+                            <span class="currency">$</span>79<span class="period">/mo</span>
+                        </div>
+                        <p class="desc">Ultimate fitness experience with unlimited access.</p>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat"><i class="fa-solid fa-users"></i> 86 Active</div>
+                        <div class="stat"><i class="fa-solid fa-infinity"></i> Unlimited</div>
+                    </div>
+
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> Unlimited gym access</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited classes</li>
+                        <li><i class="fa-solid fa-check"></i> 4 Personal Training</li>
+                        <li><i class="fa-solid fa-check"></i> Sauna access</li>
+                    </ul>
+
+                    <div class="plan-footer">
+                        <button class="icon-btn edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="plan-card">
+                    <div class="color-strip green"></div>
+                    <div class="plan-header">
+                        <h2>Annual VIP</h2>
+                        <div class="price">
+                            <span class="currency">$</span>799<span class="period">/yr</span>
+                        </div>
+                        <p class="desc">Best value - Save 15% with annual commitment.</p>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat"><i class="fa-solid fa-users"></i> 25 Active</div>
+                        <div class="stat"><i class="fa-solid fa-infinity"></i> Unlimited</div>
+                    </div>
+
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> All Premium Benefits</li>
+                        <li><i class="fa-solid fa-check"></i> 6 Personal Training</li>
+                        <li><i class="fa-solid fa-check"></i> Guest pass (4/month)</li>
+                        <li><i class="fa-solid fa-check"></i> Free merchandise</li>
+                    </ul>
+
+                    <div class="plan-footer">
+                        <button class="icon-btn edit"><i class="fa-solid fa-pen"></i></button>
+                        <button class="icon-btn delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
     </div>
-
-    <a href="dashboard.html">Dashboard</a>
-    <a href="members.html">Members</a>
-    <a href="diet_plans.html">Diet Plans</a>
-    <a href="staff.html">Staff</a>
-    <a class="active" href="membership.html">Membership</a>
-    <a href="reports.html">Reports</a>
-
-    <div class="settings">⚙ Settings</div>
-  </div>
-
-  
-  <div class="page">
-
-    
-    <div class="page-header">
-      <div class="header-left">
-        <h1>Membership Plans</h1>
-        <p>Create and manage membership plans for your fitness studio</p>
-      </div>
-
-      <div class="header-right">
-        <button class="btn btn-dark">Receive Payments</button>
-        <button class="btn btn-light">Create Plan</button>
-      </div>
-    </div>
-
-    <div class="plans-grid">
-
-      
-      <div class="plan-card">
-        <div class="plan-top-bar bar-blue"></div>
-
-        <div class="plan-title-row">
-          <h2>Basic</h2>
-        </div>
-
-        <p class="plan-desc">Perfect for beginners getting started with fitness</p>
-
-        <div class="plan-price">
-          <span class="amount">$29</span>
-          <span class="duration">/month</span>
-        </div>
-
-        <div class="plan-small-info">
-          <div class="info-line">
-            <span class="info-icon blue">👥</span>
-            <span>45 active members</span>
-          </div>
-          <div class="info-line">
-            <span class="info-icon blue">🕒</span>
-            <span>8 classes/month</span>
-          </div>
-        </div>
-
-        <hr class="divider" />
-
-        <ul class="feature-list">
-          <li>✅ Access to gym floor</li>
-          <li>✅ 8 classes per month</li>
-          <li>✅ Locker room access</li>
-          <li>✅ Mobile app access</li>
-        </ul>
-
-        <div class="plan-actions">
-          <button class="btn-edit">✏ Edit</button>
-          <button class="btn-delete">🗑</button>
-        </div>
-      </div>
-
-      <div class="plan-card">
-        <div class="plan-top-bar bar-purple"></div>
-
-        <div class="plan-title-row">
-          <h2>Standard</h2>
-          <span class="badge">Most Popular</span>
-        </div>
-
-        <p class="plan-desc">Most popular plan for regular fitness enthusiasts</p>
-
-        <div class="plan-price">
-          <span class="amount">$49</span>
-          <span class="duration">/month</span>
-        </div>
-
-        <div class="plan-small-info">
-          <div class="info-line">
-            <span class="info-icon purple">👥</span>
-            <span>128 active members</span>
-          </div>
-          <div class="info-line">
-            <span class="info-icon purple">🕒</span>
-            <span>20 classes/month</span>
-          </div>
-        </div>
-
-        <hr class="divider" />
-
-        <ul class="feature-list">
-          <li>✅ Access to gym floor</li>
-          <li>✅ 20 classes per month</li>
-          <li>✅ Locker room access</li>
-          <li>✅ Mobile app access</li>
-          <li>✅ 1 personal training session/month</li>
-          <li>✅ Nutrition consultation</li>
-        </ul>
-
-        <div class="plan-actions">
-          <button class="btn-edit">✏ Edit</button>
-          <button class="btn-delete">🗑</button>
-        </div>
-      </div>
-
-      <div class="plan-card">
-        <div class="plan-top-bar bar-orange"></div>
-
-        <div class="plan-title-row">
-          <h2>Premium</h2>
-        </div>
-
-        <p class="plan-desc">Ultimate fitness experience with unlimited access</p>
-
-        <div class="plan-price">
-          <span class="amount">$79</span>
-          <span class="duration">/month</span>
-        </div>
-
-        <div class="plan-small-info">
-          <div class="info-line">
-            <span class="info-icon orange">👥</span>
-            <span>86 active members</span>
-          </div>
-          <div class="info-line">
-            <span class="info-icon orange">🕒</span>
-            <span>Unlimited classes</span>
-          </div>
-        </div>
-
-        <hr class="divider" />
-
-        <ul class="feature-list">
-          <li>✅ Unlimited gym access</li>
-          <li>✅ Unlimited classes</li>
-          <li>✅ Locker room access</li>
-          <li>✅ Mobile app access</li>
-          <li>✅ 4 personal training sessions/month</li>
-          <li>✅ Nutrition consultation</li>
-          <li>✅ Priority class booking</li>
-          <li>✅ Guest pass (2/month)</li>
-          <li>✅ Sauna access</li>
-        </ul>
-
-        <div class="plan-actions">
-          <button class="btn-edit">✏ Edit</button>
-          <button class="btn-delete">🗑</button>
-        </div>
-      </div>
-
-      <div class="plan-card">
-        <div class="plan-top-bar bar-green"></div>
-
-        <div class="plan-title-row">
-          <h2>Annual Premium</h2>
-        </div>
-
-        <p class="plan-desc">Best value - Save 15% with annual commitment</p>
-
-        <div class="plan-price">
-          <span class="amount">$799</span>
-          <span class="duration">/year</span>
-        </div>
-
-        <div class="plan-small-info">
-          <div class="info-line">
-            <span class="info-icon green">👥</span>
-            <span>25 active members</span>
-          </div>
-          <div class="info-line">
-            <span class="info-icon green">🕒</span>
-            <span>Unlimited classes</span>
-          </div>
-        </div>
-
-        <hr class="divider" />
-
-        <ul class="feature-list">
-          <li>✅ Unlimited gym access</li>
-          <li>✅ Unlimited classes</li>
-          <li>✅ Locker room access</li>
-          <li>✅ Mobile app access</li>
-          <li>✅ 6 personal training sessions/month</li>
-          <li>✅ Nutrition consultation</li>
-          <li>✅ Priority class booking</li>
-          <li>✅ Guest pass (4/month)</li>
-          <li>✅ Sauna access</li>
-          <li>✅ Free merchandise</li>
-        </ul>
-
-        <div class="plan-actions">
-          <button class="btn-edit">✏ Edit</button>
-          <button class="btn-delete">🗑</button>
-        </div>
-      </div>
-
-    </div>
-
-
-  </div>
 </body>
 </html>

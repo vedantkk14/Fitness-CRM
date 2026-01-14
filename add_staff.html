@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Staff Member</title>
+  <link rel="stylesheet" href="styling/add_staff.css">
+</head>
+
+<body>
+
+    <div class="overlay">
+
+        <div class="modal">
+            <div class="modal-header">
+            <div>
+                <h2>Add New Staff Member</h2>
+                <p>Add a new instructor or staff members</p>
+            </div>
+            <a href="staff.html" class="close-btn" ... >X</a>
+        </div>
+
+        <form class="staff-form" action="staff.html">
+            
+
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" placeholder="John haminton" required /> 
+            </div>
+
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select id="role" required>
+                    <option value="" disabled selected>Select role</option>
+                    <option>Senior Instructor</option>
+                    <option>Fitness Instructor</option>
+                    <option>Strength Coach</option>
+                    <option>Pilates Instructor</option>
+                    <option>Zumba Instructor</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="john@jof.com" required />    
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="(+91)7789553390" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Specialities">Specialities(comma seperated)</label>
+                <input type="text" id="Specialites" placeholder="Yoga,Pilates,Meditation" />
+            </div>
+
+            <div class="modal-actions">
+                <a href="staff.html" class="btn cancel-btn" ... >Cancel</a>
+                <button type="submit" class="btn add-btn">Add Staff Member</button>
+            </div>
+
+        </form>
+        </div>
+    </div>
+</body>
+</html>
+

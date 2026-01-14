@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Membership Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/styling/add_membership.css">
+</head>
+<body class="modal-body">
+
+    <div class="overlay">
+        <div class="modal">
+            
+            <div class="modal-header">
+                <div class="header-content">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <div>
+                        <h2>Create Membership Plan</h2>
+                        <p>Configure a new pricing tier for your members.</p>
+                    </div>
+                </div>
+                <a href="membership.html" class="close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <form class="membership-form" action="membership.html">
+                
+                <div class="form-group">
+                    <label>Plan Name</label>
+                    <input type="text" placeholder="e.g. Gold Membership" required /> 
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea placeholder="Briefly describe the benefits..." rows="2"></textarea>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label>Price ($)</label>
+                        <input type="number" placeholder="49.99" step="0.01" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Duration</label>
+                        <div class="duration-box">
+                            <input type="number" placeholder="1" min="1" required />
+                            <select>
+                                <option>Month</option>
+                                <option>Year</option>
+                                <option>Week</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Max Classes / Month</label>
+                    <input type="text" placeholder="Leave empty for unlimited" />
+                </div>
+
+                <div class="form-group">
+                    <label>Features (One per line)</label>
+                    <textarea rows="4" placeholder="Access to gym floor&#10;Locker room access"></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <a href="membership.html" class="btn cancel-btn">Cancel</a>
+                    <button type="submit" class="btn create-btn">Create Plan</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html> 
