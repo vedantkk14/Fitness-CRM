@@ -3,137 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JoFIndia | Members</title>
+    <title>JOF India | Members</title>
 
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../static/members.css">
-
-    
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-
-<div class="sidebar">
-    <div class="sidebar-header">
-        <div class="logo-container">
-            <img src="../logo-light.png" class="logo-img" alt="logo">
+    <aside class="sidebar">
+        <div class="logo-area">
+            <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
         </div>
-        <span class="logo-text">JoFIndia</span>
-    </div>
 
-    <a href="dashboard.html">Dashboard</a>
-    <a class="active" href="#">Members</a>
-    <a href="diet_plans.html">Diet Plans</a>
-    <a href="staff.html">Staff</a>
-    <a href="membership.html">Membership</a>
-    <a href="reports.html">Reports</a>
-
-    <div class="settings">⚙ Settings</div>
-</div>
-
-
-<div class="content">
-    <h1>Members</h1>
-    <div class="sub-heading">
-        Manage gym members and their health information
-    </div>
-</div>
-
-
-<div class="members-actions">
-    <div class="search-wrapper">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search members...">
-    </div>
-
-    
-    <a href="#add-member-modal" class="add-member-btn">
-        <i class="fa-solid fa-user-plus"></i> Add Member
-    </a>
-</div>
-
-
-<div class="members-table">
-    <table>
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Age</th>
-            <th>Membership</th>
-            <th>Status</th>
-            <th>Payment</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <tr>
-            <td>Sarah Johnson</td>
-            <td>sarah@email.com</td>
-            <td>28</td>
-            <td>Premium</td>
-            <td class="active-status">Active</td>
-            <td>Paid</td>
-        </tr>
-
-        <tr>
-            <td>Michael Chen</td>
-            <td>michael@email.com</td>
-            <td>34</td>
-            <td>Standard</td>
-            <td class="expired-status">Expired</td>
-            <td>Pending</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
-
-<div id="add-member-modal" class="modal">
-
-    <div class="modal-card">
-
+        <div class="nav-label">MENU</div>
         
-        <div class="modal-header">
-            <h3>Add New Member</h3>
-            <a href="#" class="close-btn">
-                <i class="fa-solid fa-xmark"></i>
+        <nav class="navigation">
+            <a href="dashboard.html" class="nav-link">
+                <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard">
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-link active">
+                <img src="../icons/users-solid-full.svg" alt="Members">
+                <span>Members</span>
+            </a>
+
+            <a href="diet-plans.html" class="nav-link">
+                <img src="../icons/carrot-solid-full.svg" alt="Diet Plans">
+                <span>Diet Plans</span>
+            </a>
+
+            <a href="staff.html" class="nav-link">
+                <img src="../icons/clipboard-user-solid-full.svg" alt="Staff">
+                <span>Staff</span>
+            </a>
+
+            <a href="reports.html" class="nav-link">
+                <img src="../icons/chart-line-solid-full.svg" alt="Reports">
+                <span>Reports</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-promo">
+            <p>Pro Plan Active</p>
+            <small>Valid until Dec 2026</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="header-banner">
+            <div class="header-text">
+                <h1>Members</h1>
+                <p>Manage gym members and their health information</p>
+            </div>
+            <div class="header-actions">
+                <div class="profile-pic">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=F25C2A&color=fff" alt="Profile">
+                </div>
+            </div>
+        </header>
+
+        <div class="toolbar">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search members...">
+            </div>
+
+            <a href="personal_health.html" class="btn-primary">
+                <i class="fa-solid fa-user-plus"></i> Add Member
             </a>
         </div>
 
-        
-        <div class="tab-cards">
-            <div class="tab-card active-card">Personal & Health</div>
-            <div class="tab-card">Metrics & Scales</div>
-            <div class="tab-card">Membership</div>
+        <div class="table-card">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Membership</th>
+                        <th>Status</th>
+                        <th>Payment</th>
+                        <th>View</th> </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><span class="fw-bold">Sarah Johnson</span></td>
+                        <td class="text-muted">sarah@email.com</td>
+                        <td>28</td>
+                        <td><span class="badge purple">Premium</span></td>
+                        <td><span class="status-pill active">Active</span></td>
+                        <td><span class="badge green-outline">Paid</span></td>
+                        <td>
+                            <a href="#modal-sarah" class="btn-view"><i class="fa-solid fa-eye"></i></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="fw-bold">Michael Chen</span></td>
+                        <td class="text-muted">michael@email.com</td>
+                        <td>34</td>
+                        <td><span class="badge gray">Standard</span></td>
+                        <td><span class="status-pill expired">Expired</span></td>
+                        <td><span class="badge red-outline">Pending</span></td>
+                        <td>
+                            <a href="#modal-michael" class="btn-view"><i class="fa-solid fa-eye"></i></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><span class="fw-bold">John Kanaki</span></td>
+                        <td class="text-muted">kanaki@email.com</td>
+                        <td>20</td>
+                        <td><span class="badge purple">Premium</span></td>
+                        <td><span class="status-pill active">Active</span></td>
+                        <td><span class="badge green-outline">Paid</span></td>
+                        <td>
+                            <a href="#modal-john" class="btn-view"><i class="fa-solid fa-eye"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        
-        <div class="form-section">
-            <label>Full Name</label>
-            <input type="text">
+    </main>
 
-            <label>Email</label>
-            <input type="email">
+    <div id="modal-sarah" class="modal-wrapper">
+        <a href="#" class="modal-close-area"></a> <div class="modal-card">
+            <div class="modal-header">
+                <h2>Sarah Johnson</h2>
+                <a href="#" class="close-icon">&times;</a>
+            </div>
+            <div class="modal-body">
+                
+                <div class="section">
+                    <h3>Health Form Details</h3>
+                    <div class="grid-2">
+                        <div class="info-group"><label>Age</label><span>28</span></div>
+                        <div class="info-group"><label>Height</label><span>165 cm</span></div>
+                        <div class="info-group"><label>Weight</label><span>62 kg</span></div>
+                        <div class="info-group"><label>Email</label><span>sarah@email.com</span></div>
+                    </div>
+                    <div class="info-group full">
+                        <label>Medical Issues / Injuries</label>
+                        <span>None. Slight lower back pain after heavy lifting sessions.</span>
+                    </div>
+                    <div class="info-group full">
+                        <label>Photos (Front & Side)</label>
+                        <div class="photo-placeholder-row">
+                            <div class="photo-box">Front View</div>
+                            <div class="photo-box">Side View</div>
+                        </div>
+                    </div>
+                </div>
 
-            <label>Age</label>
-            <input type="number">
+                <div class="section">
+                    <h3>Self Assessment (Scale 1-10)</h3>
+                    <div class="scale-row">
+                        <div class="scale-item">
+                            <span>Mood</span>
+                            <div class="bar-container"><div class="bar-fill" style="width: 80%;"></div></div>
+                            <span class="val">8</span>
+                        </div>
+                        <div class="scale-item">
+                            <span>Sleep</span>
+                            <div class="bar-container"><div class="bar-fill" style="width: 70%;"></div></div>
+                            <span class="val">7</span>
+                        </div>
+                        <div class="scale-item">
+                            <span>Hunger</span>
+                            <div class="bar-container"><div class="bar-fill" style="width: 60%;"></div></div>
+                            <span class="val">6</span>
+                        </div>
+                        <div class="scale-item">
+                            <span>Energy</span>
+                            <div class="bar-container"><div class="bar-fill" style="width: 90%;"></div></div>
+                            <span class="val">9</span>
+                        </div>
+                    </div>
+                </div>
 
-            <label>Medical Conditions</label>
-            <textarea></textarea>
+                <div class="section no-border">
+                    <h3>Measurements</h3>
+                    <div class="grid-4">
+                        <div class="meas-box"><label>Chest</label><span>34"</span></div>
+                        <div class="meas-box"><label>Waist</label><span>28"</span></div>
+                        <div class="meas-box"><label>Hip</label><span>36"</span></div>
+                        <div class="meas-box"><label>Thighs</label><span>21"</span></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-        
-        <div class="modal-footer">
-            <a href="#" class="cancel-btn">Cancel</a>
-            <button class="save-btn">Add Member</button>
-        </div>
-
     </div>
-</div>
+
+    <div id="modal-michael" class="modal-wrapper">
+        <a href="#" class="modal-close-area"></a>
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Michael Chen</h2>
+                <a href="#" class="close-icon">&times;</a>
+            </div>
+            <div class="modal-body">
+                <div class="section">
+                    <h3>Health Form Details</h3>
+                    <div class="grid-2">
+                        <div class="info-group"><label>Age</label><span>34</span></div>
+                        <div class="info-group"><label>Height</label><span>178 cm</span></div>
+                        <div class="info-group"><label>Weight</label><span>80 kg</span></div>
+                        <div class="info-group"><label>Email</label><span>michael@email.com</span></div>
+                    </div>
+                    <div class="info-group full">
+                        <label>Medical Issues / Injuries</label>
+                        <span>Recovering from ACL surgery on right knee (2022).</span>
+                    </div>
+                    <div class="info-group full">
+                        <label>Photos (Front & Side)</label>
+                        <div class="photo-placeholder-row">
+                            <div class="photo-box">Front View</div>
+                            <div class="photo-box">Side View</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h3>Self Assessment (Scale 1-10)</h3>
+                    <div class="scale-row">
+                        <div class="scale-item"><span>Mood</span><div class="bar-container"><div class="bar-fill" style="width: 60%;"></div></div><span class="val">6</span></div>
+                        <div class="scale-item"><span>Sleep</span><div class="bar-container"><div class="bar-fill" style="width: 50%;"></div></div><span class="val">5</span></div>
+                        <div class="scale-item"><span>Hunger</span><div class="bar-container"><div class="bar-fill" style="width: 80%;"></div></div><span class="val">8</span></div>
+                        <div class="scale-item"><span>Energy</span><div class="bar-container"><div class="bar-fill" style="width: 60%;"></div></div><span class="val">6</span></div>
+                    </div>
+                </div>
+                <div class="section no-border">
+                    <h3>Measurements</h3>
+                    <div class="grid-4">
+                        <div class="meas-box"><label>Chest</label><span>40"</span></div>
+                        <div class="meas-box"><label>Waist</label><span>34"</span></div>
+                        <div class="meas-box"><label>Hip</label><span>38"</span></div>
+                        <div class="meas-box"><label>Thighs</label><span>24"</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-john" class="modal-wrapper">
+        <a href="#" class="modal-close-area"></a>
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>John Kanaki</h2>
+                <a href="#" class="close-icon">&times;</a>
+            </div>
+            <div class="modal-body">
+                <div class="section">
+                    <h3>Health Form Details</h3>
+                    <div class="grid-2">
+                        <div class="info-group"><label>Age</label><span>20</span></div>
+                        <div class="info-group"><label>Height</label><span>172 cm</span></div>
+                        <div class="info-group"><label>Weight</label><span>70 kg</span></div>
+                        <div class="info-group"><label>Email</label><span>kanaki@email.com</span></div>
+                    </div>
+                    <div class="info-group full">
+                        <label>Medical Issues / Injuries</label>
+                        <span>Mild Asthma. Uses inhaler pre-workout.</span>
+                    </div>
+                    <div class="info-group full">
+                        <label>Photos (Front & Side)</label>
+                        <div class="photo-placeholder-row">
+                            <div class="photo-box">Front View</div>
+                            <div class="photo-box">Side View</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h3>Self Assessment (Scale 1-10)</h3>
+                    <div class="scale-row">
+                        <div class="scale-item"><span>Mood</span><div class="bar-container"><div class="bar-fill" style="width: 90%;"></div></div><span class="val">9</span></div>
+                        <div class="scale-item"><span>Sleep</span><div class="bar-container"><div class="bar-fill" style="width: 80%;"></div></div><span class="val">8</span></div>
+                        <div class="scale-item"><span>Hunger</span><div class="bar-container"><div class="bar-fill" style="width: 90%;"></div></div><span class="val">9</span></div>
+                        <div class="scale-item"><span>Energy</span><div class="bar-container"><div class="bar-fill" style="width: 90%;"></div></div><span class="val">9</span></div>
+                    </div>
+                </div>
+                <div class="section no-border">
+                    <h3>Measurements</h3>
+                    <div class="grid-4">
+                        <div class="meas-box"><label>Chest</label><span>38"</span></div>
+                        <div class="meas-box"><label>Waist</label><span>30"</span></div>
+                        <div class="meas-box"><label>Hip</label><span>35"</span></div>
+                        <div class="meas-box"><label>Thighs</label><span>22"</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

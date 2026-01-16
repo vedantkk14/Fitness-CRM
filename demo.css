@@ -1,83 +1,158 @@
-/* ===== Members Action Bar ===== */
-.members-actions {
-    margin-left: 200px;
-    padding: 0 20px 20px;
+/* --- 1. GLOBAL VARIABLES & RESET --- */
+:root {
+    --primary: #F25C2A;
+    --primary-gradient: linear-gradient(135deg, #F25C2A 0%, #ff8c69 100%);
+    --dark-sidebar: #000000;
+    --bg-body: #F0F2F5;
+    --text-main: #2D3748;
+    --text-muted: #6B7280;
+    --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+}
+
+/* --- 2. SIDEBAR (Fixed Position) --- */
+.sidebar {
+    background-color: var(--dark-sidebar);
+    color: #fff;
+    width: 260px;
+    height: 100vh;
+    padding: 25px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    position: fixed; /* Locked to the left */
+    left: 0;
+    top: 0;
+    border-right: 1px solid #1a1a1a;
+    z-index: 1000;
 }
 
-/* Search Box */
-.search-box {
-    padding: 10px 12px;
-    width: 220px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    outline: none;
-    font-size: 14px;
+.logo-area { margin-bottom: 40px; padding-left: 10px; }
+.brand-logo { width: 140px; display: block; }
+
+.nav-label {
+    font-size: 12px; color: #666; letter-spacing: 1.5px;
+    margin-bottom: 15px; font-weight: 600; padding-left: 15px;
 }
 
-/* Add Member Button */
-.add-member-btn {
-    background: #2d6cdf;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
+.nav-link {
+    display: flex; align-items: center; padding: 14px 16px;
+    margin-bottom: 10px; color: #a0a0a0; text-decoration: none;
+    border-radius: 12px; transition: all 0.3s ease; font-size: 14px; font-weight: 500;
 }
 
-.add-member-btn:hover {
-    background: #1f57c3;
+/* Icon Color Fix */
+.nav-link img {
+    width: 20px; height: 20px; margin-right: 12px;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1); /* Turns black icons white */
+    opacity: 0.7;
 }
 
-/* ===== Members Table Container ===== */
-.members-table {
-    margin-left: 200px;
-    padding: 0 20px 30px;
+/* Hover/Active States */
+.nav-link:hover { background-color: rgba(255, 255, 255, 0.08); color: #fff; transform: translateX(5px); }
+.nav-link:hover img { opacity: 1; }
+
+.nav-link.active {
+    background: var(--primary-gradient); color: #fff;
+    box-shadow: 0 4px 15px rgba(242, 92, 42, 0.4);
+}
+.nav-link.active img { opacity: 1; }
+
+.sidebar-promo {
+    margin-top: auto; background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    padding: 20px; border-radius: 16px; text-align: center; border: 1px solid #333;
+}
+.sidebar-promo p { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: #fff; }
+.sidebar-promo small { font-size: 11px; color: #888; }
+
+/* --- 3. MAIN CONTENT LAYOUT --- */
+.main-content {
+    /* This creates space for the fixed sidebar */
+    margin-left: 260px; 
+    padding: 30px 40px;
+    width: calc(100% - 260px);
 }
 
-/* Table Styling */
-.members-table table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
+/* --- 4. HEADER BANNER --- */
+.header-banner {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 40px;
+}
+.header-text h1 { font-size: 26px; font-weight: 700; color: #1a202c; }
+.header-text p { color: #718096; font-size: 15px; }
+
+.profile-pic img {
+    width: 45px; height: 45px; border-radius: 50%;
+    border: 2px solid #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* --- 5. TOOLBAR & BUTTONS --- */
+.toolbar {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 25px; gap: 20px;
+}
+
+.search-bar {
+    background: #fff; padding: 12px 20px; border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03); display: flex; align-items: center;
+    gap: 10px; min-width: 300px;
+}
+.search-bar input { border: none; outline: none; font-size: 14px; color: #555; width: 100%; }
+.search-bar i { color: #aaa; }
+
+.btn-primary {
+    background: var(--primary); color: #fff; padding: 12px 24px;
+    border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 500;
+    display: flex; align-items: center; gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(242, 92, 42, 0.3);
+}
+.btn-primary:hover { background: #e04f1f; transform: translateY(-2px); }
+
+/* --- 6. TABLE STYLES --- */
+.table-card {
+    background: #fff; border-radius: 20px;
+    padding-bottom: 20px; box-shadow: var(--shadow-soft);
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-/* Table Header */
-.members-table th {
-    background: #f1f3f8;
-    color: #555;
-    font-weight: 600;
-    padding: 14px;
-    text-align: left;
-    font-size: 14px;
+.styled-table { width: 100%; border-collapse: collapse; }
+
+.styled-table th {
+    background-color: #f9fafb; color: var(--text-muted); font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;
+    text-align: left; padding: 18px 25px; border-bottom: 1px solid #edf2f7;
 }
 
-/* Table Body */
-.members-table td {
-    padding: 14px;
-    border-bottom: 1px solid #eee;
-    font-size: 14px;
-    color: #333;
+.styled-table td {
+    padding: 18px 25px; font-size: 14px; color: var(--text-main);
+    border-bottom: 1px solid #f3f4f6; vertical-align: middle;
 }
+.styled-table tr:last-child td { border-bottom: none; }
+.styled-table tr:hover { background-color: #fafbfc; }
 
-/* Hover Effect */
-.members-table tr:hover {
-    background-color: #f9f9ff;
-}
+/* --- 7. BADGES & PILLS --- */
+.fw-bold { font-weight: 600; color: #1F2933; }
+.text-muted { color: #6B7280; }
 
-/* Status Styles */
-.active-status {
-    color: green;
-    font-weight: 600;
-}
+.badge { padding: 5px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+.badge.purple { background: #EEF2FF; color: #6366F1; }
+.badge.gray { background: #F3F4F6; color: #4B5563; }
+.badge.green-outline { border: 1px solid #34D399; color: #059669; background: #ECFDF5; }
+.badge.red-outline { border: 1px solid #F87171; color: #DC2626; background: #FEF2F2; }
 
-.expired-status {
-    color: #d9534f;
-    font-weight: 600;
+.status-pill {
+    display: inline-flex; align-items: center; padding: 6px 12px;
+    border-radius: 30px; font-size: 12px; font-weight: 600;
 }
+.status-pill.active { background-color: #DCFCE7; color: #166534; }
+.status-pill.active::before { content: "●"; margin-right: 6px; font-size: 10px; }
+.status-pill.expired { background-color: #FEE2E2; color: #991B1B; }
+.status-pill.expired::before { content: "●"; margin-right: 6px; font-size: 10px; }

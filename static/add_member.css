@@ -1,0 +1,188 @@
+/* --- VARIABLES & RESET --- */
+:root {
+    --primary: #F25C2A;
+    --primary-gradient: linear-gradient(135deg, #F25C2A 0%, #ff8c69 100%);
+    --bg-dark: #000000;
+    --bg-light: #F4F5F7;
+    --text-main: #1F2937;
+    --text-muted: #6B7280;
+    --white: #ffffff;
+    --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden; 
+    background-color: var(--bg-light);
+}
+
+/* --- SPLIT LAYOUT --- */
+.add-member-page {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* --- LEFT BRAND PANEL (Made Wider) --- */
+.brand-panel {
+    /* CHANGED: Increased width from 350px to 500px */
+    width: 500px; 
+    background-color: var(--bg-dark);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    flex-shrink: 0;
+    border-right: 1px solid #1a1a1a;
+}
+
+.brand-logo {
+    width: 140px; /* Slightly larger logo to match wider panel */
+    margin-bottom: 20px;
+}
+
+.brand-panel h2 {
+    font-size: 28px; /* Slightly larger text */
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.brand-panel p {
+    font-size: 15px;
+    color: #9CA3AF;
+    line-height: 1.6;
+}
+
+/* --- RIGHT FORM PANEL --- */
+.form-panel {
+    flex-grow: 1;
+    background-color: var(--bg-light);
+    overflow-y: auto; 
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- FORM CARD DESIGN --- */
+.form-card {
+    background: var(--white);
+    width: 100%;
+    max-width: 600px; /* Slightly wider form card for better balance */
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+/* --- INPUTS & LABELS --- */
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+label:first-child { margin-top: 0; }
+
+input, textarea {
+    width: 100%;
+    padding: 14px 16px; /* Slightly bigger touch targets */
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #F9FAFB;
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(242, 92, 42, 0.1);
+}
+
+/* --- BUTTONS --- */
+.form-actions {
+    display: flex;
+    margin-top: 35px;
+    align-items: center;
+}
+
+.form-actions.right { justify-content: flex-end; }
+.form-actions.space-between { justify-content: space-between; }
+
+.next-btn, .submit-btn {
+    background: var(--primary-gradient);
+    color: var(--white);
+    padding: 14px 35px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(242, 92, 42, 0.3);
+    transition: transform 0.2s;
+}
+
+.next-btn:hover, .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(242, 92, 42, 0.4);
+}
+
+.back-btn {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.back-btn:hover {
+    background-color: #E5E7EB;
+    color: var(--text-main);
+}
+
+.thank-you {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .add-member-page { flex-direction: column; overflow-y: auto; }
+    .brand-panel { width: 100%; padding: 40px 20px; height: auto; }
+    .form-panel { padding: 20px; }
+    .brand-logo { width: 80px; }
+}
