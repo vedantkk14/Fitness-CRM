@@ -1,4 +1,4 @@
-/* --- 1. GLOBAL VARIABLES & RESET --- */
+
 :root {
     --primary: #F25C2A;
     --primary-gradient: linear-gradient(135deg, #F25C2A 0%, #ff8c69 100%);
@@ -14,14 +14,12 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Poppins', sans-serif; background-color: var(--bg-body); color: var(--text-dark); }
 
-/* --- 2. LAYOUT GRID --- */
 .dashboard-container {
     display: grid;
-    grid-template-columns: 260px 1fr; /* Fixed Sidebar, Flexible Content */
+    grid-template-columns: 260px 1fr; 
     min-height: 100vh;
 }
 
-/* --- 3. SIDEBAR --- */
 .sidebar {
     background-color: var(--sidebar-bg);
     color: #fff;
@@ -45,14 +43,13 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--bg-body); col
 .nav-link.active { background: var(--primary-gradient); color: #fff; box-shadow: 0 4px 15px rgba(242, 92, 42, 0.4); }
 .sidebar-footer { border-top: 1px solid #333; padding-top: 15px; }
 
-/* --- 4. MAIN CONTENT --- */
 .main-content { padding: 30px 40px; }
 .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
 .header-text h1 { font-size: 26px; font-weight: 700; color: #111; }
 .header-text p { color: var(--text-grey); font-size: 14px; margin-top: 5px; }
 .header-actions { display: flex; gap: 15px; }
 
-/* Buttons */
+
 .add-btn { 
     background: var(--primary-gradient); color: white; text-decoration: none; 
     padding: 10px 24px; border-radius: 30px; font-weight: 600; font-size: 14px; 
@@ -66,7 +63,7 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--bg-body); col
     padding: 10px 20px; border-radius: 30px; font-weight: 600; cursor: pointer; 
 }
 
-/* --- 5. PLANS GRID & CARDS --- */
+
 .plans-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
 
 .plan-card { 
@@ -77,18 +74,18 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--bg-body); col
 }
 .plan-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
 
-/* Color Strips */
+
 .color-strip { height: 6px; width: 100%; }
 .color-strip.blue { background: #3B82F6; }
 .color-strip.purple { background: #8B5CF6; }
 .color-strip.orange { background: #F25C2A; }
 .color-strip.green { background: #10B981; }
 
-/* Popular Badge */
+
 .plan-card.popular { border: 2px solid #8B5CF6; }
 .badge { position: absolute; top: 12px; right: 12px; background: #8B5CF6; color: white; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; }
 
-/* Plan Content */
+
 .plan-header { padding: 25px 25px 15px; text-align: center; }
 .plan-header h2 { font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
 .plan-header .price { font-size: 32px; font-weight: 700; color: var(--text-dark); }
@@ -108,9 +105,8 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--bg-body); col
 .icon-btn:hover { background: #F3F4F6; color: var(--text-dark); }
 .icon-btn.delete:hover { background: #FEF2F2; color: #EF4444; border-color: #FECACA; }
 
-/* --- 6. ADD MEMBERSHIP (MODAL STYLES) --- */
 .modal-body {
-    background: rgba(0, 0, 0, 0.7); /* Dark overlay background */
+    background: rgba(0, 0, 0, 0.7); 
     display: flex; justify-content: center; align-items: center;
     min-height: 100vh;
 }
@@ -142,7 +138,6 @@ input:focus, select:focus, textarea:focus { border-color: var(--primary); backgr
 .cancel-btn { background: white; color: var(--text-grey); border: 1px solid var(--border-light); text-decoration: none; padding: 10px 20px; border-radius: 10px; font-size: 14px; font-weight: 500; }
 .create-btn { background: var(--primary-gradient); color: white; border: none; padding: 10px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; }
 
-/* Responsive */
 @media (max-width: 900px) {
     .dashboard-container { grid-template-columns: 1fr; }
     .sidebar { display: none; }
