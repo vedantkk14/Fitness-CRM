@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOF Fitness | Reports</title>
+    <link rel="stylesheet" href="../static/dashboard.css">
+    <link rel="stylesheet" href="../static/reports.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
+            </div>
+
+            <div class="nav-label">MENU</div>
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-link">
+                    <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
+                    <span>Dashboard</span>
+                </a>
+                <a href="members.html" class="nav-link">
+                    <img src="../icons/users-solid-full.svg" alt="Members" width="20">
+                    <span>Members</span>
+                </a>
+                <a href="diet-plans.html" class="nav-link">
+                    <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                    <span>Diet Plans</span>
+                </a>
+                <a href="staff.html" class="nav-link">
+                    <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
+                    <span>Staff</span>
+                </a>
+                <a href="membership.html" class="nav-link">
+                    <img src="../icons/credit-card-regular-full.svg" alt="Staff" width="20">
+                    <span>Membership</span>
+                </a>
+                <a href="reports.html" class="nav-link active">
+                    <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
+                    <span>Reports</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="header-banner">
+                <div class="header-text">
+                    <h1>KPI Reports</h1>
+                    <p>Comprehensive insights into revenue, growth, and retention.</p>
+                </div>
+                <div class="header-actions">
+                    <div class="profile-pic">
+                        <img src="../icons/JO.svg" alt="JO" width="20">
+                    </div>
+                </div>
+            </header>
+
+            <section class="report-controls">
+                <div class="control-left">
+                    <label>Report Period:</label>
+                    <div class="date-inputs">
+                        <div class="input-wrapper">
+                            <span>From</span>
+                            <input type="date" value="2025-12-13">
+                        </div>
+                        <div class="input-wrapper">
+                            <span>To</span>
+                            <input type="date" value="2026-01-12">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-right">
+                    <button class="btn-export pdf">
+                        <img src="../icons/file-solid-full.svg" width="14" class="btn-icon"> Export PDF
+                    </button>
+                    <button class="btn-export ppt">
+                        <img src="../icons/file-invoice-solid-full.svg" width="14" class="btn-icon"> PowerPoint
+                    </button>
+                </div>
+            </section>
+
+            <section class="kpi-grid">
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon blue-gradient">
+                            <img src="../icons/wallet-solid-full.svg" width="24">
+                        </div>
+                        <div class="menu-dots"><img src="../icons/ellipsis-solid-full.svg" width="20"></div>
+                    </div>
+                    <div class="stat-body">
+                        <h3>Total Revenue</h3>
+                        <h2>$33,700</h2>
+                        <p class="growth positive">
+                            Collected this month
+                        </p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon red-gradient">
+                            <img src="../icons/sack-dollar-solid-full.svg" width="24">
+                        </div>
+                        <div class="menu-dots"><img src="../icons/ellipsis-solid-full.svg" width="20"></div>
+                    </div>
+                    <div class="stat-body">
+                        <h3>Total Due Payments</h3>
+                        <h2>$1,850</h2>
+                        <p class="growth negative">
+                            Pending collection
+                        </p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon orange-gradient">
+                            <img src="../icons/users-solid-full.svg" width="24">
+                        </div>
+                        <div class="menu-dots"><img src="../icons/ellipsis-solid-full.svg" width="20"></div>
+                    </div>
+                    <div class="stat-body">
+                        <h3>Total Due Members</h3>
+                        <h2>8</h2>
+                        <p class="growth neutral">
+                            Members with outstanding bills
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-grid">
+
+                <div class="panel chart-panel">
+                    <div class="panel-header">
+                        <h3>Revenue & Profit Analysis</h3>
+                        <div class="chart-legend">
+                            <span class="legend-item"><span class="dot blue"></span> Revenue</span>
+                            <span class="legend-item"><span class="dot green"></span> Expenses</span>
+                            <span class="legend-item"><span class="dot orange"></span> Profit</span>
+                        </div>
+                    </div>
+                    <div class="css-chart-container grouped-chart">
+                        <div class="bar-group">
+                            <div class="bar-col">
+                                <div class="bar blue" style="height: 60%"></div>
+                                <div class="bar green" style="height: 40%"></div>
+                                <div class="bar orange" style="height: 25%"></div>
+                            </div>
+                            <span class="label">Jan</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-col">
+                                <div class="bar blue" style="height: 70%"></div>
+                                <div class="bar green" style="height: 45%"></div>
+                                <div class="bar orange" style="height: 35%"></div>
+                            </div>
+                            <span class="label">Feb</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-col">
+                                <div class="bar blue" style="height: 65%"></div>
+                                <div class="bar green" style="height: 42%"></div>
+                                <div class="bar orange" style="height: 30%"></div>
+                            </div>
+                            <span class="label">Mar</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-col">
+                                <div class="bar blue" style="height: 80%"></div>
+                                <div class="bar green" style="height: 50%"></div>
+                                <div class="bar orange" style="height: 45%"></div>
+                            </div>
+                            <span class="label">Apr</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-col">
+                                <div class="bar blue" style="height: 78%"></div>
+                                <div class="bar green" style="height: 48%"></div>
+                                <div class="bar orange" style="height: 40%"></div>
+                            </div>
+                            <span class="label">May</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-col">
+                                <div class="bar blue" style="height: 90%"></div>
+                                <div class="bar green" style="height: 55%"></div>
+                                <div class="bar orange" style="height: 50%"></div>
+                            </div>
+                            <span class="label">Jun</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel chart-panel">
+                    <div class="panel-header">
+                        <h3>Member Retention</h3>
+                    </div>
+                    <div class="svg-chart-container">
+                        <svg viewBox="0 0 100 50" class="line-chart-svg">
+                            <line x1="0" y1="10" x2="100" y2="10" stroke="#f0f0f0" stroke-width="0.5" />
+                            <line x1="0" y1="25" x2="100" y2="25" stroke="#f0f0f0" stroke-width="0.5" />
+                            <line x1="0" y1="40" x2="100" y2="40" stroke="#f0f0f0" stroke-width="0.5" />
+                            <path d="M0,40 Q25,35 50,20 T100,10" fill="none" stroke="#F25C2A" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path d="M0,40 Q25,35 50,20 T100,10 V50 H0 Z" fill="rgba(242, 92, 42, 0.1)" />
+                            <circle cx="0" cy="40" r="1.5" fill="#F25C2A" />
+                            <circle cx="50" cy="20" r="1.5" fill="#F25C2A" />
+                            <circle cx="100" cy="10" r="1.5" fill="#F25C2A" />
+                        </svg>
+                        <div class="chart-meta">
+                            <span><b style="color:#F25C2A">92%</b> Retention Rate</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <h3 class="section-title">Detailed Reports</h3>
+            <section class="reports-actions">
+
+                <a href="reports/churn_report.html" class="report-card">
+                    <div class="icon-circle soft-red">
+                        <img src="../icons/brain-solid-full.svg" width="24">
+                    </div>
+                    <div class="card-text">
+                        <h4>At-Risk Members</h4>
+                        <p>AI Churn Prediction</p>
+                    </div>
+                    <div class="watermark-icon"><img src="../icons/brain-solid-full.svg"></div>
+                </a>
+
+                <a href="reports/renewal_report.html" class="report-card">
+                    <div class="icon-circle soft-blue">
+                        <img src="../icons/circle-exclamation-solid-full (1).svg" width="24">
+                    </div>
+                    <div class="card-text">
+                        <h4>Expiring Soon</h4>
+                        <p>Renewal Reminders</p>
+                    </div>
+                    <div class="watermark-icon"><img src="../icons/circle-exclamation-solid-full (1).svg"></div>
+                </a>
+
+                <a href="reports/revenue_source.html" class="report-card">
+                    <div class="icon-circle soft-green">
+                        <img src="../icons/dollar-sign-solid-full.svg" width="24">
+                    </div>
+                    <div class="card-text">
+                        <h4>Revenue Sources</h4>
+                        <p>Profitable Services</p>
+                    </div>
+                    <div class="watermark-icon"><img src="../icons/dollar-sign-solid-full.svg"></div>
+                </a>
+
+                <a href="reports/trainer_performance.html" class="report-card">
+                    <div class="icon-circle soft-teal">
+                        <img src="../icons/dumbbell-solid-full (1).svg" width="24">
+                    </div>
+                    <div class="card-text">
+                        <h4>Trainers</h4>
+                        <p>Performance Stats</p>
+                    </div>
+                    <div class="watermark-icon"><img src="../icons/dumbbell-solid-full (1).svg"></div>
+                </a>
+
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

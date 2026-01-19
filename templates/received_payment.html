@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Received Payments | JoF Fitness</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="/static/received_payments.css" />
+</head>
+
+<body>
+
+  <div class="overlay">
+    <div class="modal">
+
+      <div class="modal-header">
+        <div class="header-content">
+          <div class="icon-box">
+            <i class="fa-solid fa-receipt"></i>
+          </div>
+          <div>
+            <h2>Payment History</h2>
+            <p>Recent transactions and payment status.</p>
+          </div>
+        </div>
+
+        
+        <a href="/templates/membership.html" class="close-btn" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </a>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Member Name</th>
+              <th>Plan</th>
+              <th>Date</th>
+              <th>Mode</th>
+              <th class="right">Amount</th>
+              <th class="right">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <div class="user-info">
+                  <div class="avatar">S</div>
+                  <span class="bold">Sarah Johnson</span>
+                </div>
+              </td>
+              <td class="muted">Premium Plan</td>
+              <td class="muted">Jan 05, 2025</td>
+              <td><span class="pill upi"><i class="fa-solid fa-mobile-screen"></i> UPI</span></td>
+              <td class="amount right">+$79.00</td>
+              <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="user-info">
+                  <div class="avatar blue">M</div>
+                  <span class="bold">Michael Chen</span>
+                </div>
+              </td>
+              <td class="muted">Standard Plan</td>
+              <td class="muted">Jan 08, 2025</td>
+              <td><span class="pill cash"><i class="fa-solid fa-money-bill-wave"></i> Cash</span></td>
+              <td class="amount right">+$49.00</td>
+              <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="user-info">
+                  <div class="avatar orange">E</div>
+                  <span class="bold">Emily Rodriguez</span>
+                </div>
+              </td>
+              <td class="muted">Premium Plan</td>
+              <td class="muted">Jan 10, 2025</td>
+              <td><span class="pill card"><i class="fa-regular fa-credit-card"></i> Card</span></td>
+              <td class="amount right">+$79.00</td>
+              <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="user-info">
+                  <div class="avatar">D</div>
+                  <span class="bold">David Martinez</span>
+                </div>
+              </td>
+              <td class="muted">Premium Plan</td>
+              <td class="muted">Jan 12, 2025</td>
+              <td><span class="pill upi"><i class="fa-solid fa-mobile-screen"></i> UPI</span></td>
+              <td class="amount right">+$79.00</td>
+              <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button></td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
