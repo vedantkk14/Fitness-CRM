@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management | JoF Fitness</title> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/styling/staff.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="../logo-light.png" alt="JOF Logo" class="brand-logo">
+            </div>
+
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span>
+                </a>
+                <a href="members.html" class="nav-link">
+                    <i class="fa-solid fa-users"></i> <span>Members</span>
+                </a>
+                <a href="diet_plans.html" class="nav-link">
+                    <i class="fa-solid fa-carrot"></i> <span>Diet Plans</span>
+                </a>
+                <a href="staff.html" class="nav-link active">
+                    <i class="fa-solid fa-clipboard-user"></i> <span>Staff</span>
+                </a>
+                <a href="membership.html" class="nav-link">
+                    <i class="fa-solid fa-credit-card"></i> <span>Membership</span>
+                </a>
+                <a href="reports.html" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i> <span>Reports</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="nav-link"><i class="fa-solid fa-gear"></i> <span>Settings</span></a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="page-header">
+                <div class="header-text">
+                    <h1>Staff Members</h1>
+                    <p>Manage your fitness studio instructors and schedule.</p>
+                </div>
+                
+                <a href="/templates/add_staff.html" class="add-btn">
+                    <i class="fa-solid fa-plus"></i> Add New Staff
+                </a>
+            </header>
+
+            <div class="filter-bar">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search staff...">
+                </div>
+            </div>
+
+            <section class="card-grid">
+
+                <div class="staff-card">
+                    <div class="card-header-row">
+                        <div class="status-dot online"></div>
+                        <div class="menu-icon"><i class="fa-solid fa-ellipsis"></i></div>
+                    </div>
+                    
+                    <div class="avatar-circle">SM</div>
+                    
+                    <div class="card-body">
+                        <h3>Sarah Mitchell</h3>
+                        <span class="designation">Senior Instructor</span>
+                        
+                        <div class="contact-info">
+                            <p><i class="fa-regular fa-envelope"></i> sarah.m@fitstudio.com</p>
+                            <p><i class="fa-solid fa-phone"></i> (555) 111-2222</p>
+                        </div>
+
+                        <div class="rating-box">
+                            <i class="fa-solid fa-star"></i> 4.9 <span class="muted">/ 5.0</span>
+                        </div>
+
+                        <div class="tags-container">
+                            <span class="tag">Yoga</span>
+                            <span class="tag">Meditation</span>
+                            <span class="tag">Flexibility</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="workload">
+                            <strong>12</strong> <small>Classes/wk</small>
+                        </div>
+                        <button class="view-btn">View Schedule</button>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <div class="card-header-row">
+                        <div class="status-dot online"></div>
+                        <div class="menu-icon"><i class="fa-solid fa-ellipsis"></i></div>
+                    </div>
+
+                    <div class="avatar-circle color-2">MT</div>
+
+                    <div class="card-body">
+                        <h3>Mike Torres</h3>
+                        <span class="designation">Fitness Instructor</span>
+
+                        <div class="contact-info">
+                            <p><i class="fa-regular fa-envelope"></i> mike.t@fitstudio.com</p>
+                            <p><i class="fa-solid fa-phone"></i> (555) 222-3333</p>
+                        </div>
+
+                        <div class="rating-box">
+                            <i class="fa-solid fa-star"></i> 4.8 <span class="muted">/ 5.0</span>
+                        </div>
+
+                        <div class="tags-container">
+                            <span class="tag">HIIT</span>
+                            <span class="tag">Cardio</span>
+                            <span class="tag">Spin</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="workload">
+                            <strong>15</strong> <small>Classes/wk</small>
+                        </div>
+                        <button class="view-btn">View Schedule</button>
+                    </div>
+                </div>
+
+                <div class="staff-card">
+                    <div class="card-header-row">
+                        <div class="status-dot offline"></div>
+                        <div class="menu-icon"><i class="fa-solid fa-ellipsis"></i></div>
+                    </div>
+
+                    <div class="avatar-circle color-3">DK</div>
+
+                    <div class="card-body">
+                        <h3>David Kim</h3>
+                        <span class="designation">Strength Coach</span>
+
+                        <div class="contact-info">
+                            <p><i class="fa-regular fa-envelope"></i> david.k@fitstudio.com</p>
+                            <p><i class="fa-solid fa-phone"></i> (555) 333-4444</p>
+                        </div>
+
+                        <div class="rating-box">
+                            <i class="fa-solid fa-star"></i> 4.9 <span class="muted">/ 5.0</span>
+                        </div>
+
+                        <div class="tags-container">
+                            <span class="tag">Strength</span>
+                            <span class="tag">CrossFit</span>
+                            <span class="tag">Lifting</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="workload">
+                            <strong>10</strong> <small>Classes/wk</small>
+                        </div>
+                        <button class="view-btn">View Schedule</button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
