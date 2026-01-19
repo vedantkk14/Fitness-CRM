@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Received Payments | JoF Fitness</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <link rel="stylesheet" href="../static/received_payment.css" />
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="../icons/logo-light.png" alt="JOF Logo" class="brand-logo">
+            </div>
+            <div class="nav-label">MENU</div>
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-link"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+                <a href="members.html" class="nav-link"><i class="fa-solid fa-users"></i> Members</a>
+                <a href="#" class="nav-link active"><i class="fa-solid fa-receipt"></i> Payments</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            
+            <div class="page-header">
+                <div class="header-text">
+                    <h1>Payment History</h1>
+                    <p>View all recent transactions and payment statuses.</p>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" placeholder="Search transaction...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-panel">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Member Name</th>
+                                <th>Plan Details</th>
+                                <th>Date</th>
+                                <th>Payment Mode</th>
+                                <th class="right">Amount</th>
+                                <th class="right">Invoice</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar">S</div>
+                                        <div>
+                                            <span class="bold">Sarah Johnson</span>
+                                            <span class="email-sub">sarah@example.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge premium">Premium Plan</span></td>
+                                <td class="muted">Jan 05, 2025</td>
+                                <td><span class="pill upi"><i class="fa-solid fa-mobile-screen"></i> UPI</span></td>
+                                <td class="amount right">+$79.00</td>
+                                <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar blue">M</div>
+                                        <div>
+                                            <span class="bold">Michael Chen</span>
+                                            <span class="email-sub">mike.c@example.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge standard">Standard Plan</span></td>
+                                <td class="muted">Jan 08, 2025</td>
+                                <td><span class="pill cash"><i class="fa-solid fa-money-bill-wave"></i> Cash</span></td>
+                                <td class="amount right">+$49.00</td>
+                                <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar orange">E</div>
+                                        <div>
+                                            <span class="bold">Emily Rodriguez</span>
+                                            <span class="email-sub">emily.r@example.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge premium">Premium Plan</span></td>
+                                <td class="muted">Jan 10, 2025</td>
+                                <td><span class="pill card"><i class="fa-regular fa-credit-card"></i> Card</span></td>
+                                <td class="amount right">+$79.00</td>
+                                <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar">D</div>
+                                        <div>
+                                            <span class="bold">David Martinez</span>
+                                            <span class="email-sub">david.m@example.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge premium">Premium Plan</span></td>
+                                <td class="muted">Jan 12, 2025</td>
+                                <td><span class="pill upi"><i class="fa-solid fa-mobile-screen"></i> UPI</span></td>
+                                <td class="amount right">+$79.00</td>
+                                <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar blue">J</div>
+                                        <div>
+                                            <span class="bold">Jessica Lee</span>
+                                            <span class="email-sub">jess.lee@example.com</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="plan-badge standard">Standard Plan</span></td>
+                                <td class="muted">Jan 14, 2025</td>
+                                <td><span class="pill card"><i class="fa-regular fa-credit-card"></i> Card</span></td>
+                                <td class="amount right">+$49.00</td>
+                                <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
