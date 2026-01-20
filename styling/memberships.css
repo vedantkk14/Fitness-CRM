@@ -136,8 +136,23 @@ input:focus, select:focus, textarea:focus { border-color: var(--primary); backgr
 
 .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; border-top: 1px solid var(--border-light); padding-top: 20px; }
 .cancel-btn { background: white; color: var(--text-grey); border: 1px solid var(--border-light); text-decoration: none; padding: 10px 20px; border-radius: 10px; font-size: 14px; font-weight: 500; }
-.create-btn { background: var(--primary-gradient); color: white; border: none; padding: 10px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; }
+.create-btn { 
+    background: var(--primary-gradient); 
+    color: white; 
+    border: none; 
+    padding: 10px 24px; 
+    border-radius: 30px;
+    font-size: 14px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    
+    box-shadow: 0 4px 10px rgba(242, 92, 42, 0.3); 
+    transition: transform 0.2s; 
+}
 
+.create-btn:hover { 
+    transform: translateY(-2px); 
+}
 @media (max-width: 900px) {
     .dashboard-container { grid-template-columns: 1fr; }
     .sidebar { display: none; }

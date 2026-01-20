@@ -1,256 +1,306 @@
+/* --- 1. VARIABLES (Clean Theme) --- */
+:root {
+    --primary: #F25C2A;          /* Brand Orange */
+    --primary-dark: #d94f23;
+    --text-dark: #111827;        /* Black text */
+    --text-grey: #6B7280;        /* Grey text */
+    --bg-body: #F3F4F6;          /* Light grey background for the page */
+    --bg-paper: #FFFFFF;         /* White background for the invoice */
+    --border: #E5E7EB;           /* Subtle borders */
+    --success: #10B981;          /* Green for "PAID" status */
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: #f4f5f7;
-  padding: 30px;
+    background-color: var(--bg-body);
+    padding: 40px 20px;
+    color: var(--text-dark);
 }
 
-.invoice-page {
-  width: 900px;
-  margin: auto;
-  background: #ffffff;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+/* --- 2. INVOICE CONTAINER (The Paper) --- */
+.invoice-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-paper);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft premium shadow */
+    border: 1px solid var(--border);
 }
-    
+
+/* --- 3. HEADER --- */
 .invoice-header {
-  background: linear-gradient(135deg, #F25C2A 0%, #ff8c69 100%);
-  padding: 35px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
 }
 
-.invoice-header h1 {
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 1px;
+/* Logo Area */
+.logo-wrapper {
+    background: #000; /* Black box for logo contrast */
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 15px;
 }
 
-.meta {
-  margin-top: 16px;
-  font-size: 13px;
-  line-height: 1.8;
+.brand-logo {
+    height: 40px; /* Adjust height to fit your logo */
+    display: block;
 }
 
-.meta span {
-  display: inline-block;
-  width: 120px;
-  font-weight: 500;
-  opacity: 0.95;
+.company-address p {
+    font-size: 13px;
+    color: var(--text-grey);
+    line-height: 1.5;
 }
 
-.header-right {
-  text-align: right;
+.company-address b {
+    color: var(--text-dark);
 }
 
-.logo-circle {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  margin-left: auto;
+/* Header Details (Right Side) */
+.invoice-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary); /* Orange Title */
+    text-align: right;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
-.business-name {
-  margin-top: 10px;
-  font-weight: 600;
-  font-size: 13px;
-  opacity: 0.95;
+.meta-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
 }
 
-/* Billing */
-.billing-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  padding: 28px 35px;
+.meta-item {
+    font-size: 14px;
 }
 
-.bill-box h3 {
-  font-size: 12px;
-  letter-spacing: 0.8px;
-  color: #6b7280;
-  margin-bottom: 10px;
+.meta-item .label {
+    color: var(--text-grey);
+    margin-right: 10px;
 }
 
-.bill-box p {
-  font-size: 13px;
-  color: #1f2937;
-  line-height: 1.7;
+.meta-item .value {
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
+.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 30px 0;
+}
+
+/* --- 4. BILLING SECTION --- */
+.billing-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.bill-to h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-grey);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.client-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.bill-to p {
+    font-size: 14px;
+    color: var(--text-grey);
+    line-height: 1.5;
+}
+
+.status-badge {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.status-badge.paid {
+    background-color: #ECFDF5;
+    color: var(--success);
+    border: 1px solid #D1FAE5;
+}
+
+/* --- 5. ITEMS TABLE --- */
 .items-section {
-  padding: 0 35px 25px;
+    margin-bottom: 40px;
 }
 
-.table-head {
-  background: #F25C2A;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: 1.8fr 0.6fr 0.8fr 0.8fr;
-  font-size: 12px;
-  font-weight: 700;
+.table-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--border);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-grey);
+    letter-spacing: 0.5px;
 }
 
 .table-row {
-  display: grid;
-  grid-template-columns: 1.8fr 0.6fr 0.8fr 0.8fr;
-  padding: 16px 18px;
-  border-bottom: 1px solid #e5e7eb;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
 }
 
-.item-title {
-  font-weight: 700;
-  font-size: 13px;
-  color: #111827;
+.item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
 }
 
-.item-subtitle {
-  font-size: 12px;
-  color: #6b7280;
-  margin-top: 4px;
+.item-meta {
+    font-size: 12px;
+    color: var(--text-grey);
+    margin-top: 4px;
 }
 
-.center {
-  text-align: center;
-  font-weight: 600;
-  color: #374151;
+.center { text-align: center; }
+.right { text-align: right; }
+
+.col-qty, .col-price, .col-total {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 500;
 }
 
-.right {
-  text-align: right;
-  font-weight: 600;
-  color: #111827;
+/* --- 6. SUMMARY & TOTALS --- */
+.summary-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.bank-details h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-grey);
+    margin-bottom: 10px;
+}
+
+.bank-details p {
+    font-size: 13px;
+    color: var(--text-dark);
+    margin-bottom: 5px;
 }
 
 .totals-box {
-  margin-top: 12px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
+    width: 300px;
 }
 
-.total-line {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 18px;
-  background: #f9fafb;
-  font-size: 14px;
-  color: #374151;
-  border-bottom: 1px solid #e5e7eb;
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--text-grey);
 }
 
-.total-line.grand {
-  background: #fff3ef;
-  font-weight: 800;
-  color: #111827;
-  border-bottom: none;
+.total-row span:last-child {
+    color: var(--text-dark);
+    font-weight: 600;
 }
 
-/* Bottom section */
-.bottom-section {
-  padding: 0 35px 25px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.grand-total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid var(--border);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary); /* Orange Grand Total */
 }
 
-.bank-box,
-.notes-box {
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 18px;
-  background: #ffffff;
+.grand-total span:last-child {
+    color: var(--primary);
 }
 
-.bank-box h3,
-.notes-box h3 {
-  font-size: 12px;
-  letter-spacing: 0.8px;
-  color: #6b7280;
-  margin-bottom: 10px;
+/* --- 7. FOOTER & BUTTONS --- */
+.footer-actions {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.bank-box p,
-.notes-box p {
-  font-size: 13px;
-  color: #374151;
-  line-height: 1.7;
+.thank-you {
+    font-size: 13px;
+    color: var(--text-grey);
+    font-style: italic;
 }
 
-.invoice-actions {
-  padding: 0 35px 30px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
+.buttons {
+    display: flex;
+    gap: 15px;
 }
 
-.download-btn {
-  text-decoration: none;
-  background: linear-gradient(135deg, #F25C2A 0%, #ff8c69 100%);
-  color: white;
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 14px;
-  transition: 0.2s;
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-.download-btn:hover {
-  transform: translateY(-2px);
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-dark);
 }
 
-.back-btn {
-  text-decoration: none;
-  background: #ffffff;
-  color: #1f2937;
-  border: 1px solid #e5e7eb;
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 14px;
+.btn-secondary:hover {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
 }
 
-.back-btn:hover {
-  background: #f3f4f6;
+.btn-primary {
+    background: var(--text-dark); /* Black button for premium feel */
+    color: #fff;
+    border: none;
 }
 
-@media (max-width: 950px) {
-  body {
-    padding: 12px;
-  }
+.btn-primary:hover {
+    background: var(--primary); /* Orange on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(242, 92, 42, 0.2);
+}
 
-  .invoice-page {
-    width: 100%;
-  }
-
-  .billing-info,
-  .bottom-section {
-    grid-template-columns: 1fr;
-  }
-
-  .table-head,
-  .table-row {
-    grid-template-columns: 1.6fr 0.6fr 0.8fr 0.8fr;
-  }
-
-  .invoice-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .invoice-container { padding: 20px; }
+    .invoice-header { flex-direction: column; gap: 30px; }
+    .invoice-title { text-align: left; }
+    .meta-grid { align-items: flex-start; }
+    .table-header, .table-row { grid-template-columns: 2fr 1fr; gap: 10px; }
+    .col-qty, .col-price { display: none; } /* Hide details on very small screens */
+    .summary-section { flex-direction: column; gap: 30px; }
+    .totals-box { width: 100%; }
+    .footer-actions { flex-direction: column-reverse; gap: 20px; align-items: stretch; }
 }
