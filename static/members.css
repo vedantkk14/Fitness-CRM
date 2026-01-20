@@ -107,6 +107,42 @@ body {
 .search-bar input { border: none; outline: none; font-size: 14px; color: #555; width: 100%; }
 .search-bar i { color: #aaa; }
 
+/* --- NEW TOOLBAR STYLES --- */
+
+/* 1. Wrapper to keep Search and Filter together */
+.search-group {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between search bar and filter button */
+}
+
+/* 2. Filter Button Design */
+.filter-btn {
+    background: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px; /* Matches search bar roundness */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Matches search bar shadow */
+    
+    color: #6B7280; /* Muted text color */
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+/* Hover Effect */
+.filter-btn:hover {
+    color: var(--primary); /* Turns Orange */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
 .btn-primary {
     background: var(--primary); color: #fff; padding: 12px 24px;
     border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 500;
@@ -157,11 +193,7 @@ body {
 .status-pill.expired { background-color: #FEE2E2; color: #991B1B; }
 .status-pill.expired::before { content: "●"; margin-right: 6px; font-size: 10px; }
 
-/* ... [KEEP ALL PREVIOUS CSS ABOVE] ... */
 
-/* ==================================================
-   VIEW BUTTON STYLES
-   ================================================== */
 .btn-view {
     display: inline-flex;
     align-items: center;
@@ -171,7 +203,7 @@ body {
     border-radius: 8px;
     background-color: #f1f3f8;
     color: var(--primary);
-    text-decoration: none;
+    text-decoration: none;  
     transition: all 0.2s ease;
 }
 
