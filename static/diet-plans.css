@@ -1,4 +1,16 @@
-/* RESET & BASICS  */
+/* --- VARS --- */
+:root {
+    --primary: #F25C2A;
+    --primary-gradient: linear-gradient(135deg, #F25C2A 0%, #ff8c69 100%);
+    --dark-sidebar: #000000;
+    --bg-body: #F0F2F5;
+    --white: #ffffff;
+    --text-main: #2D3748;
+    --text-muted: #A0AEC0;
+    --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,33 +19,27 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #F6F7F9;
-    color: #1F2933;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    overflow-x: hidden;
 }
 
-/*Prevents giant icons */
-img {
-    max-width: 100%;
-    display: block;
-    /* Removes bottom spacing gap */
-}
-
-/* LAYOUT */
+/* --- LAYOUT GRID --- */
 .dashboard-container {
     display: grid;
     grid-template-columns: 260px 1fr;
     min-height: 100vh;
 }
 
-/* SIDEBAR */
+/* --- SIDEBAR DESIGN --- */
 .sidebar {
-    background-color: #000000;
+    background-color: var(--dark-sidebar);
     color: #fff;
     padding: 25px;
-    border-right: 1px solid #1a1a1a;
     display: flex;
     flex-direction: column;
     position: relative;
+    border-right: 1px solid #1a1a1a;
     z-index: 1000;
     /* Fix: Ensure sidebar stays above content */
 }
@@ -47,50 +53,30 @@ img {
     width: 140px;
 }
 
-/* SIDEBAR ICON FIX */
 .nav-link img {
+    /* Fix size */
     width: 20px;
     height: 20px;
+
     margin-right: 15px;
 
-    /* Turn Black SVG -> White */
     filter: brightness(0) invert(1);
-
     opacity: 0.7;
-    /* Slight dim */
-    transition: opacity 0.3s;
+    transition: all 0.3s ease;
 }
 
-.nav-link {
-    display: flex;
-    align-items: center;
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    color: #a0a0a0;
-    text-decoration: none;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s;
-}
-
-/* Hover & Active States */
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.08);
-    color: #fff;
-}
-
-.nav-link:hover img {
+.nav-link:hover img,
+.nav-link.active img {
     opacity: 1;
 }
 
-.nav-link.active {
-    background: linear-gradient(135deg, #F25C2A 0%, #ff8c69 100%);
-    color: #fff;
-    box-shadow: 0 4px 15px rgba(242, 92, 42, 0.4);
+
+.nav-link:not(.active) img {
+    opacity: 0.7;
 }
 
-.nav-link.active img {
+
+.nav-link:hover img {
     opacity: 1;
 }
 
@@ -103,26 +89,133 @@ img {
     padding-left: 15px;
 }
 
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    color: #a0a0a0;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-link .icon-box {
+    width: 25px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+/* Active & Hover States */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.nav-link.active {
+    background: var(--primary-gradient);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(242, 92, 42, 0.4);
+    /* Glowing Orange Shadow */
+}
+
+/* Decorative Sidebar Promo */
 .sidebar-promo {
     margin-top: auto;
-    background: #1e1e1e;
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
     padding: 20px;
     border-radius: 16px;
     text-align: center;
     border: 1px solid #333;
 }
 
+.sidebar-promo i {
+    color: #FFD700;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
 .sidebar-promo p {
-    color: white;
-    margin-bottom: 5px;
     font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
 .sidebar-promo small {
-    color: #888;
     font-size: 11px;
+    color: #888;
 }
 
+/* --- Sidebar Dropdown (Copied from members.css) --- */
+.nav-item-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.sidebar-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    /* To the right of the sidebar */
+    top: 0;
+    width: 200px;
+    background-color: var(--dark-sidebar);
+    border-radius: 0 12px 12px 0;
+    /* Rounded on right side */
+    padding: 10px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    border-left: 1px solid #333;
+    /* Separator */
+    animation: slideRight 0.2s ease-out;
+}
+
+.nav-item-dropdown:hover .sidebar-submenu {
+    display: block;
+}
+
+.sidebar-submenu a {
+    display: block;
+    padding: 12px 20px;
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.sidebar-submenu a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 25px;
+    /* Slight movement */
+}
+
+.nav-arrow {
+    margin-left: auto;
+    font-size: 10px;
+    opacity: 0.5;
+    transition: transform 0.2s;
+}
+
+.nav-item-dropdown:hover .nav-arrow {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 /* ================= MAIN CONTENT ================= */
 .main-content {
     padding: 30px 40px;
