@@ -5,107 +5,56 @@
     <meta charset="UTF-8">
     <title>JOF India | Add Member</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../static/add_member.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
     <div class="add-member-page">
 
-        <!-- LEFT BRAND PANEL -->
         <div class="brand-panel">
-            <img src="../icons/logo-light.png" class="brand-logo">
+            <img src="../icons/logo-light(1).png" class="brand-logo" alt="Logo">
             <h2>JOF India</h2>
             <p>Transforming Health.<br>One Member at a Time.</p>
         </div>
 
-        <!-- RIGHT FORM PANEL -->
         <div class="form-panel">
+            <h2 class="page-title">Health Details</h2>
 
-            <!-- ===== PAGE HEADERS ===== -->
-            <h2 class="page-title health-title">Health Details</h2>
-            <h2 class="page-title metrics-title">Metrics</h2>
-            <h2 class="page-title measurement-title">Measurements</h2>
-
-            <!-- ===== STEP TABS ===== -->
             <div class="step-tabs">
-                <a href="#health" class="tab active">Health</a>
-                <a href="#metrics" class="tab">Metrics</a>
-                <a href="#measurements" class="tab">Measurements</a>
+                <span class="tab active">Health</span>
+                <span class="tab">Metrics</span>
+                <span class="tab">Measurements</span>
             </div>
 
-            <!-- ================= HEALTH ================= -->
-            <section id="health" class="form-card step-section">
+            <div class="form-card">
                 <label>Full Name</label>
-                <input type="text">
+                <input type="text" placeholder="e.g. Joshuaa">
 
                 <label>Age</label>
-                <input type="number">
+                <input type="number" placeholder="e.g. 24">
 
                 <label>Height (cm)</label>
-                <input type="number">
+                <input type="number" placeholder="e.g. 175">
 
                 <label>Body Weight (kg)</label>
-                <input type="number">
+                <input type="number" placeholder="e.g. 70">
 
                 <label>Email ID</label>
-                <input type="email">
+                <input type="email" placeholder="client@email.com">
 
                 <label>Medical Issues / Injuries</label>
-                <textarea></textarea>
-
-                <div class="form-actions right">
-                    <a href="#metrics" class="next-btn">Next</a>
-                </div>
-            </section>
-
-            <!-- ================= METRICS ================= -->
-            <section id="metrics" class="form-card step-section">
-                <label>Mood (1–10)</label>
-                <input type="number" min="1" max="10">
-
-                <label>Sleep (1–10)</label>
-                <input type="number" min="1" max="10">
-
-                <label>Hunger & Cravings (1–10)</label>
-                <input type="number" min="1" max="10">
-
-                <label>Energy Levels (1–10)</label>
-                <input type="number" min="1" max="10">
+                <textarea placeholder="List any injuries or conditions..."></textarea>
 
                 <div class="form-actions space-between">
-                    <a href="#health" class="back-btn">Back</a>
-                    <a href="#measurements" class="next-btn">Next</a>
+                    <a href="members.html" class="back-btn">&larr; Back</a>
+                    <a href="metrics.html" class="next-btn">Next Step &rarr;</a>
                 </div>
-            </section>
-
-            <!-- ================= MEASUREMENTS ================= -->
-            <section id="measurements" class="form-card step-section">
-                <label>Chest (Nipple Line)</label>
-                <input type="number">
-
-                <label>Waist (Navel Line)</label>
-                <input type="number">
-
-                <label>Hip</label>
-                <input type="number">
-
-                <label>Thighs (Mid Thigh)</label>
-                <input type="number">
-
-                <div class="form-actions space-between">
-                    <a href="#metrics" class="back-btn">Back</a>
-                    <button class="submit-btn">Submit</button>
-                </div>
-
-                <p class="thank-you">
-                    Thank You 😊<br><strong>Team JOF</strong>
-                </p>
-            </section>
-
+            </div>
         </div>
+
     </div>
 
 </body>
