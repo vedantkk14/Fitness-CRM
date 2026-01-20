@@ -9,7 +9,11 @@
     --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -26,86 +30,165 @@ body {
     padding: 25px;
     display: flex;
     flex-direction: column;
-    position: fixed; /* Locked to the left */
+    position: fixed;
+    /* Locked to the left */
     left: 0;
     top: 0;
     border-right: 1px solid #1a1a1a;
     z-index: 1000;
 }
 
-.logo-area { margin-bottom: 40px; padding-left: 10px; }
-.brand-logo { width: 140px; display: block; }
+.logo-area {
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.brand-logo {
+    width: 140px;
+    display: block;
+}
 
 .nav-label {
-    font-size: 12px; color: #666; letter-spacing: 1.5px;
-    margin-bottom: 15px; font-weight: 600; padding-left: 15px;
+    font-size: 12px;
+    color: #666;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    padding-left: 15px;
 }
 
 .nav-link {
-    display: flex; align-items: center; padding: 14px 16px;
-    margin-bottom: 10px; color: #a0a0a0; text-decoration: none;
-    border-radius: 12px; transition: all 0.3s ease; font-size: 14px; font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    color: #a0a0a0;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 /* Icon Color Fix */
 .nav-link img {
-    width: 20px; height: 20px; margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
     transition: transform 0.3s ease;
-    filter: brightness(0) invert(1); /* Turns black icons white */
+    filter: brightness(0) invert(1);
+    /* Turns black icons white */
     opacity: 0.7;
 }
 
 /* Hover/Active States */
-.nav-link:hover { background-color: rgba(255, 255, 255, 0.08); color: #fff; transform: translateX(5px); }
-.nav-link:hover img { opacity: 1; }
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.nav-link:hover img {
+    opacity: 1;
+}
 
 .nav-link.active {
-    background: var(--primary-gradient); color: #fff;
+    background: var(--primary-gradient);
+    color: #fff;
     box-shadow: 0 4px 15px rgba(242, 92, 42, 0.4);
 }
-.nav-link.active img { opacity: 1; }
+
+.nav-link.active img {
+    opacity: 1;
+}
 
 .sidebar-promo {
-    margin-top: auto; background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
-    padding: 20px; border-radius: 16px; text-align: center; border: 1px solid #333;
+    margin-top: auto;
+    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #333;
 }
-.sidebar-promo p { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: #fff; }
-.sidebar-promo small { font-size: 11px; color: #888; }
+
+.sidebar-promo p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #fff;
+}
+
+.sidebar-promo small {
+    font-size: 11px;
+    color: #888;
+}
 
 /* --- 3. MAIN CONTENT LAYOUT --- */
 .main-content {
     /* This creates space for the fixed sidebar */
-    margin-left: 260px; 
+    margin-left: 260px;
     padding: 30px 40px;
     width: calc(100% - 260px);
 }
 
 /* --- 4. HEADER BANNER --- */
 .header-banner {
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 40px;
 }
-.header-text h1 { font-size: 26px; font-weight: 700; color: #1a202c; }
-.header-text p { color: #718096; font-size: 15px; }
+
+.header-text h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+.header-text p {
+    color: #718096;
+    font-size: 15px;
+}
 
 .profile-pic img {
-    width: 45px; height: 45px; border-radius: 50%;
-    border: 2px solid #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* --- 5. TOOLBAR & BUTTONS --- */
 .toolbar {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 25px; gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 20px;
 }
 
 .search-bar {
-    background: #fff; padding: 12px 20px; border-radius: 30px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03); display: flex; align-items: center;
-    gap: 10px; min-width: 300px;
+    background: #fff;
+    padding: 12px 20px;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 300px;
 }
-.search-bar input { border: none; outline: none; font-size: 14px; color: #555; width: 100%; }
-.search-bar i { color: #aaa; }
+
+.search-bar input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #555;
+    width: 100%;
+}
+
+.search-bar i {
+    color: #aaa;
+}
 
 /* --- NEW TOOLBAR STYLES --- */
 
@@ -144,54 +227,206 @@ body {
 }
 
 .btn-primary {
-    background: var(--primary); color: #fff; padding: 12px 24px;
-    border-radius: 12px; text-decoration: none; font-size: 14px; font-weight: 500;
-    display: flex; align-items: center; gap: 8px;
+    background: var(--primary);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     transition: background 0.2s, transform 0.2s;
     box-shadow: 0 4px 10px rgba(242, 92, 42, 0.3);
+    border: none;
+    cursor: pointer;
+    /* Added for button element */
 }
-.btn-primary:hover { background: #e04f1f; transform: translateY(-2px); }
+
+.btn-primary:hover {
+    background: #e04f1f;
+    transform: translateY(-2px);
+}
+
+/* --- Sidebar Dropdown --- */
+.nav-item-dropdown {
+    position: relative;
+}
+
+.sidebar-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    /* To the right of the sidebar */
+    top: 0;
+    width: 200px;
+    background-color: var(--dark-sidebar);
+    border-radius: 0 12px 12px 0;
+    /* Rounded on right side */
+    padding: 10px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    border-left: 1px solid #333;
+    /* Separator */
+    animation: slideRight 0.2s ease-out;
+}
+
+.nav-item-dropdown:hover .sidebar-submenu {
+    display: block;
+}
+
+.sidebar-submenu a {
+    display: block;
+    padding: 12px 20px;
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.sidebar-submenu a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 25px;
+    /* Slight movement */
+}
+
+.nav-arrow {
+    margin-left: auto;
+    font-size: 10px;
+    opacity: 0.5;
+    transition: transform 0.2s;
+}
+
+.nav-item-dropdown:hover .nav-arrow {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 /* --- 6. TABLE STYLES --- */
 .table-card {
-    background: #fff; border-radius: 20px;
-    padding-bottom: 20px; box-shadow: var(--shadow-soft);
+    background: #fff;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    box-shadow: var(--shadow-soft);
     overflow: hidden;
 }
 
-.styled-table { width: 100%; border-collapse: collapse; }
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
 .styled-table th {
-    background-color: #f9fafb; color: var(--text-muted); font-size: 12px;
-    text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;
-    text-align: left; padding: 18px 25px; border-bottom: 1px solid #edf2f7;
+    background-color: #f9fafb;
+    color: var(--text-muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-align: left;
+    padding: 18px 25px;
+    border-bottom: 1px solid #edf2f7;
 }
 
 .styled-table td {
-    padding: 18px 25px; font-size: 14px; color: var(--text-main);
-    border-bottom: 1px solid #f3f4f6; vertical-align: middle;
+    padding: 18px 25px;
+    font-size: 14px;
+    color: var(--text-main);
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
 }
-.styled-table tr:last-child td { border-bottom: none; }
-.styled-table tr:hover { background-color: #fafbfc; }
+
+.styled-table tr:last-child td {
+    border-bottom: none;
+}
+
+.styled-table tr:hover {
+    background-color: #fafbfc;
+}
 
 /* --- 7. BADGES & PILLS --- */
-.fw-bold { font-weight: 600; color: #1F2933; }
-.text-muted { color: #6B7280; }
+.fw-bold {
+    font-weight: 600;
+    color: #1F2933;
+}
 
-.badge { padding: 5px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
-.badge.purple { background: #EEF2FF; color: #6366F1; }
-.badge.gray { background: #F3F4F6; color: #4B5563; }
-.badge.green-outline { border: 1px solid #34D399; color: #059669; background: #ECFDF5; }
-.badge.red-outline { border: 1px solid #F87171; color: #DC2626; background: #FEF2F2; }
+.text-muted {
+    color: #6B7280;
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge.purple {
+    background: #EEF2FF;
+    color: #6366F1;
+}
+
+.badge.gray {
+    background: #F3F4F6;
+    color: #4B5563;
+}
+
+.badge.green-outline {
+    border: 1px solid #34D399;
+    color: #059669;
+    background: #ECFDF5;
+}
+
+.badge.red-outline {
+    border: 1px solid #F87171;
+    color: #DC2626;
+    background: #FEF2F2;
+}
 
 .status-pill {
-    display: inline-flex; align-items: center; padding: 6px 12px;
-    border-radius: 30px; font-size: 12px; font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
 }
-.status-pill.active { background-color: #DCFCE7; color: #166534; }
-.status-pill.active::before { content: "●"; margin-right: 6px; font-size: 10px; }
-.status-pill.expired { background-color: #FEE2E2; color: #991B1B; }
-.status-pill.expired::before { content: "●"; margin-right: 6px; font-size: 10px; }
+
+.status-pill.active {
+    background-color: #DCFCE7;
+    color: #166534;
+}
+
+.status-pill.active::before {
+    content: "●";
+    margin-right: 6px;
+    font-size: 10px;
+}
+
+.status-pill.expired {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+.status-pill.expired::before {
+    content: "●";
+    margin-right: 6px;
+    font-size: 10px;
+}
 
 
 .btn-view {
@@ -217,13 +452,15 @@ body {
 /* 1. The Wrapper: Covers the whole screen */
 .modal-wrapper {
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dimmed background */
+    background: rgba(0, 0, 0, 0.6);
+    /* Dimmed background */
     z-index: 9999;
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(4px);
@@ -240,8 +477,10 @@ body {
 /* 3. The Close Area: Invisible layer to close modal when clicking outside */
 .modal-close-area {
     position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     cursor: default;
 }
 
@@ -254,7 +493,7 @@ body {
     max-height: 90vh;
     overflow-y: auto;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
 }
@@ -282,7 +521,10 @@ body {
     text-decoration: none;
     line-height: 1;
 }
-.close-icon:hover { color: #fff; }
+
+.close-icon:hover {
+    color: #fff;
+}
 
 .modal-body {
     padding: 30px;
@@ -294,7 +536,12 @@ body {
     border-bottom: 1px solid #edf2f7;
     padding-bottom: 25px;
 }
-.section.no-border { border: none; margin-bottom: 0; padding-bottom: 0; }
+
+.section.no-border {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 
 .section h3 {
     font-size: 13px;
@@ -306,12 +553,27 @@ body {
 }
 
 /* Grids */
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
 
 /* Info Groups */
-.info-group { margin-bottom: 10px; }
-.info-group.full { grid-column: span 2; margin-top: 5px; }
+.info-group {
+    margin-bottom: 10px;
+}
+
+.info-group.full {
+    grid-column: span 2;
+    margin-top: 5px;
+}
 
 .info-group label {
     display: block;
@@ -320,6 +582,7 @@ body {
     font-weight: 600;
     margin-bottom: 2px;
 }
+
 .info-group span {
     font-size: 14px;
     color: var(--text-main);
@@ -332,6 +595,7 @@ body {
     gap: 15px;
     margin-top: 5px;
 }
+
 .photo-box {
     width: 100px;
     height: 100px;
@@ -351,13 +615,19 @@ body {
     flex-direction: column;
     gap: 12px;
 }
+
 .scale-item {
     display: flex;
     align-items: center;
     gap: 15px;
     font-size: 13px;
 }
-.scale-item > span:first-child { width: 60px; font-weight: 500; }
+
+.scale-item>span:first-child {
+    width: 60px;
+    font-weight: 500;
+}
+
 .bar-container {
     flex-grow: 1;
     height: 8px;
@@ -365,12 +635,19 @@ body {
     border-radius: 10px;
     overflow: hidden;
 }
+
 .bar-fill {
     height: 100%;
     background: var(--primary-gradient);
     border-radius: 10px;
 }
-.val { font-weight: 700; color: var(--primary); width: 20px; text-align: right; }
+
+.val {
+    font-weight: 700;
+    color: var(--primary);
+    width: 20px;
+    text-align: right;
+}
 
 /* Measurement Boxes */
 .meas-box {
@@ -380,5 +657,17 @@ body {
     text-align: center;
     border: 1px solid #edf2f7;
 }
-.meas-box label { display: block; font-size: 10px; color: #6b7280; margin-bottom: 2px; text-transform: uppercase; }
-.meas-box span { font-size: 16px; font-weight: 700; color: #1f2933; }
+
+.meas-box label {
+    display: block;
+    font-size: 10px;
+    color: #6b7280;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+.meas-box span {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2933;
+}

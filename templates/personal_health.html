@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>JOF India | Add Member</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../static/add_member.css">
 </head>
 
@@ -20,6 +22,12 @@
 
         <div class="form-panel">
             <h2 class="page-title">Health Details</h2>
+
+            <div class="step-tabs">
+                <span class="tab active">Health</span>
+                <span class="tab">Metrics</span>
+                <span class="tab">Measurements</span>
+            </div>
 
             <div class="form-card">
                 <label>Full Name</label>
@@ -40,7 +48,8 @@
                 <label>Medical Issues / Injuries</label>
                 <textarea placeholder="List any injuries or conditions..."></textarea>
 
-                <div class="form-actions right">
+                <div class="form-actions space-between">
+                    <a href="members.html" class="back-btn">&larr; Back</a>
                     <a href="metrics.html" class="next-btn">Next Step &rarr;</a>
                 </div>
             </div>
@@ -49,4 +58,5 @@
     </div>
 
 </body>
+
 </html>

@@ -1,0 +1,380 @@
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-main, #2D3748);
+    margin: 30px 0 20px 0;
+}
+
+
+.report-controls {
+    background: #ffffff;
+    padding: 20px 25px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft, 0 4px 6px rgba(0, 0, 0, 0.05));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.control-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-left label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2D3748;
+}
+
+.date-inputs {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #F7FAFC;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1px solid #E2E8F0;
+}
+
+.input-wrapper span {
+    color: #A0AEC0;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.input-wrapper input {
+    border: none;
+    background: transparent;
+    color: #2D3748;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.control-right {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-export {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: white;
+}
+
+.btn-export:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-export.pdf {
+    background: linear-gradient(135deg, #EF4444, #DC2626);
+}
+
+.btn-export.ppt {
+    background: linear-gradient(135deg, #F97316, #EA580C);
+}
+
+
+.btn-icon {
+    filter: brightness(0) invert(1);
+}
+
+
+
+.blue-gradient {
+    background: linear-gradient(135deg, #60A5FA, #3B82F6);
+}
+
+.red-gradient {
+    background: linear-gradient(135deg, #F87171, #EF4444);
+}
+
+
+
+
+.chart-legend {
+    display: flex;
+    gap: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #4A5568;
+    font-weight: 500;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot.blue {
+    background-color: #3B82F6;
+}
+
+.dot.green {
+    background-color: #10B981;
+}
+
+.dot.orange {
+    background-color: #F59E0B;
+}
+
+.grouped-chart {
+    height: 300px;
+    padding-top: 20px;
+}
+
+.bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 12%;
+}
+
+.bar-col {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3px;
+    height: 100%;
+    width: 100%;
+}
+
+.bar {
+    width: 30%;
+    border-radius: 4px 4px 0 0;
+    transition: height 1s ease-in-out;
+}
+
+.bar.blue {
+    background-color: #3B82F6;
+}
+
+.bar.green {
+    background-color: #10B981;
+}
+
+.bar.orange {
+    background-color: #F59E0B;
+}
+
+
+
+.reports-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding-bottom: 40px;
+}
+
+.report-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--shadow-soft, 0 4px 6px rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+.watermark-icon {
+    position: absolute;
+    right: -10px;
+    bottom: -15px;
+    opacity: 0.05;
+    transform: rotate(-15deg);
+}
+
+.watermark-icon img {
+    width: 80px;
+    height: 80px;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.icon-circle img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+
+.soft-red {
+    background: #FEF2F2;
+}
+
+.soft-blue {
+    background: #EFF6FF;
+}
+
+.soft-green {
+    background: #ECFDF5;
+}
+
+.soft-teal {
+    background: #F0FDFA;
+}
+
+.card-text {
+    position: relative;
+    z-index: 2;
+}
+
+.card-text h4 {
+    color: #1A202C;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card-text p {
+    color: #718096;
+    font-size: 13px;
+}
+
+
+.svg-chart-container {
+    height: 180px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.line-chart-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.chart-meta {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6B7280;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .reports-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Sidebar Dropdown (Global) --- */
+.nav-item-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.sidebar-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    /* To the right of the sidebar */
+    top: 0;
+    width: 200px;
+    background-color: #000000;
+    /* Sidebar bg defaults for reports usually black/dark */
+    border-radius: 0 12px 12px 0;
+    /* Rounded on right side */
+    padding: 10px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    border-left: 1px solid #333;
+    /* Separator */
+    animation: slideRight 0.2s ease-out;
+}
+
+.nav-item-dropdown:hover .sidebar-submenu {
+    display: block;
+}
+
+.sidebar-submenu a {
+    display: block;
+    padding: 12px 20px;
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.sidebar-submenu a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 25px;
+    /* Slight movement */
+}
+
+.nav-arrow {
+    margin-left: auto;
+    font-size: 10px;
+    opacity: 0.5;
+    transition: transform 0.2s;
+}
+
+.nav-item-dropdown:hover .nav-arrow {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

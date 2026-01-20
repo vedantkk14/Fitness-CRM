@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +18,25 @@
         </div>
 
         <div class="nav-label">MENU</div>
-        
+
         <nav class="navigation">
             <a href="dashboard.html" class="nav-link">
                 <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard">
                 <span>Dashboard</span>
             </a>
 
-            <a href="#" class="nav-link active">
-                <img src="../icons/users-solid-full.svg" alt="Members">
-                <span>Members</span>
-            </a>
+            <div class="nav-item-dropdown">
+                <a href="#" class="nav-link active">
+                    <img src="../icons/users-solid-full.svg" alt="Members">
+                    <span>Members</span>
+                    <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                </a>
+                <div class="sidebar-submenu">
+                    <a href="personal_health.html">Add New Member</a>
+                    <a href="person_info.html">View Members</a>
+                    <a href="received_payment.html">Payment Details</a>
+                </div>
+            </div>
 
             <a href="diet-plans.html" class="nav-link">
                 <img src="../icons/carrot-solid-full.svg" alt="Diet Plans">
@@ -59,7 +68,7 @@
     </aside>
 
     <main class="main-content">
-        
+
         <header class="header-banner">
             <div class="header-text">
                 <h1>Members</h1>
@@ -100,7 +109,8 @@
                         <th>Membership</th>
                         <th>Status</th>
                         <!-- <th>Payment</th> -->
-                        <th>View</th> </tr>
+                        <th>View</th>
+                    </tr>
                 </thead>
 
                 <tbody>
@@ -142,5 +152,7 @@
 
     </main>
 
+
 </body>
+
 </html>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOF Fitness | Premium Dashboard</title>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../static/dashboard.css">
 </head>
 
@@ -24,10 +25,18 @@
                     <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
                     <span>Dashboard</span>
                 </a>
-                <a href="members.html" class="nav-link">
-                    <img src="../icons/users-solid-full.svg" alt="Members" width="20">
-                    <span>Members</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="members.html" class="nav-link">
+                        <img src="../icons/users-solid-full.svg" alt="Members" width="20">
+                        <span>Members</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="personal_health.html">Add New Member</a>
+                        <a href="person_info.html">View Members</a>
+                        <a href="received_payment.html">Payment Details</a>
+                    </div>
+                </div>
                 <a href="diet-plans.html" class="nav-link">
                     <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
                     <span>Diet Plans</span>
@@ -35,6 +44,11 @@
                 <a href="staff.html" class="nav-link">
                     <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
+
+                </a>
+                <a href="membership.html" class="nav-link">
+                    <img src="../icons/credit-card-regular-full.svg" alt="Staff" width="20">
+                    <span>Membership</span>
                 </a>
                 <a href="membership.html" class="nav-link">
                     <img src="../icons/credit-card-solid-full.svg" alt="Membership" width="20">

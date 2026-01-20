@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff Management | JoF Fitness</title> 
-    
+    <title>Staff Management | JoF Fitness</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="../static/staff.css">
 </head>
+
 <body>
 
     <div class="dashboard-container">
-        
+
         <aside class="sidebar">
             <div class="logo-area">
                 <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
@@ -24,10 +28,18 @@
                     <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
                     <span>Dashboard</span>
                 </a>
-                <a href="members.html" class="nav-link">
-                    <img src="../icons/users-solid-full.svg" alt="Members" width="20">
-                    <span>Members</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="members.html" class="nav-link">
+                        <img src="../icons/users-solid-full.svg" alt="Members" width="20">
+                        <span>Members</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="personal_health.html">Add New Member</a>
+                        <a href="person_info.html">View Members</a>
+                        <a href="received_payment.html">Payment Details</a>
+                    </div>
+                </div>
                 <a href="diet-plans.html" class="nav-link">
                     <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
                     <span>Diet Plans</span>
@@ -53,13 +65,13 @@
         </aside>
 
         <main class="main-content">
-            
+
             <header class="page-header">
                 <div class="header-text">
                     <h1>Staff Members</h1>
                     <p>Manage your fitness studio instructors and schedule.</p>
                 </div>
-                
+
                 <a href="add_staff.html" class="add-btn">
                     <img src="../icons/plus-solid-full.svg" alt="img" width="20"> Add New Staff
                 </a>
@@ -79,13 +91,13 @@
                         <div class="status-dot online"></div>
                         <div class="menu-icon"><img src="../icons/ellipsis-solid-full.svg" alt="img" width="20"></div>
                     </div>
-                    
+
                     <div class="avatar-circle">SM</div>
-                    
+
                     <div class="card-body">
                         <h3>Sarah Mitchell</h3>
                         <span class="designation">Senior Instructor</span>
-                        
+
                         <div class="contact-info">
                             <p><i class="fa-regular fa-envelope"></i> sarah.m@fitstudio.com</p>
                             <p><i class="fa-solid fa-phone"></i> (555) 111-2222</p>
@@ -187,4 +199,5 @@
     </div>
 
 </body>
+
 </html>

@@ -26,10 +26,18 @@
                     <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
                     <span>Dashboard</span>
                 </a>
-                <a href="members.html" class="nav-link">
-                    <img src="../icons/users-solid-full.svg" alt="Members" width="20">
-                    <span>Members</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="members.html" class="nav-link">
+                        <img src="../icons/users-solid-full.svg" alt="Members" width="20">
+                        <span>Members</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="personal_health.html">Add New Member</a>
+                        <a href="person_info.html">View Members</a>
+                        <a href="received_payment.html">Payment Details</a>
+                    </div>
+                </div>
                 <a href="diet-plans.html" class="nav-link">
                     <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
                     <span>Diet Plans</span>
@@ -63,11 +71,11 @@
                 </div>
 
                 <div class="header-actions">
-                    <a href="/templates/received_payments.html" class="add-btn">
+                    <a href="received_payment.html" class="add-btn">
                         <i class="fa-solid fa-plus"></i> Received Payments
                     </a>
 
-                    <a href="/templates/add_membership.html" class="add-btn">
+                    <a href="add_membership.html" class="add-btn">
                         <i class="fa-solid fa-plus"></i> Create Plan
                     </a>
                 </div>
