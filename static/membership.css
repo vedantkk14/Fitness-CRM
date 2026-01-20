@@ -1,8 +1,8 @@
 /* --- VARS --- */
 :root {
-    --primary: #F25C2A; 
+    --primary: #F25C2A;
     --primary-gradient: linear-gradient(135deg, #F25C2A 0%, #ff8c69 100%);
-    --dark-sidebar: #000000; 
+    --dark-sidebar: #000000;
     --bg-body: #F0F2F5;
     --white: #ffffff;
     --text-main: #2D3748;
@@ -11,13 +11,23 @@
     --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; background-color: var(--bg-body); color: var(--text-dark); }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+}
 
 /* --- LAYOUT GRID --- */
 .dashboard-container {
     display: grid;
-    grid-template-columns: 260px 1fr; /* Fixed Sidebar, Flexible Content */
+    grid-template-columns: 260px 1fr;
+    /* Fixed Sidebar, Flexible Content */
     min-height: 100vh;
 }
 
@@ -31,19 +41,74 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--bg-body); col
     height: 100vh;
     position: sticky;
     top: 0;
+    z-index: 9999;
+    /* Ensure sidebar is very high */
 }
-.logo-area { margin-bottom: 40px; padding-left: 10px; }
-.brand-logo { width: 120px; }
 
-.navigation { flex-grow: 1; display: flex; flex-direction: column; gap: 5px; }
-.nav-link { 
-    display: flex; align-items: center; gap: 12px; 
-    padding: 12px 16px; color: #9CA3AF; text-decoration: none; 
-    border-radius: 12px; transition: 0.3s; font-size: 14px; font-weight: 500; 
+.sidebar-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    /* To the right of the sidebar */
+    top: 0;
+    width: 200px;
+    background-color: #000000;
+    /* Matching sidebar bg */
+    border-radius: 0 12px 12px 0;
+    /* Rounded on right side */
+    padding: 10px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 100000;
+    /* Ensure submenu is above everything */
+    border-left: 1px solid #333;
+    /* Separator */
+    animation: slideRight 0.2s ease-out;
 }
-.nav-link:hover { background: rgba(255,255,255,0.1); color: #fff; }
-.nav-link.active { background: var(--primary-gradient); color: #fff; box-shadow: 0 4px 15px rgba(242, 92, 42, 0.4); }
-.sidebar-footer { border-top: 1px solid #333; padding-top: 15px; }
+
+.logo-area {
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.brand-logo {
+    width: 120px;
+}
+
+.navigation {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #9CA3AF;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.nav-link.active {
+    background: var(--primary-gradient);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(242, 92, 42, 0.4);
+}
+
+.sidebar-footer {
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
 
 /* --- 4. MAIN CONTENT --- */
 .main-content {
@@ -448,7 +513,7 @@ textarea:focus {
     /* Rounded on right side */
     padding: 10px 0;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-    z-index: 1001;
+    z-index: 100000;
     border-left: 1px solid #333;
     /* Separator */
     animation: slideRight 0.2s ease-out;
