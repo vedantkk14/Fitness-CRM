@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice | JoF Fitness</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/invoice.css" />
+</head>
+
+<body>
+
+  <div class="invoice-container">
+    
+    <header class="invoice-header">
+      <div class="header-brand">
+        <div class="logo-wrapper">
+            <img src="/icons/logo-light(1).png" alt="JoF Logo" class="brand-logo">
+        </div>
+        <div class="company-address">
+            <p><b>JoF Fitness Studio</b></p>
+            <p>Pune, Maharashtra - India</p>
+            <p>support@joffitness.com</p>
+        </div>
+      </div>
+
+      <div class="header-details">
+        <h1 class="invoice-title">INVOICE</h1>
+        <div class="meta-grid">
+            <div class="meta-item">
+                <span class="label">Invoice :</span>
+                <span class="value">INV-2026-001</span>
+            </div>
+            <div class="meta-item">
+                <span class="label">GST NO :</span>
+                <span class="value">27AAAAP0267H2ZN</span>
+            </div>
+            <div class="meta-item">
+                <span class="label">Date</span>
+                <span class="value">Jan 20, 2026</span>
+            </div>
+           
+        </div>
+      </div>
+    </header>
+
+    <hr class="divider">
+
+    <section class="billing-section">
+      <div class="bill-to">
+        <h3>Bill To</h3>
+        <p class="client-name">Demo Member</p>          
+        <p>demo@member.com</p>
+        <p>+91 80907 35690</p>
+      </div>
+      <div class="status-box">
+          <span class="status-badge paid">PAID</span>
+      </div>
+    </section>
+
+    <section class="items-section">
+      <div class="table-header">
+        <div class="col-desc">Description</div>
+        <div class="col-qty center">Qty</div>
+        <div class="col-price right">Price</div>
+        <div class="col-total right">Total</div>
+      </div>
+
+      <div class="table-row">
+        <div class="col-desc">
+          <p class="item-name">Premium Membership Plan</p>
+          <p class="item-meta">Monthly Subscription</p>
+        </div>
+        <div class="col-qty center">1</div>
+        <div class="col-price right">₹4,000.00</div>
+        <div class="col-total right">₹4,000.00</div>
+      </div>
+
+      <div class="table-row">
+        <div class="col-desc">
+          <p class="item-name">Personal Training Bundle</p>
+          <p class="item-meta">4 Sessions included</p>
+        </div>
+        <div class="col-qty center">1</div>
+        <div class="col-price right">₹0.00</div>
+        <div class="col-total right">₹0.00</div>
+      </div>
+
+      <div class="table-row">
+        <div class="col-desc">
+          <p class="item-name">Diet Consultation</p>
+          <p class="item-meta">Quarterly Check-in</p>
+        </div>
+        <div class="col-qty center">1</div>
+        <div class="col-price right">₹0.00</div>
+        <div class="col-total right">₹0.00</div>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <div class="bank-details">
+        <h3>Payment Details</h3>
+        <p><b>Bank:</b> HDFC Bank</p>
+        <p><b>Account:</b> 556677889900</p>
+        <p><b>IFSC:</b> HDFC0001234</p>
+        <p><b>upi id:</b> jof@okaxis</p>
+      </div>
+
+      <div class="totals-box">
+        <div class="total-row">
+            <span>Subtotal</span>
+            <span>₹4,000.00</span>
+        </div>
+        <div class="total-row">
+            <span>Tax (18% GST)</span>
+            <span>₹720.00</span>
+        </div>
+        <div class="total-row grand-total">
+            <span>Total Amount</span>
+            <span>₹4,720.00</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-actions">
+        <p class="thank-you">Thank you for choosing JOF!</p>
+        <div class="buttons">
+            <button class="btn btn-secondary">Print</button>
+            <a href="/templates/invoice.html" download class="download-btn">
+                <button class="btn btn-primary">Download PDF</button>
+            </a>
+        </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+/* --- 1. VARIABLES (Clean Theme) --- */
+:root {
+    --primary: #F25C2A;          
+    --primary-dark: #d94f23;
+    --text-dark: #111827;        
+    --text-grey: #6B7280;        
+    --bg-body: #F3F4F6;          
+    --bg-paper: #FFFFFF;         
+    --border: #c8cacc;           
+    --success: #10B981;          
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    padding: 40px 20px;
+    color: var(--text-dark);
+}
+
+/* --- 2. INVOICE CONTAINER (The Paper) --- */
+.invoice-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bg-paper);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft premium shadow */
+    border: 1px solid var(--border);
+}
+
+/* --- 3. HEADER --- */
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+/* Logo Area */
+.logo-wrapper {
+    background: #000; /* Black box for logo contrast */
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.brand-logo {
+    height: 40px; /* Adjust height to fit your logo */
+    display: block;
+}
+
+.company-address p {
+    font-size: 13px;
+    color: var(--text-grey);
+    line-height: 1.5;
+}
+
+.company-address b {
+    color: var(--text-dark);
+}
+
+/* Header Details (Right Side) */
+.invoice-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary); /* Orange Title */
+    text-align: right;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.meta-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+.meta-item {
+    font-size: 14px;
+}
+
+.meta-item .label {
+    color: var(--text-grey);
+    margin-right: 10px;
+}
+
+.meta-item .value {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 30px 0;
+}
+
+/* --- 4. BILLING SECTION --- */
+.billing-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.bill-to h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-grey);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.client-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.bill-to p {
+    font-size: 14px;
+    color: var(--text-grey);
+    line-height: 1.5;
+}
+
+.status-badge {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.status-badge.paid {
+    background-color: #ECFDF5;
+    color: var(--success);
+    border: 1px solid #D1FAE5;
+}
+
+/* --- 5. ITEMS TABLE --- */
+.items-section {
+    margin-bottom: 40px;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--border);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-grey);
+    letter-spacing: 0.5px;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.item-meta {
+    font-size: 12px;
+    color: var(--text-grey);
+    margin-top: 4px;
+}
+
+.center { text-align: center; }
+.right { text-align: right; }
+
+.col-qty, .col-price, .col-total {
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* --- 6. SUMMARY & TOTALS --- */
+.summary-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.bank-details h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-grey);
+    margin-bottom: 10px;
+}
+
+.bank-details p {
+    font-size: 13px;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.totals-box {
+    width: 300px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--text-grey);
+}
+
+.total-row span:last-child {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.grand-total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid var(--border);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary); /* Orange Grand Total */
+}
+
+.grand-total span:last-child {
+    color: var(--primary);
+}
+
+/* --- 7. FOOTER & BUTTONS --- */
+.footer-actions {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.thank-you {
+    font-size: 13px;
+    color: var(--text-grey);
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
+}
+
+.btn-primary {
+    background: var(--text-dark); /* Black button for premium feel */
+    color: #fff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--primary); /* Orange on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(242, 92, 42, 0.2);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .invoice-container { padding: 20px; }
+    .invoice-header { flex-direction: column; gap: 30px; }
+    .invoice-title { text-align: left; }
+    .meta-grid { align-items: flex-start; }
+    .table-header, .table-row { grid-template-columns: 2fr 1fr; gap: 10px; }
+    .col-qty, .col-price { display: none; } /* Hide details on very small screens */
+    .summary-section { flex-direction: column; gap: 30px; }
+    .totals-box { width: 100%; }
+    .footer-actions { flex-direction: column-reverse; gap: 20px; align-items: stretch; }
+}
