@@ -181,9 +181,6 @@ body {
     transform: scale(1.05);
 }
 
-/* ==================================================
-   CSS-ONLY MODAL LOGIC (NO SCRIPT)
-   ================================================== */
 
 /* 1. The Wrapper: Covers the whole screen */
 .modal-wrapper {
