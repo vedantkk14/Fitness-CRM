@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOF India | Create Diet Plan</title>
+        
+    <link rel="stylesheet" href="../static/create_diet_plan.css">
+</head>
+
+<body>
+
+    <div class="split-layout">
+
+        <div class="brand-panel">
+            <img src="../icons/logo-light(1).png" class="brand-logo" alt="Logo">
+            <h2>JOF India</h2>
+            <p>Design the perfect fuel<br>for your client's goals.</p>
+        </div>
+
+        <div class="form-panel">
+            <div class="form-header-group">
+                <h2 class="page-title">Create Diet Plan</h2>
+                <p class="sub-text">Fill in the nutritional details below.</p>
+            </div>
+
+            <form class="form-card">
+                
+                <div class="form-section">
+                    <h3 class="section-heading">
+                        <img src="../icons/clipboard-user-solid-full.svg" alt="icon"> 
+                        Plan Details
+                    </h3>
+                    
+                    <label>Plan Name</label>
+                    <input type="text" placeholder="e.g. Summer Shred - Phase 1">
+
+                    <div class="section-label">Diet Preference</div>
+                    <div class="diet-type-selector">
+                        
+                        <label class="radio-card">
+                            <input type="radio" name="diet_type" value="veg" checked>
+                            <div class="card-content">
+                                <div class="icon-circle green">
+                                    <img src="../icons/leaf-solid-full.svg" alt="Veg">
+                                </div>
+                                <span>Vegetarian</span>
+                            </div>
+                        </label>
+
+                        <label class="radio-card">
+                            <input type="radio" name="diet_type" value="non-veg">
+                            <div class="card-content">
+                                <div class="icon-circle red">
+                                    <img src="../icons/drumstick-bite-solid-full.svg" alt="Non-Veg">
+                                </div>
+                                <span>Non-Veg</span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Target Goal</label>
+                            <select>
+                                <option value="" disabled selected>Select Goal</option>
+                                <option value="weight_loss">Weight Loss</option>
+                                <option value="muscle_gain">Muscle Gain</option>
+                                <option value="maintenance">Maintenance</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Duration (Weeks)</label>
+                            <input type="number" placeholder="e.g. 12">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Daily Calorie Target</label>
+                            <input type="number" placeholder="e.g. 2200">
+                        </div>
+                        <div class="form-group">
+                            <label>Member Capacity</label>
+                            <input type="number" placeholder="e.g. 10">
+                        </div>
+                    </div>
+
+                    <label>Assign Trainer</label>
+                    <select>
+                        <option value="" disabled selected>Select Trainer</option>
+                        <option value="vedant">Vedant K.</option>
+                        <option value="shri">Shri K.</option>
+                        <option value="vrishabh">Vrishabh C.</option>
+                    </select>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-heading">
+                        <img src="../icons/utensils-solid-full.svg" alt="icon">
+                        Meal Schedule
+                    </h3>
+                    
+                    <div class="meal-input">
+                        <label>
+                            <img src="../icons/sun-solid-full.svg" alt="icon"> Breakfast
+                        </label>
+                        <textarea placeholder="e.g. 3 Boiled Eggs, 1 Slice Brown Bread with peanut butter..."></textarea>
+                    </div>
+
+                    <div class="meal-input">
+                        <label>
+                            <img src="../icons/cloud-sun-solid-full.svg" alt="icon"> Lunch
+                        </label>
+                        <textarea placeholder="e.g. Chicken breast, Salad, chapatis..."></textarea>
+                    </div>
+
+                    <div class="meal-input">
+                        <label>
+                            <img src="../icons/mug-hot-solid-full.svg" alt="icon"> Snacks / Pre-Workout
+                        </label>
+                        <textarea placeholder="e.g. Whey Protein, Banana..."></textarea>
+                    </div>
+
+                    <div class="meal-input">
+                        <label>
+                            <img src="../icons/moon-solid-full.svg" alt="icon"> Dinner
+                        </label>
+                        <textarea placeholder="e.g.Rice, dal, steamed vegetables..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions space-between">
+                    <a href="diet_plans.html" class="back-btn">Cancel</a>
+                    <button type="button" class="submit-btn">Save & Publish Plan</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
