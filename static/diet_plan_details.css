@@ -24,19 +24,7 @@ body {
     overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-/* Details Container (formerly Modal) */
-.details-container {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 28px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  /* Softer shadow for dashboard integration */
-  border: 1px solid #e5e7eb;
-=======
+
 /* --- LAYOUT GRID --- */
 .dashboard-container {
     display: grid;
@@ -55,7 +43,7 @@ body {
     border-right: 1px solid #1a1a1a;
     z-index: 1000;
     /* Fix: Ensure sidebar stays above content */
->>>>>>> 971b5e3c128a67b57d1073dc3d690f9f375f3046
+
 }
 
 .logo-area {
@@ -358,25 +346,11 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-<<<<<<< HEAD
-  .details-container {
-    width: 100%;
-  }
 
-  .info-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-=======
     .dashboard-container { grid-template-columns: 1fr; }
     .sidebar { display: none; }
     .stats-container { grid-template-columns: 1fr 1fr; }
     .meal-row { flex-direction: column; align-items: flex-start; gap: 10px; }
     .meal-time { margin-bottom: 10px; }
->>>>>>> 971b5e3c128a67b57d1073dc3d690f9f375f3046
+
 }
