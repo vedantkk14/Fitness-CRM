@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assign Diet Plan | JoF Fitness</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="../static/assign_diet_plan.css">
 </head>
 
 <body>
 
     <div class="dashboard-container">
-        
+
         <aside class="sidebar">
             <div class="logo-area">
                 <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
@@ -24,12 +26,26 @@
                 <a href="../templates/dashboard.html" class="nav-link">
                     <i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span>
                 </a>
-                <a href="../templates/members.html" class="nav-link">
-                    <i class="fa-solid fa-users"></i> <span>Members</span>
-                </a>
-                <a href="../templates/diet-plans.html" class="nav-link active">
-                    <i class="fa-solid fa-carrot"></i> <span>Diet Plans</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="../templates/members.html" class="nav-link">
+                        <i class="fa-solid fa-users"></i> <span>Members</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="../templates/personal_health.html">Add New Member</a>
+                        <a href="../templates/received_payments.html">Payment Details</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a href="../templates/diet-plans.html" class="nav-link active">
+                        <i class="fa-solid fa-carrot"></i> <span>Diet Plans</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="../templates/create_diet_plan.html">Create Diet Plan</a>
+                        <a href="../templates/assign_diet_plan.html">Assign</a>
+                    </div>
+                </div>
                 <a href="../templates/staff.html" class="nav-link">
                     <i class="fa-solid fa-clipboard-user"></i> <span>Staff</span>
                 </a>
@@ -39,21 +55,31 @@
                 <a href="../templates/payments.html" class="nav-link">
                     <i class="fa-solid fa-chart-line"></i> <span>Payments</span>
                 </a>
-                <a href="../templates/reports.html" class="nav-link">
-                    <i class="fa-solid fa-chart-line"></i> <span>Reports</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="../templates/reports.html" class="nav-link">
+                        <i class="fa-solid fa-chart-line"></i> <span>Reports</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="../templates/reports/feedback_sentiment.html">Feedback & Sentiment</a>
+                        <a href="../templates/reports/renewal_report.html">Renewal Report</a>
+                        <a href="../templates/reports/revenue_source.html">Revenue Report</a>
+                        <a href="../templates/reports/trainer_performance.html">Trainer Performance</a>
+                    </div>
+                </div>
             </nav>
 
-           
+
         </aside>
 
         <main class="main-content">
-            
+
             <header class="page-header">
                 <div class="header-text">
-                    <a href="/templates/diet-plans.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Plans</a>
+                    <a href="/templates/diet-plans.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back
+                        to Plans</a>
                     <h1>Send Diet Plan</h1>
-                    <p>Assign <b>Weight Loss Plan</b> to your members.</p>
+                    <p>Assign <b id="headerPlanName">Weight Loss Plan</b> to your members.</p>
                 </div>
             </header>
 
@@ -70,13 +96,14 @@
 
                     <form action="#" class="assign-form">
                         <div class="member-list">
-                            
+
                             <label class="member-item">
                                 <input type="checkbox" name="member" value="+917890123456">
                                 <div class="avatar">VS</div>
                                 <div class="member-info">
                                     <span class="m-name">Vedant Sharma</span>
-                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20"> +91 78901 23456</span>
+                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg"
+                                            alt="Diet Plans" width="20"> +91 78901 23456</span>
                                 </div>
                             </label>
 
@@ -85,7 +112,8 @@
                                 <div class="avatar color-2">IP</div>
                                 <div class="member-info">
                                     <span class="m-name">Ishita Patel</span>
-                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20"> +91 86601 12233</span>
+                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg"
+                                            alt="Diet Plans" width="20"> +91 86601 12233</span>
                                 </div>
                             </label>
 
@@ -94,7 +122,8 @@
                                 <div class="avatar color-3">RC</div>
                                 <div class="member-info">
                                     <span class="m-name">Rahul Chadchan</span>
-                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20"> +91 98765 43210</span>
+                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg"
+                                            alt="Diet Plans" width="20"> +91 98765 43210</span>
                                 </div>
                             </label>
 
@@ -103,7 +132,8 @@
                                 <div class="avatar color-4">SR</div>
                                 <div class="member-info">
                                     <span class="m-name">Sneha Reddy</span>
-                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20">+91 88887 77666</span>
+                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg"
+                                            alt="Diet Plans" width="20">+91 88887 77666</span>
                                 </div>
                             </label>
 
@@ -112,25 +142,38 @@
                         <div class="actions">
                             <a href="/templates/diet-plans.html" class="btn cancel-btn">Cancel</a>
                             <button type="submit" class="btn send-btn">
-                                <img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20"> Send Plan
+                                <img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20"> Send
+                                Plan
                             </button>
                         </div>
                     </form>
                 </div>
 
                 <aside class="side-panel">
-                    
+
                     <div class="info-card plan-summary">
-                        <div class="icon-box"><img src="../icons/note-sticky-solid-full.svg" alt="Diet Plans" width="20"></i></div>
-                        <div>
+                        <div class="icon-box"><img src="../icons/note-sticky-solid-full.svg" alt="Diet Plans"
+                                width="20"></div>
+                        <div style="width: 100%;">
                             <h3>Selected Plan</h3>
-                            <p class="highlight">Weight Loss Plan</p>
-                            <p class="muted">High Protein, Low Carb</p>
+                            <select id="dietPlanSelect" class="plan-dropdown"
+                                style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #E5E7EB; margin-top: 5px; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #1F2937; outline: none; cursor: pointer;">
+                                <option value="weight_loss" data-desc="High Protein, Low Carb" selected>Weight Loss Plan
+                                </option>
+                                <option value="muscle_gain" data-desc="High Protein, High Calorie">Muscle Gain Plan
+                                </option>
+                                <option value="keto" data-desc="High Fat, Low Carb">Keto Diet</option>
+                                <option value="intermittent" data-desc="16:8 Fasting Window">Intermittent Fasting
+                                </option>
+                                <option value="vegan" data-desc="Plant-based, Nutrient Dense">Vegan Power</option>
+                            </select>
+                            <p class="muted" id="planDescription" style="margin-top: 5px;">High Protein, Low Carb</p>
                         </div>
                     </div>
 
                     <div class="info-card note-card">
-                        <h3><img src="../icons/comment-dots-regular-full.svg" alt="Diet Plans" width="20"></i> Add Personal Note</h3>
+                        <h3><img src="../icons/comment-dots-regular-full.svg" alt="Diet Plans" width="20"></i> Add
+                            Personal Note</h3>
                         <textarea class="note-box" placeholder="E.g. Complete your protein goal..."></textarea>
                     </div>
 
@@ -141,5 +184,20 @@
         </main>
     </div>
 
+    <script>
+        const planSelect = document.getElementById('dietPlanSelect');
+        const planDesc = document.getElementById('planDescription');
+        const headerPlanName = document.getElementById('headerPlanName');
+
+        planSelect.addEventListener('change', function () {
+            const selectedOption = planSelect.options[planSelect.selectedIndex];
+            const planName = selectedOption.text;
+            const description = selectedOption.getAttribute('data-desc');
+
+            planDesc.textContent = description;
+            headerPlanName.textContent = planName;
+        });
+    </script>
 </body>
+
 </html>

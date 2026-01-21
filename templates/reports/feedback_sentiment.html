@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOF Fitness | Feedback & Sentiment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../../static/dashboard.css">
     <link rel="stylesheet" href="../../static/reports.css">
     <link rel="stylesheet" href="../../static/received_payment.css">
@@ -14,9 +15,7 @@
 
 <body>
 
-    <button class="mobile-toggle">
-        <i class="fa-solid fa-bars"></i>
-    </button>
+
 
     <div class="dashboard-container">
 
@@ -42,10 +41,17 @@
                         <a href="../received_payments.html">Payment Details</a>
                     </div>
                 </div>
-                <a href="../diet-plans.html" class="nav-link">
-                    <img src="../../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
-                    <span>Diet Plans</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="../diet-plans.html" class="nav-link">
+                        <img src="../../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                        <span>Diet Plans</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="../create_diet_plan.html">Create Diet Plan</a>
+                        <a href="../assign_diet_plan.html">Assign</a>
+                    </div>
+                </div>
                 <a href="../staff.html" class="nav-link">
                     <img src="../../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
