@@ -9,6 +9,8 @@
     --text-muted: #A0AEC0;
     --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --sidebar-width: 260px;
+    --primary: #F25C2A;
 }
 
 * {
@@ -24,24 +26,74 @@ body {
     overflow-x: hidden;
 }
 
-/* --- LAYOUT GRID --- */
+/* --- SIDEBAR TOGGLE BUTTON (Corner Tick) --- */
+.mobile-toggle {
+    position: fixed;
+    top: 25px;          
+    left: 20px;         
+    z-index: 2000;      
+    background: var(--primary);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;       /* FORCE VISIBLE on all screens */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(242, 92, 42, 0.4);
+    transition: all 0.3s ease;
+}
+
+.mobile-toggle i {
+    color: #fff;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.mobile-toggle:hover {
+    transform: scale(1.05);
+    background: #e04f1f;
+}
+
+/* When sidebar is open */
+body.sidebar-open .mobile-toggle {
+    left: 260px;
+}
+
+body.sidebar-open .mobile-toggle i {
+    transform: rotate(180deg);
+}
+
+/* --- LAYOUT --- */
 .dashboard-container {
-    display: grid;
-    grid-template-columns: 260px 1fr;
+    display: flex;
     min-height: 100vh;
+    position: relative;
+    width: 100%;
 }
 
 /* --- SIDEBAR DESIGN --- */
 .sidebar {
     background-color: var(--dark-sidebar);
     color: #fff;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
     border-right: 1px solid #1a1a1a;
-    z-index: 1000;
-    /* Fix: Ensure sidebar stays above content */
+    
+    /* Smooth Transition for sliding */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Ensure button is visible outside sidebar boundary */
+    overflow: visible; 
+}
+
+body.sidebar-open .sidebar {
+    left: 0;
 }
 
 .logo-area {
@@ -49,39 +101,8 @@ body {
     padding-left: 10px;
 }
 
-.btn-primary {
-    text-decoration: none;
-}
-
 .brand-logo {
     width: 140px;
-}
-
-.nav-link img {
-    /* Fix size */
-    width: 20px;
-    height: 20px;
-
-    margin-right: 15px;
-
-    filter: brightness(0) invert(1);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-}
-
-.nav-link:hover img,
-.nav-link.active img {
-    opacity: 1;
-}
-
-
-.nav-link:not(.active) img {
-    opacity: 0.7;
-}
-
-
-.nav-link:hover img {
-    opacity: 1;
 }
 
 .nav-label {
@@ -106,51 +127,30 @@ body {
     font-weight: 500;
 }
 
-.nav-link .icon-box {
-    width: 25px;
-    margin-right: 10px;
-    text-align: center;
+.nav-link img {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: all 0.3s ease;
 }
 
-/* Active & Hover States */
 .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.08);
     color: #fff;
     transform: translateX(5px);
 }
 
+.nav-link:hover img,
+.nav-link.active img {
+    opacity: 1;
+}
+
 .nav-link.active {
     background: var(--primary-gradient);
     color: #fff;
     box-shadow: 0 4px 15px rgba(242, 92, 42, 0.4);
-    /* Glowing Orange Shadow */
-}
-
-/* Decorative Sidebar Promo */
-.sidebar-promo {
-    margin-top: auto;
-    background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
-    padding: 20px;
-    border-radius: 16px;
-    text-align: center;
-    border: 1px solid #333;
-}
-
-.sidebar-promo i {
-    color: #FFD700;
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.sidebar-promo p {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 4px;
-}
-
-.sidebar-promo small {
-    font-size: 11px;
-    color: #888;
 }
 
 /* --- Sidebar Accordion Dropdown --- */
@@ -161,18 +161,12 @@ body {
 
 .sidebar-submenu {
     display: none;
-    position: static;
-    /* Standard flow, pushes content down */
     width: 100%;
-    /* Fill sidebar */
     background-color: rgba(255, 255, 255, 0.03);
-    /* Subtle dark contrast */
     border-radius: 12px;
     padding: 5px 0;
     margin-top: 5px;
     margin-bottom: 5px;
-    box-shadow: none;
-    border-left: none;
     animation: fadeIn 0.3s ease;
 }
 
@@ -183,7 +177,6 @@ body {
 .sidebar-submenu a {
     display: block;
     padding: 10px 10px 10px 50px;
-    /* Indent for hierarchy */
     color: #888;
     text-decoration: none;
     font-size: 13px;
@@ -195,10 +188,8 @@ body {
     color: #fff;
     background: rgba(255, 255, 255, 0.05);
     padding-left: 55px;
-    /* Slight movement */
 }
 
-/* Arrow rotation */
 .nav-arrow {
     margin-left: auto;
     font-size: 10px;
@@ -216,16 +207,49 @@ body {
         opacity: 0;
         transform: translateY(-5px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+.toggle-sidebar-btn {
+    position: absolute;
+    top: 115px; /* Aligned roughly with Menu Label */
+    right: -15px; /* Stick out 15px to the right */
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary);
+    border: 3px solid #F0F2F5; /* Matches body bg to look clean */
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    z-index: 1002;
+    transition: transform 0.4s ease, background 0.3s;
+}
+
+.toggle-sidebar-btn:hover {
+    background-color: #d64518;
+    transform: scale(1.1);
+}
+
+.toggle-sidebar-btn i {
+    transition: transform 0.4s ease;
+}
+
 /* --- MAIN CONTENT --- */
 .main-content {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
     padding: 30px 40px;
+    
+    /* Smooth Transition for expanding */
+    transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.4s ease;
 }
 
 /* Header Banner */
@@ -268,10 +292,11 @@ body {
     outline: none;
     font-size: 14px;
     color: #555;
+    width: 200px;
 }
 
-.search-bar i {
-    color: #aaa;
+.search-bar img {
+    opacity: 0.5;
 }
 
 .profile-pic img {
@@ -283,16 +308,7 @@ body {
     cursor: pointer;
 }
 
-.stat-icon img {
-    /* Turn black SVG white */
-    filter: brightness(0) invert(1);
-
-    width: 24px;
-    height: 24px;
-    display: block;
-}
-
-/* --- KPI CARDS (The attractive part) --- */
+/* --- KPI CARDS --- */
 .kpi-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -321,7 +337,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Gradient Icon Backgrounds */
 .stat-icon {
     width: 50px;
     height: 50px;
@@ -332,6 +347,12 @@ body {
     color: #fff;
     font-size: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon img {
+    filter: brightness(0) invert(1);
+    width: 24px;
+    height: 24px;
 }
 
 .orange-gradient {
@@ -387,6 +408,10 @@ body {
     color: #d97706;
 }
 
+.growth img {
+    width: 14px;
+}
+
 /* --- CHARTS & PANELS --- */
 .content-grid {
     display: grid;
@@ -415,15 +440,16 @@ body {
 }
 
 .dropdown {
-    padding: 5px 15px;
+    padding: 8px 15px;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     color: #4a5568;
     background: #f7fafc;
     outline: none;
+    cursor: pointer;
 }
 
-/* CSS Only Bar Chart */
+/* CSS Bar Chart */
 .css-chart-container {
     height: 220px;
     display: flex;
@@ -445,16 +471,13 @@ body {
     border-radius: 6px;
     background-color: #EDF2F7;
     transition: height 1s ease-in-out;
-    position: relative;
 }
 
-/* Make the active bar pop */
 .bar.active {
     background: var(--primary-gradient);
     box-shadow: 0 4px 10px rgba(242, 92, 42, 0.3);
 }
 
-/* Add hover effect to bars */
 .bar:hover {
     background-color: #cbd5e0;
 }
@@ -469,7 +492,7 @@ body {
     color: #a0aec0;
 }
 
-/* Quick Actions List */
+/* Quick Actions */
 .action-list {
     display: flex;
     flex-direction: column;
@@ -487,7 +510,6 @@ body {
     cursor: pointer;
     transition: all 0.2s;
     text-align: left;
-    text-decoration: none;
 }
 
 .action-btn .icon {
@@ -495,7 +517,6 @@ body {
     height: 40px;
     border-radius: 10px;
     background: #edf2f7;
-    color: #4a5568;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -504,14 +525,7 @@ body {
 .action-btn .icon img {
     width: 20px;
     height: 20px;
-    opacity: 0.7;
-    transition: all 0.2s ease;
-}
-
-/* Hover state: Turn them white when background turns orange */
-.action-btn:hover .icon img {
-    filter: brightness(0) invert(1);
-    opacity: 1;
+    filter: brightness(0) invert(1) opacity(0.5);
 }
 
 .action-btn:hover {
@@ -521,12 +535,94 @@ body {
 
 .action-btn:hover .icon {
     background: var(--primary);
-    color: #fff;
 }
 
-.action-btn span {
-    font-weight: 600;
+.action-btn:hover .icon img {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+
+.action-btn a {
+    text-decoration: none;
     color: #4a5568;
+    font-weight: 600;
 }
 
-/* Responsive section removed temporarily */
+/* --- COLLAPSED STATE (Logic) --- */
+
+/* 1. Sidebar slides out to the left */
+body.collapsed .sidebar {
+    transform: translateX(-100%);
+}
+
+/* 2. Content expands to fill screen */
+body.collapsed .main-content {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* 3. Button Icon Rotates (Pointing Right >) */
+body.collapsed .toggle-sidebar-btn i {
+    transform: rotate(180deg);
+}
+
+/* 4. Button moves to stick to the screen edge */
+/* Since the button is inside the sidebar, and the sidebar moved left,
+   we need to push the button right to keep it visible on screen */
+body.collapsed .toggle-sidebar-btn {
+    right: -40px; /* Push it further right so it stays on screen edge */
+    border-color: transparent; /* Optional: cleaner look when docked */
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 992px) {
+    /* 1. Show the toggle button on mobile */
+    .mobile-toggle {
+        display: flex; 
+    }
+
+    /* 2. Hide Sidebar by default on mobile */
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    /* 3. Show Sidebar when class 'sidebar-open' is added via JS */
+    body.sidebar-open .sidebar {
+        transform: translateX(0);
+    }
+
+    /* 4. Reset Main Content to full width on mobile */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* 5. Move toggle button when sidebar is open */
+    body.sidebar-open .mobile-toggle {
+        left: 260px;
+    }
+    
+    body.sidebar-open .toggle-sidebar-btn i {
+        transform: rotate(180deg); 
+    }
+
+    body.sidebar-open .mobile-toggle i {
+        transform: rotate(180deg);
+    }
+
+    body.sidebar-open::after {
+        content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5); z-index: 1000;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-text h1 {
+        font-size: 20px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
