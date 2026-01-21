@@ -153,7 +153,7 @@ body {
     color: #888;
 }
 
-/* --- Sidebar Dropdown (Copied from members.css) --- */
+/* --- Sidebar Accordion Dropdown --- */
 .nav-item-dropdown {
     position: relative;
     width: 100%;
@@ -161,20 +161,19 @@ body {
 
 .sidebar-submenu {
     display: none;
-    position: absolute;
-    left: 100%;
-    /* To the right of the sidebar */
-    top: 0;
-    width: 200px;
-    background-color: var(--dark-sidebar);
-    border-radius: 0 12px 12px 0;
-    /* Rounded on right side */
-    padding: 10px 0;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-    z-index: 1001;
-    border-left: 1px solid #333;
-    /* Separator */
-    animation: slideRight 0.2s ease-out;
+    position: static;
+    /* Standard flow, pushes content down */
+    width: 100%;
+    /* Fill sidebar */
+    background-color: rgba(255, 255, 255, 0.03);
+    /* Subtle dark contrast */
+    border-radius: 12px;
+    padding: 5px 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: none;
+    border-left: none;
+    animation: fadeIn 0.3s ease;
 }
 
 .nav-item-dropdown:hover .sidebar-submenu {
@@ -183,20 +182,23 @@ body {
 
 .sidebar-submenu a {
     display: block;
-    padding: 12px 20px;
-    color: #a0a0a0;
+    padding: 10px 10px 10px 50px;
+    /* Indent for hierarchy */
+    color: #888;
     text-decoration: none;
     font-size: 13px;
     transition: all 0.2s;
+    border-radius: 8px;
 }
 
 .sidebar-submenu a:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.05);
-    padding-left: 25px;
+    padding-left: 55px;
     /* Slight movement */
 }
 
+/* Arrow rotation */
 .nav-arrow {
     margin-left: auto;
     font-size: 10px;
@@ -209,15 +211,15 @@ body {
     transform: rotate(90deg);
 }
 
-@keyframes slideRight {
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateX(-10px);
+        transform: translateY(-5px);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
@@ -528,20 +530,146 @@ body {
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 900px) {
+/* --- RESPONSIVE --- */
+
+/* Mobile Toggle Button */
+.mobile-toggle {
+    display: none;
+    /* Hidden on desktop */
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    z-index: 1002;
+    background: var(--dark-sidebar);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.mobile-toggle:hover {
+    background: #333;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    backdrop-filter: blur(2px);
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 1024px) {
+
+    /* Tablet & Mobile Layout */
     .dashboard-container {
         grid-template-columns: 1fr;
+        /* Single column */
     }
 
+    /* Sidebar Hiding */
     .sidebar {
-        display: none;
+        display: flex;
+        /* Restore display from legacy none */
+        position: fixed;
+        left: -280px;
+        /* Hide off-screen */
+        top: 0;
+        height: 100vh;
+        width: 260px;
+        transition: left 0.3s ease;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
     }
 
-    .kpi-grid {
-        grid-template-columns: 1fr;
+    .sidebar.active {
+        left: 0;
+        /* Show sidebar */
     }
 
-    .content-grid {
+    /* Show Toggle Button */
+    .mobile-toggle {
+        display: block;
+    }
+
+    /* Adjust Main Content Padding for Header */
+    .dashboard-container>main {
+        padding-top: 60px;
+        /* Space for fixed toggle/header */
+    }
+
+    /* Adjust cards grid */
+    .members-grid,
+    .kpi-grid,
+    .content-grid,
+    .card-grid,
+    .diet-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Mobile Updates */
+    .kpi-grid,
+    .card-grid,
+    .diet-cards-grid {
         grid-template-columns: 1fr;
+        /* Stack cards vertically */
+    }
+
+    .table-panel,
+    .table-card,
+    .table-responsive {
+        overflow-x: auto;
+        /* Horizontal scroll for tables */
+    }
+
+    table {
+        min-width: 600px;
+        /* Force scroll */
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    /* Mobile Stack for Toolbar/Filter */
+    .toolbar,
+    .filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .search-group,
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-bar {
+        min-width: auto;
     }
 }

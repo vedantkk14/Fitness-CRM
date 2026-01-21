@@ -148,7 +148,7 @@ body {
     color: #888;
 }
 
-/* --- Sidebar Dropdown (Copied from members.css) --- */
+/* --- Sidebar Accordion Dropdown --- */
 .nav-item-dropdown {
     position: relative;
     width: 100%;
@@ -156,20 +156,19 @@ body {
 
 .sidebar-submenu {
     display: none;
-    position: absolute;
-    left: 100%;
-    /* To the right of the sidebar */
-    top: 0;
-    width: 200px;
-    background-color: var(--dark-sidebar);
-    border-radius: 0 12px 12px 0;
-    /* Rounded on right side */
-    padding: 10px 0;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-    z-index: 1001;
-    border-left: 1px solid #333;
-    /* Separator */
-    animation: slideRight 0.2s ease-out;
+    position: static;
+    /* Standard flow, pushes content down */
+    width: 100%;
+    /* Fill sidebar */
+    background-color: rgba(255, 255, 255, 0.03);
+    /* Subtle dark contrast */
+    border-radius: 12px;
+    padding: 5px 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: none;
+    border-left: none;
+    animation: fadeIn 0.3s ease;
 }
 
 .nav-item-dropdown:hover .sidebar-submenu {
@@ -178,17 +177,19 @@ body {
 
 .sidebar-submenu a {
     display: block;
-    padding: 12px 20px;
-    color: #a0a0a0;
+    padding: 10px 10px 10px 50px;
+    /* Indent for hierarchy */
+    color: #888;
     text-decoration: none;
     font-size: 13px;
     transition: all 0.2s;
+    border-radius: 8px;
 }
 
 .sidebar-submenu a:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.05);
-    padding-left: 25px;
+    padding-left: 55px;
     /* Slight movement */
 }
 
@@ -204,85 +205,20 @@ body {
     transform: rotate(90deg);
 }
 
-@keyframes slideRight {
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateX(-10px);
+        transform: translateY(-5px);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
-/* --- Sidebar Dropdown (Copied from members.css) --- */
-.nav-item-dropdown {
-    position: relative;
-    width: 100%;
-}
-
-.sidebar-submenu {
-    display: none;
-    position: absolute;
-    left: 100%;
-    /* To the right of the sidebar */
-    top: 0;
-    width: 200px;
-    background-color: var(--dark-sidebar);
-    border-radius: 0 12px 12px 0;
-    /* Rounded on right side */
-    padding: 10px 0;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-    z-index: 1001;
-    border-left: 1px solid #333;
-    /* Separator */
-    animation: slideRight 0.2s ease-out;
-}
-
-.nav-item-dropdown:hover .sidebar-submenu {
-    display: block;
-}
-
-.sidebar-submenu a {
-    display: block;
-    padding: 12px 20px;
-    color: #a0a0a0;
-    text-decoration: none;
-    font-size: 13px;
-    transition: all 0.2s;
-}
-
-.sidebar-submenu a:hover {
-    color: #fff;
-    background: rgba(255, 255, 255, 0.05);
-    padding-left: 25px;
-    /* Slight movement */
-}
-
-.nav-arrow {
-    margin-left: auto;
-    font-size: 10px;
-    opacity: 0.5;
-    transition: transform 0.2s;
-}
-
-.nav-item-dropdown:hover .nav-arrow {
-    opacity: 1;
-    transform: rotate(90deg);
-}
-
-@keyframes slideRight {
-    from {
-        opacity: 0;
-        transform: translateX(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
+/* --- Sidebar Accordion Dropdown (Duplicate removed) --- */
+/* Styles handled by previous block */
 
 /* --- MAIN CONTENT AREA --- */
 .main-content {

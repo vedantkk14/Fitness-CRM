@@ -1,0 +1,25 @@
+.rating-stars {
+    /* color: #F6E05E; - Removed */
+    font-size: 12px;
+}
+
+.rating-stars img {
+    filter: invert(88%) sepia(23%) saturate(1636%) hue-rotate(352deg) brightness(101%) contrast(105%);
+    /* Gold Color */
+    vertical-align: middle;
+}
+
+.badge-excellent {
+    background: #C6F6D5;
+    color: #22543D;
+}
+
+.badge-good {
+    background: #FEFCBF;
+    color: #744210;
+}
+
+.badge-improvement {
+    background: #FED7D7;
+    color: #822727;
+}

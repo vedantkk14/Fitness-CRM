@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOF Fitness | Feedback & Sentiment</title>
+    <link rel="stylesheet" href="../../static/dashboard.css">
+    <link rel="stylesheet" href="../../static/reports.css">
+    <link rel="stylesheet" href="../../static/received_payment.css">
+    <link rel="stylesheet" href="../../static/feedback_sentiment.css">
+
+</head>
+
+<body>
+
+    <button class="mobile-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="../../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
+            </div>
+
+            <div class="nav-label">MENU</div>
+            <nav class="navigation">
+                <a href="../dashboard.html" class="nav-link">
+                    <img src="../../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
+                    <span>Dashboard</span>
+                </a>
+                <div class="nav-item-dropdown">
+                    <a href="../members.html" class="nav-link">
+                        <img src="../../icons/users-solid-full.svg" alt="Members" width="20">
+                        <span>Members</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="../personal_health.html">Add New Member</a>
+                        <a href="../received_payments.html">Payment Details</a>
+                    </div>
+                </div>
+                <a href="../diet-plans.html" class="nav-link">
+                    <img src="../../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                    <span>Diet Plans</span>
+                </a>
+                <a href="../staff.html" class="nav-link">
+                    <img src="../../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
+                    <span>Staff</span>
+                </a>
+                <a href="../membership.html" class="nav-link">
+                    <img src="../../icons/credit-card-solid-full.svg" alt="Membership" width="20">
+                    <span>Membership</span>
+                </a>
+                <a href="../payments.html" class="nav-link">
+                    <img src="../../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
+                    <span>Payments</span>
+                </a>
+                <div class="nav-item-dropdown">
+                    <a href="../reports.html" class="nav-link active">
+                        <img src="../../icons/chart-line-solid-full.svg" alt="Reports" width="20">
+                        <span>Reports</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="feedback_sentiment.html">Feedback & Sentiment</a>
+                        <a href="renewal_report.html">Renewal Report</a>
+                        <a href="revenue_source.html">Revenue Report</a>
+                        <a href="trainer_performance.html">Trainer Performance</a>
+                    </div>
+                </div>
+            </nav>
+
+        </aside>
+
+        <main class="main-content">
+
+            <div class="page-header" style="margin-bottom: 20px;">
+                <div class="header-text">
+                    <h1>Feedback & Sentiment Analysis</h1>
+                    <p>Track member satisfaction and sentiment trends.</p>
+                </div>
+                <div class="header-actions">
+                    <div class="profile-pic">
+                        <img src="../../icons/JO.svg" alt="JO" width="20">
+                    </div>
+                </div>
+            </div>
+
+            <section class="kpi-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon purple-gradient">
+                            <img src="../../icons/face-smile-regular-full.svg" width="24">
+                        </div>
+                    </div>
+                    <div class="stat-body">
+                        <h3>Net Promoter Score</h3>
+                        <h2>+42</h2>
+                        <p class="growth positive">Great</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon green-gradient">
+                            <img src="../../icons/comment-dots-regular-full.svg" width="24">
+                        </div>
+                    </div>
+                    <div class="stat-body">
+                        <h3>Total Feedback</h3>
+                        <h2>158</h2>
+                        <p class="growth positive">+12 this week</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon orange-gradient">
+                            <img src="../../icons/star-half-stroke-solid-full.svg" width="24">
+                        </div>
+                    </div>
+                    <div class="stat-body">
+                        <h3>Avg. Rating</h3>
+                        <h2>4.6/5</h2>
+                        <p class="growth positive">Top Tier</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="table-panel">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service Type</th>
+                                <th>Member Name</th>
+                                <th>Date</th>
+                                <th>Rating</th>
+                                <th>Feedback Comment</th>
+                                <th>Sentiment</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><span class="sentiment-badge neutral">Online Training</span></td>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar blue">R</div>
+                                        <div>
+                                            <span class="bold">Rohan Gupta</span>
+                                            <span class="email-sub">Gold Member</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="muted">Today, 10:30 AM</td>
+                                <td>
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                </td>
+                                <td class="comment-text">"The Zoom session for HIIT was intense! Audio quality was
+                                    perfect this time."</td>
+                                <td><span class="sentiment-badge positive">Positive</span></td>
+                                <td><button class="btn-icon"><img src="../../icons/pen-to-square-solid-full.svg"
+                                            width="14"></button></td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="sentiment-badge" style="background: #E9D8FD; color: #44337A;">Offline
+                                        PT</span></td>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar orange">P</div>
+                                        <div>
+                                            <span class="bold">Priya Sharma</span>
+                                            <span class="email-sub">Silver Member</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="muted">Yesterday</td>
+                                <td>
+                                    <i class="fa-solid fa-star rating-star"></i>
+                                    <i class="fa-solid fa-star rating-star"></i>
+                                    <i class="fa-solid fa-star rating-star"></i>
+                                    <img src="../../icons/star-regular-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-regular-full.svg" class="rating-star" width="12">
+                                </td>
+                                <td class="comment-text">"My offline trainer was 10 mins late. Form correction during
+                                    deadlifts was good though."</td>
+                                <td><span class="sentiment-badge negative">Negative</span></td>
+                                <td><button class="btn-icon"><img src="../../icons/check-solid-full.svg"
+                                            width="14"></button></td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="sentiment-badge neutral">Online Training</span></td>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar">A</div>
+                                        <div>
+                                            <span class="bold">Amit Verma</span>
+                                            <span class="email-sub">Monthly</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="muted">Jan 18, 2026</td>
+                                <td>
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-regular-full.svg" class="rating-star" width="12">
+                                </td>
+                                <td class="comment-text">"App workout logging is easy, but need more vegetarian options
+                                    in the diet plan."</td>
+                                <td><span class="sentiment-badge neutral">Neutral</span></td>
+                                <td><button class="btn-icon"><img src="../../icons/pen-to-square-solid-full.svg"
+                                            width="14"></button></td>
+                            </tr>
+
+                            <tr>
+                                <td><span class="sentiment-badge" style="background: #E9D8FD; color: #44337A;">Offline
+                                        PT</span></td>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar blue">S</div>
+                                        <div>
+                                            <span class="bold">Sneha Kapoor</span>
+                                            <span class="email-sub">Platinum Member</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="muted">Jan 15, 2026</td>
+                                <td>
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                    <img src="../../icons/star-solid-full.svg" class="rating-star" width="12">
+                                </td>
+                                <td class="comment-text">"In-person sessions are great. Trainer Mike really pushes me to
+                                    my limits!"</td>
+                                <td><span class="sentiment-badge positive">Positive</span></td>
+                                <td><button class="btn-icon"><img src="../../icons/heart-regular-full.svg"
+                                            width="14"></button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../../static/mobile.js"></script>
+</body>
+
+</html>

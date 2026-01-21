@@ -5,34 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOF Fitness | Trainer Performance</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../../static/dashboard.css">
     <link rel="stylesheet" href="../../static/reports.css">
     <link rel="stylesheet" href="../../static/received_payment.css">
-    <style>
-        .rating-stars {
-            color: #F6E05E;
-            font-size: 12px;
-        }
+    <link rel="stylesheet" href="../../static/trainer_performance.css">
 
-        .badge-excellent {
-            background: #C6F6D5;
-            color: #22543D;
-        }
-
-        .badge-good {
-            background: #FEFCBF;
-            color: #744210;
-        }
-
-        .badge-improvement {
-            background: #FED7D7;
-            color: #822727;
-        }
-    </style>
 </head>
 
 <body>
+
+    <button class="mobile-toggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
     <div class="dashboard-container">
 
@@ -55,7 +39,7 @@
                     </a>
                     <div class="sidebar-submenu">
                         <a href="../personal_health.html">Add New Member</a>
-                        <a href="../received_payment.html">Payment Details</a>
+                        <a href="../received_payments.html">Payment Details</a>
                     </div>
                 </div>
                 <a href="../diet-plans.html" class="nav-link">
@@ -81,7 +65,7 @@
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="cross_branch_report.html">Cross Branch</a>
+                        <a href="feedback_sentiment.html">Feedback & Sentiment</a>
                         <a href="renewal_report.html">Renewal Report</a>
                         <a href="revenue_source.html">Revenue Report</a>
                         <a href="trainer_performance.html">Trainer Performance</a>
@@ -135,11 +119,11 @@
                                 <td class="right">98%</td>
                                 <td>
                                     <span class="rating-stars">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-half-stroke-solid-full.svg" width="12">
                                     </span>
                                     <span style="font-size: 12px; color: #718096; margin-left: 5px;">4.8</span>
                                 </td>
@@ -161,11 +145,11 @@
                                 <td class="right">95%</td>
                                 <td>
                                     <span class="rating-stars">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-regular-full.svg" width="12">
                                     </span>
                                     <span style="font-size: 12px; color: #718096; margin-left: 5px;">4.0</span>
                                 </td>
@@ -187,11 +171,11 @@
                                 <td class="right">85%</td>
                                 <td>
                                     <span class="rating-stars">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                        <i class="fa-regular fa-star"></i>
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-solid-full.svg" width="12">
+                                        <img src="../../icons/star-regular-full.svg" width="12">
+                                        <img src="../../icons/star-regular-full.svg" width="12">
                                     </span>
                                     <span style="font-size: 12px; color: #718096; margin-left: 5px;">3.2</span>
                                 </td>
@@ -206,6 +190,7 @@
         </main>
     </div>
 
+    <script src="../../static/mobile.js"></script>
 </body>
 
 </html>

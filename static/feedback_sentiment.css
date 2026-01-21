@@ -1,0 +1,38 @@
+.sentiment-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.positive {
+    background: #C6F6D5;
+    color: #22543D;
+}
+
+.neutral {
+    background: #EDF2F7;
+    color: #4A5568;
+}
+
+.negative {
+    background: #FED7D7;
+    color: #822727;
+}
+
+.rating-star {
+    /* color: #F6E05E; - Removed as it doesn't apply to img tags */
+    width: 12px;
+    height: 12px;
+    filter: invert(88%) sepia(23%) saturate(1636%) hue-rotate(352deg) brightness(101%) contrast(105%);
+    /* Gold Color */
+    vertical-align: middle;
+}
+
+.comment-text {
+    color: #4A5568;
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 400px;
+}

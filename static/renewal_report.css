@@ -1,0 +1,68 @@
+.filter-group {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #4A5568;
+    transition: all 0.2s;
+}
+
+.filter-btn.active {
+    background: #ebf8ff;
+    color: #2b6cb0;
+    border-color: #bee3f8;
+    font-weight: 600;
+}
+
+.status-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Filter for WhatsApp Green (#25D366) */
+.icon-btn[style*="25D366"] img {
+    filter: invert(56%) sepia(93%) saturate(489%) hue-rotate(86deg) brightness(91%) contrast(89%);
+}
+
+.status-pill.expiring {
+    background: #FEFCBF;
+    color: #744210;
+}
+
+/* Filter for Expiring Brown (#744210) */
+.status-pill.expiring img {
+    filter: invert(24%) sepia(35%) saturate(3025%) hue-rotate(15deg) brightness(97%) contrast(92%);
+    vertical-align: middle;
+}
+
+.status-pill.expired {
+    background: #FED7D7;
+    color: #9B2C2C;
+}
+
+/* Filter for Expired Red (#9B2C2C) */
+.status-pill.expired img {
+    filter: invert(19%) sepia(59%) saturate(2971%) hue-rotate(341deg) brightness(88%) contrast(93%);
+    vertical-align: middle;
+}
+
+.days-remaining {
+    font-weight: 600;
+    color: #2D3748;
+}
+
+.days-remaining.critical {
+    color: #E53E3E;
+}
