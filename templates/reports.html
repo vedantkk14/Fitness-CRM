@@ -52,10 +52,19 @@
                     <img src="../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
                     <span>Payments</span>
                 </a>
-                <a href="reports.html" class="nav-link active">
-                    <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
-                    <span>Reports</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="reports.html" class="nav-link active">
+                        <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
+                        <span>Reports</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="reports/cross_branch_report.html">Cross Branch</a>
+                        <a href="reports/renewal_report.html">Renewal Report</a>
+                        <a href="reports/revenue_source.html">Revenue Report</a>
+                        <a href="reports/trainer_performance.html">Trainer Performance</a>
+                    </div>
+                </div>
             </nav>
 
         </aside>
@@ -240,16 +249,7 @@
             <h3 class="section-title">Detailed Reports</h3>
             <section class="reports-actions">
 
-                <a href="reports/churn_report.html" class="report-card">
-                    <div class="icon-circle soft-red">
-                        <img src="../icons/brain-solid-full.svg" width="24">
-                    </div>
-                    <div class="card-text">
-                        <h4>At-Risk Members</h4>
-                        <p>AI Churn Prediction</p>
-                    </div>
-                    <div class="watermark-icon"><img src="../icons/brain-solid-full.svg"></div>
-                </a>
+
 
                 <a href="reports/renewal_report.html" class="report-card">
                     <div class="icon-circle soft-blue">
@@ -282,6 +282,17 @@
                         <p>Performance Stats</p>
                     </div>
                     <div class="watermark-icon"><img src="../icons/dumbbell-solid-full (1).svg"></div>
+                </a>
+
+                <a href="reports/cross_branch_report.html" class="report-card">
+                    <div class="icon-circle" style="background: #FAF5FF;">
+                        <img src="../icons/chart-pie-solid-full.svg" width="24">
+                    </div>
+                    <div class="card-text">
+                        <h4>Cross-Branch</h4>
+                        <p>Performance Report</p>
+                    </div>
+                    <div class="watermark-icon"><img src="../icons/chart-pie-solid-full.svg"></div>
                 </a>
 
             </section>

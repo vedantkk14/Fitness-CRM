@@ -474,7 +474,11 @@ body {
 
 .view-btn:hover {
     background: var(--text-dark);
+<<<<<<< HEAD
     color: #2a2929;
+=======
+    color: #f36004;
+>>>>>>> d70b440d47cfe99ecac238527621e3f87fa29589
     border-color: var(--text-dark);
 }
 
