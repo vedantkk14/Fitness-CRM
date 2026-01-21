@@ -1,0 +1,54 @@
+.performance-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bg-high {
+    background: #C6F6D5;
+    color: #22543D;
+}
+
+.bg-medium {
+    background: #FEFCBF;
+    color: #744210;
+}
+
+.bg-low {
+    background: #FED7D7;
+    color: #822727;
+}
+
+.progress-bar-bg {
+    background: #EDF2F7;
+    border-radius: 4px;
+    height: 6px;
+    width: 80px;
+    margin-top: 6px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.fill-high {
+    background: #48BB78;
+}
+
+.fill-medium {
+    background: #ECC94B;
+}
+
+.fill-low {
+    background: #F56565;
+}
+
+/* Ensure icons inside avatars with colored backgrounds are white */
+.avatar.blue img,
+.avatar.orange img,
+.avatar img {
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(323deg) brightness(101%) contrast(100%);
+    /* White */
+}

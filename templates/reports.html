@@ -12,6 +12,8 @@
 
 <body>
 
+
+
     <div class="dashboard-container">
 
         <aside class="sidebar">
@@ -33,13 +35,20 @@
                     </a>
                     <div class="sidebar-submenu">
                         <a href="personal_health.html">Add New Member</a>
-                        <a href="received_payment.html">Payment Details</a>
+                        <a href="received_payments.html">Payment Details</a>
                     </div>
                 </div>
-                <a href="diet-plans.html" class="nav-link">
-                    <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
-                    <span>Diet Plans</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="diet-plans.html" class="nav-link">
+                        <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                        <span>Diet Plans</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="create_diet_plan.html">Create Diet Plan</a>
+                        <a href="assign_diet_plan.html">Assign</a>
+                    </div>
+                </div>
                 <a href="staff.html" class="nav-link">
                     <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
@@ -59,7 +68,7 @@
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="reports/cross_branch_report.html">Cross Branch</a>
+                        <a href="reports/feedback_sentiment.html">Feedback & Sentiment</a>
                         <a href="reports/renewal_report.html">Renewal Report</a>
                         <a href="reports/revenue_source.html">Revenue Report</a>
                         <a href="reports/trainer_performance.html">Trainer Performance</a>
@@ -284,13 +293,13 @@
                     <div class="watermark-icon"><img src="../icons/dumbbell-solid-full (1).svg"></div>
                 </a>
 
-                <a href="reports/cross_branch_report.html" class="report-card">
+                <a href="reports/feedback_sentiment.html" class="report-card">
                     <div class="icon-circle" style="background: #FAF5FF;">
                         <img src="../icons/chart-pie-solid-full.svg" width="24">
                     </div>
                     <div class="card-text">
-                        <h4>Cross-Branch</h4>
-                        <p>Performance Report</p>
+                        <h4>Feedback and Sentiment</h4>
+                        <p>Feedback Report</p>
                     </div>
                     <div class="watermark-icon"><img src="../icons/chart-pie-solid-full.svg"></div>
                 </a>
@@ -299,6 +308,7 @@
 
         </main>
     </div>
+
 
 </body>
 <!-- this is comment -->

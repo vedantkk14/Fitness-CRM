@@ -9,62 +9,13 @@
     <link rel="stylesheet" href="../../static/dashboard.css">
     <link rel="stylesheet" href="../../static/reports.css">
     <link rel="stylesheet" href="../../static/received_payment.css">
-    <style>
-        .filter-group {
-            display: flex;
-            gap: 10px;
-        }
+    <link rel="stylesheet" href="../../static/renewal_report.css">
 
-        .filter-btn {
-            background: #fff;
-            border: 1px solid #E2E8F0;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            color: #4A5568;
-            transition: all 0.2s;
-        }
-
-        .filter-btn.active {
-            background: #ebf8ff;
-            color: #2b6cb0;
-            border-color: #bee3f8;
-            font-weight: 600;
-        }
-
-        .status-pill {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .status-pill.expiring {
-            background: #FEFCBF;
-            color: #744210;
-        }
-
-        .status-pill.expired {
-            background: #FED7D7;
-            color: #9B2C2C;
-        }
-
-        .days-remaining {
-            font-weight: 600;
-            color: #2D3748;
-        }
-
-        .days-remaining.critical {
-            color: #E53E3E;
-        }
-    </style>
 </head>
 
 <body>
+
+
 
     <div class="dashboard-container">
 
@@ -87,13 +38,20 @@
                     </a>
                     <div class="sidebar-submenu">
                         <a href="../personal_health.html">Add New Member</a>
-                        <a href="../received_payment.html">Payment Details</a>
+                        <a href="../received_payments.html">Payment Details</a>
                     </div>
                 </div>
-                <a href="../diet-plans.html" class="nav-link">
-                    <img src="../../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
-                    <span>Diet Plans</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="../diet-plans.html" class="nav-link">
+                        <img src="../../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                        <span>Diet Plans</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="../create_diet_plan.html">Create Diet Plan</a>
+                        <a href="../assign_diet_plan.html">Assign</a>
+                    </div>
+                </div>
                 <a href="../staff.html" class="nav-link">
                     <img src="../../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
@@ -113,7 +71,7 @@
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="cross_branch_report.html">Cross Branch</a>
+                        <a href="feedback_sentiment.html">Feedback & Sentiment</a>
                         <a href="renewal_report.html">Renewal Report</a>
                         <a href="revenue_source.html">Revenue Report</a>
                         <a href="trainer_performance.html">Trainer Performance</a>
@@ -184,12 +142,14 @@
                                 <td><span class="days-remaining critical">3 Days</span></td>
                                 <td>
                                     <div style="display: flex; gap: 8px;">
-                                        <button class="icon-btn"><i class="fa-solid fa-phone"></i></button>
-                                        <button class="icon-btn" style="color: #25D366;"><i
-                                                class="fa-brands fa-whatsapp"></i></button>
+                                        <button class="icon-btn"><img src="../../icons/phone-solid-full.svg"
+                                                width="14"></button>
+                                        <button class="icon-btn" style="color: #25D366;"><img
+                                                src="../../icons/whatsapp-brands-solid-full.svg" width="14"></button>
                                     </div>
                                 </td>
-                                <td><span class="status-pill expiring"><i class="fa-solid fa-clock"></i> Expiring
+                                <td><span class="status-pill expiring"><img src="../../icons/clock-solid-full.svg"
+                                            width="12"> Expiring
                                         Soon</span></td>
                             </tr>
 
@@ -208,12 +168,14 @@
                                 <td><span class="days-remaining critical">1 Day</span></td>
                                 <td>
                                     <div style="display: flex; gap: 8px;">
-                                        <button class="icon-btn"><i class="fa-solid fa-phone"></i></button>
-                                        <button class="icon-btn" style="color: #25D366;"><i
-                                                class="fa-brands fa-whatsapp"></i></button>
+                                        <button class="icon-btn"><img src="../../icons/phone-solid-full.svg"
+                                                width="14"></button>
+                                        <button class="icon-btn" style="color: #25D366;"><img
+                                                src="../../icons/whatsapp-brands-solid-full.svg" width="14"></button>
                                     </div>
                                 </td>
-                                <td><span class="status-pill expiring"><i class="fa-solid fa-clock"></i> Expiring
+                                <td><span class="status-pill expiring"><img src="../../icons/clock-solid-full.svg"
+                                            width="12"> Expiring
                                         Soon</span></td>
                             </tr>
 
@@ -232,12 +194,14 @@
                                 <td><span class="days-remaining" style="color: #718096;">-1 Day</span></td>
                                 <td>
                                     <div style="display: flex; gap: 8px;">
-                                        <button class="icon-btn"><i class="fa-solid fa-phone"></i></button>
-                                        <button class="icon-btn" style="color: #25D366;"><i
-                                                class="fa-brands fa-whatsapp"></i></button>
+                                        <button class="icon-btn"><img src="../../icons/phone-solid-full.svg"
+                                                width="14"></button>
+                                        <button class="icon-btn" style="color: #25D366;"><img
+                                                src="../../icons/whatsapp-brands-solid-full.svg" width="14"></button>
                                     </div>
                                 </td>
-                                <td><span class="status-pill expired"><i class="fa-solid fa-circle-exclamation"></i>
+                                <td><span class="status-pill expired"><img
+                                            src="../../icons/circle-exclamation-solid-full.svg" width="12">
                                         Expired</span></td>
                             </tr>
 
@@ -256,12 +220,14 @@
                                 <td><span class="days-remaining">5 Days</span></td>
                                 <td>
                                     <div style="display: flex; gap: 8px;">
-                                        <button class="icon-btn"><i class="fa-solid fa-phone"></i></button>
-                                        <button class="icon-btn" style="color: #25D366;"><i
-                                                class="fa-brands fa-whatsapp"></i></button>
+                                        <button class="icon-btn"><img src="../../icons/phone-solid-full.svg"
+                                                width="14"></button>
+                                        <button class="icon-btn" style="color: #25D366;"><img
+                                                src="../../icons/whatsapp-brands-solid-full.svg" width="14"></button>
                                     </div>
                                 </td>
-                                <td><span class="status-pill expiring"><i class="fa-solid fa-clock"></i> Expiring
+                                <td><span class="status-pill expiring"><img src="../../icons/clock-solid-full.svg"
+                                            width="12"> Expiring
                                         Soon</span></td>
                             </tr>
 
@@ -272,6 +238,7 @@
 
         </main>
     </div>
+
 
 </body>
 

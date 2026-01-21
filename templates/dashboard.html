@@ -7,6 +7,15 @@
     <title>JOF Fitness | Premium Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../static/dashboard.css">
+    
+    <script>
+        const toggleBtn = document.getElementById('toggleBtn');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('collapsed');
+        });
+    </script>
 </head>
 
 <body>
@@ -17,6 +26,10 @@
             <div class="logo-area">
                 <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
             </div>
+
+            <button class="toggle-sidebar-btn" id="toggleBtn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
 
             <div class="nav-label">MENU</div>
             <nav class="navigation">
@@ -32,13 +45,20 @@
                     </a>
                     <div class="sidebar-submenu">
                         <a href="personal_health.html">Add New Member</a>
-                        <a href="received_payment.html">Payment Details</a>
+                        <a href="received_payments.html">Payment Details</a>
                     </div>
                 </div>
-                <a href="diet-plans.html" class="nav-link">
-                    <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
-                    <span>Diet Plans</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="diet-plans.html" class="nav-link">
+                        <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                        <span>Diet Plans</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="create_diet_plan.html">Create Diet Plan</a>
+                        <a href="assign_diet_plan.html">Assign</a>
+                    </div>
+                </div>
                 <a href="staff.html" class="nav-link">
                     <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
@@ -59,7 +79,7 @@
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="reports/cross_branch_report.html">Cross Branch</a>
+                        <a href="reports/feedback_sentiment.html">Feedback & Sentiment</a>
                         <a href="reports/renewal_report.html">Renewal Report</a>
                         <a href="reports/revenue_source.html">Revenue Report</a>
                         <a href="reports/trainer_performance.html">Trainer Performance</a>
@@ -69,8 +89,7 @@
 
         </aside>
 
-        <main class="main-content">
-
+    <main class="main-content">
             <header class="header-banner">
                 <div class="header-text">
                     <h1>Hello, from team Joshuaa! 👋</h1>
@@ -99,8 +118,7 @@
                         <h3>Total Members</h3>
                         <h2>284</h2>
                         <p class="growth positive">
-                            <img src="../icons/arrow-trend-up-solid-full.svg" alt="JO" width="20"> +12% <span>vs last
-                                month</span>
+                            <img src="../icons/arrow-trend-up-solid-full.svg" alt="JO" width="20"> +12% <span>vs last month</span>
                         </p>
                     </div>
                 </div>
@@ -211,5 +229,4 @@
     </div>
 
 </body>
-
 </html>

@@ -194,15 +194,14 @@ body {
   color: #9ca3af;
 }
 
-/* ✅ Icons alignment */
+/* ✅ Icon Outside Input (Email/Phone) */
 .field-line {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.field-line input,
-.field-line select {
+.field-line input {
   flex: 1;
 }
 

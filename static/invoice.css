@@ -1,13 +1,13 @@
 /* --- VARIABLES --- */
 :root {
-    --primary: #F25C2A;          
+    --primary: #F25C2A;
     --primary-dark: #d94f23;
-    --text-dark: #111827;        
-    --text-grey: #6B7280;        
-    --bg-body: #F3F4F6;          
-    --bg-paper: #FFFFFF;         
-    --border: #c8cacc;           
-    --success: #10B981;          
+    --text-dark: #111827;
+    --text-grey: #6B7280;
+    --bg-body: #F3F4F6;
+    --bg-paper: #FFFFFF;
+    --border: #c8cacc;
+    --success: #10B981;
 }
 
 * {
@@ -29,7 +29,7 @@ body {
     background: var(--bg-paper);
     padding: 50px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--border);
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .logo-wrapper {
-    background: #000; 
+    background: #000;
     padding: 10px 15px;
     border-radius: 8px;
     display: inline-block;
@@ -67,7 +67,7 @@ body {
 .invoice-title {
     font-size: 32px;
     font-weight: 700;
-    color: var(--primary); 
+    color: var(--primary);
     text-align: right;
     margin-bottom: 15px;
     letter-spacing: 1px;
@@ -177,10 +177,17 @@ body {
     margin-top: 4px;
 }
 
-.center { text-align: center; }
-.right { text-align: right; }
+.center {
+    text-align: center;
+}
 
-.col-qty, .col-price, .col-total {
+.right {
+    text-align: right;
+}
+
+.col-qty,
+.col-price,
+.col-total {
     font-size: 14px;
     color: var(--text-dark);
     font-weight: 500;
@@ -229,7 +236,7 @@ body {
     border-top: 2px solid var(--border);
     font-size: 18px;
     font-weight: 700;
-    color: var(--primary); 
+    color: var(--primary);
 }
 
 .grand-total span:last-child {
@@ -282,20 +289,10 @@ body {
 }
 
 .btn-primary:hover {
-    background: var(--primary); 
+    background: var(--primary);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(242, 92, 42, 0.2);
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    .invoice-container { padding: 20px; }
-    .invoice-header { flex-direction: column; gap: 30px; }
-    .invoice-title { text-align: left; }
-    .meta-grid { align-items: flex-start; }
-    .table-header, .table-row { grid-template-columns: 2fr 1fr; gap: 10px; }
-    .col-qty, .col-price { display: none; }
-    .summary-section { flex-direction: column; gap: 30px; }
-    .totals-box { width: 100%; }
-    .footer-actions { flex-direction: column-reverse; gap: 20px; align-items: stretch; }
-}
+/* Responsive section removed temporarily */

@@ -9,57 +9,13 @@
     <link rel="stylesheet" href="../../static/dashboard.css">
     <link rel="stylesheet" href="../../static/reports.css">
     <link rel="stylesheet" href="../../static/received_payment.css">
-    <style>
-        .performance-badge {
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-        }
+    <link rel="stylesheet" href="../../static/revenue_source.css">
 
-        .bg-high {
-            background: #C6F6D5;
-            color: #22543D;
-        }
-
-        .bg-medium {
-            background: #FEFCBF;
-            color: #744210;
-        }
-
-        .bg-low {
-            background: #FED7D7;
-            color: #822727;
-        }
-
-        .progress-bar-bg {
-            background: #EDF2F7;
-            border-radius: 4px;
-            height: 6px;
-            width: 80px;
-            margin-top: 6px;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            border-radius: 4px;
-        }
-
-        .fill-high {
-            background: #48BB78;
-        }
-
-        .fill-medium {
-            background: #ECC94B;
-        }
-
-        .fill-low {
-            background: #F56565;
-        }
-    </style>
 </head>
 
 <body>
+
+
 
     <div class="dashboard-container">
 
@@ -82,13 +38,20 @@
                     </a>
                     <div class="sidebar-submenu">
                         <a href="../personal_health.html">Add New Member</a>
-                        <a href="../received_payment.html">Payment Details</a>
+                        <a href="../received_payments.html">Payment Details</a>
                     </div>
                 </div>
-                <a href="../diet-plans.html" class="nav-link">
-                    <img src="../../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
-                    <span>Diet Plans</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="../diet-plans.html" class="nav-link">
+                        <img src="../../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                        <span>Diet Plans</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="../create_diet_plan.html">Create Diet Plan</a>
+                        <a href="../assign_diet_plan.html">Assign</a>
+                    </div>
+                </div>
                 <a href="../staff.html" class="nav-link">
                     <img src="../../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
@@ -108,7 +71,7 @@
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="cross_branch_report.html">Cross Branch</a>
+                        <a href="feedback_sentiment.html">Feedback & Sentiment</a>
                         <a href="renewal_report.html">Renewal Report</a>
                         <a href="revenue_source.html">Revenue Report</a>
                         <a href="trainer_performance.html">Trainer Performance</a>
@@ -182,7 +145,8 @@
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar blue"><i class="fa-solid fa-dumbbell"></i></div>
+                                        <div class="avatar blue"><img src="../../icons/dumbbell-solid-full.svg"
+                                                width="16"></div>
                                         <div>
                                             <span class="bold">Personal Training</span>
                                             <span class="email-sub">1-on-1 Coaching</span>
@@ -202,7 +166,8 @@
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar orange"><i class="fa-solid fa-people-group"></i></div>
+                                        <div class="avatar orange"><img src="../../icons/users-solid-full.svg"
+                                                width="16"></div>
                                         <div>
                                             <span class="bold">Group Classes</span>
                                             <span class="email-sub">Zumba, HIIT</span>
@@ -222,7 +187,8 @@
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar"><i class="fa-solid fa-carrot"></i></div>
+                                        <div class="avatar"><img src="../../icons/carrot-solid-full.svg" width="16">
+                                        </div>
                                         <div>
                                             <span class="bold">Diet Plans</span>
                                             <span class="email-sub">Nutrition Consulting</span>
@@ -242,7 +208,8 @@
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar blue"><i class="fa-solid fa-spa"></i></div>
+                                        <div class="avatar blue"><img src="../../icons/leaf-solid-full.svg" width="16">
+                                        </div>
                                         <div>
                                             <span class="bold">Yoga Sessions</span>
                                             <span class="email-sub">Morning/Evening</span>
@@ -266,6 +233,7 @@
 
         </main>
     </div>
+
 
 </body>
 
