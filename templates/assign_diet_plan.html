@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Send Diet Plan | JoF Fitness</title>
+  <title>Assign Diet Plan | JoF Fitness</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/assign_diet_plan.css" />
@@ -11,80 +12,104 @@
 
 <body>
 
-  <div class="overlay">
+  <div class="page-container">
 
-    <div class="modal">
-
-      <div class="modal-header">
-        <div>
-          <h2>Send Diet Plan</h2>
-          <p>Select members to send <b>Weight Loss Plan</b> to via WhatsApp.</p>
-        </div>
-
-        <a href="/templates/diet-plans.html" class="close-btn" aria-label="Close">✕</a>
+    <header class="page-header">
+      <div class="header-content">
+        <h1>Send Diet Plan</h1>
+        <p>Select members to send <b>Weight Loss Plan</b> via WhatsApp.</p>
       </div>
 
-      <form class="assign-form" action="/templates/diet-plans.html">
+      <a href="/templates/diet-plans.html" class="close-btn">
+         ✕ Close
+      </a>
+    </header>
 
-        <div class="form-group">
-          <label>Select Members</label>
+    <main class="content-grid">
 
+      <section class="panel form-panel">
+        <div class="panel-header">
+            <h2>Select Members</h2>
+            <p class="subtext">Choose members from the list below.</p>
+        </div>
+
+        <form action="#" class="assign-form">
+          
           <div class="member-list">
-
             <label class="member-item">
               <input type="checkbox" name="member" value="+917890123456">
-              <span>Vedant Sharma - +91 78901 23456</span>
+              <div class="member-info">
+                  <span class="m-name">Vedant Sharma</span>
+                  <span class="m-phone">+91 78901 23456</span>
+              </div>
             </label>
 
             <label class="member-item">
               <input type="checkbox" name="member" value="+918660112233">
-              <span>Ishita Patel - +91 86601 12233</span>
+              <div class="member-info">
+                  <span class="m-name">Ishita Patel</span>
+                  <span class="m-phone">+91 86601 12233</span>
+              </div>
             </label>
 
             <label class="member-item">
               <input type="checkbox" name="member" value="+919876543210">
-              <span>Vrishabh Verma - +91 98765 49010</span>
+              <div class="member-info">
+                  <span class="m-name">Rahul Chadchan</span>
+                  <span class="m-phone">+91 98765 43210</span>
+              </div>
             </label>
 
             <label class="member-item">
               <input type="checkbox" name="member" value="+918888777666">
-              <span>Sneha Reddy - +91 88887 56786</span>
+              <div class="member-info">
+                  <span class="m-name">Sneha Reddy</span>
+                  <span class="m-phone">+91 88887 77666</span>
+              </div>
             </label>
 
             <label class="member-item">
               <input type="checkbox" name="member" value="+919999000111">
-              <span>Kabir Singh - +91 99990 00111</span>
+              <div class="member-info">
+                  <span class="m-name">Vikram Singh</span>
+                  <span class="m-phone">+91 99990 00111</span>
+              </div>
             </label>
 
             <label class="member-item">
               <input type="checkbox" name="member" value="+917755443322">
-              <span>tanish Gupta - +91 77554 43322</span>
+              <div class="member-info">
+                  <span class="m-name">Neha Gupta</span>
+                  <span class="m-phone">+91 77554 43322</span>
+              </div>
             </label>
-
-            <label class="member-item">
-              <input type="checkbox" name="member" value="+919900112233">
-              <span>Vrishabh Chadchan - +91 8623980044</span>
-            </label>
-
-            <label class="member-item">
-              <input type="checkbox" name="member" value="+918181727272">
-              <span>Priya Nair - +91 81817 37272</span>
-            </label>
-
           </div>
+
+          <div class="actions">
+            <a href="/templates/diet-plans.html" class="btn cancel-btn">Cancel</a>
+            <button type="submit" class="btn send-btn">
+                <span class="icon">✈</span> Send via WhatsApp
+            </button>
+          </div>
+
+        </form>
+      </section>
+
+      <aside class="sidebar-info">
+        <div class="panel info-card">
+          <h3>Selected Diet Plan</h3>
+          <p class="highlight">Weight Loss Plan</p>
+          <p class="muted">Calorie deficit plan designed for fat loss.</p>
         </div>
 
-        <div class="modal-actions">
-          <a href="/templates/diet-plans.html" class="btn cancel-btn">Cancel</a>
-
-          <a href="https://wa.me/" class="btn send-btn">
-            ✈ Send via WhatsApp
-          </a>
+        <div class="panel info-card">
+          <h3>Add a Note</h3>
+          <textarea class="note-box" placeholder="E.g. Stay hydrated, complete your protein goals..."></textarea>
         </div>
+      </aside>
 
-      </form>
+    </main>
 
-    </div>
   </div>
 
 </body>
