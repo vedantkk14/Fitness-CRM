@@ -1,116 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assign Diet Plan | JoF Fitness</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Diet Plan | JoF Fitness</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/assign_diet_plan.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../static/assign_diet_plan.css">
 </head>
 
 <body>
 
-  <div class="page-container">
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
+            </div>
 
-    <header class="page-header">
-      <div class="header-content">
-        <h1>Send Diet Plan</h1>
-        <p>Select members to send <b>Weight Loss Plan</b> via WhatsApp.</p>
-      </div>
+            <nav class="navigation">
+                <a href="../templates/dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span>
+                </a>
+                <a href="../templates/members.html" class="nav-link">
+                    <i class="fa-solid fa-users"></i> <span>Members</span>
+                </a>
+                <a href="../templates/diet-plans.html" class="nav-link active">
+                    <i class="fa-solid fa-carrot"></i> <span>Diet Plans</span>
+                </a>
+                <a href="../templates/staff.html" class="nav-link">
+                    <i class="fa-solid fa-clipboard-user"></i> <span>Staff</span>
+                </a>
+                <a href="../templates/membership.html" class="nav-link">
+                    <i class="fa-solid fa-credit-card"></i> <span>Membership</span>
+                </a>
+                <a href="../templates/payments.html" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i> <span>Payments</span>
+                </a>
+                <a href="../templates/reports.html" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i> <span>Reports</span>
+                </a>
+            </nav>
 
-      <a href="/templates/diet-plans.html" class="close-btn">
-         ✕ Close
-      </a>
-    </header>
+           
+        </aside>
 
-    <main class="content-grid">
+        <main class="main-content">
+            
+            <header class="page-header">
+                <div class="header-text">
+                    <a href="/templates/diet-plans.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Plans</a>
+                    <h1>Send Diet Plan</h1>
+                    <p>Assign <b>Weight Loss Plan</b> to your members.</p>
+                </div>
+            </header>
 
-      <section class="panel form-panel">
-        <div class="panel-header">
-            <h2>Select Members</h2>
-            <p class="subtext">Choose members from the list below.</p>
-        </div>
+            <section class="content-grid">
 
-        <form action="#" class="assign-form">
-          
-          <div class="member-list">
-            <label class="member-item">
-              <input type="checkbox" name="member" value="+917890123456">
-              <div class="member-info">
-                  <span class="m-name">Vedant Sharma</span>
-                  <span class="m-phone">+91 78901 23456</span>
-              </div>
-            </label>
+                <div class="panel main-panel">
+                    <div class="panel-header">
+                        <h2>Select Members</h2>
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search member...">
+                        </div>
+                    </div>
 
-            <label class="member-item">
-              <input type="checkbox" name="member" value="+918660112233">
-              <div class="member-info">
-                  <span class="m-name">Ishita Patel</span>
-                  <span class="m-phone">+91 86601 12233</span>
-              </div>
-            </label>
+                    <form action="#" class="assign-form">
+                        <div class="member-list">
+                            
+                            <label class="member-item">
+                                <input type="checkbox" name="member" value="+917890123456">
+                                <div class="avatar">VS</div>
+                                <div class="member-info">
+                                    <span class="m-name">Vedant Sharma</span>
+                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20"> +91 78901 23456</span>
+                                </div>
+                            </label>
 
-            <label class="member-item">
-              <input type="checkbox" name="member" value="+919876543210">
-              <div class="member-info">
-                  <span class="m-name">Rahul Chadchan</span>
-                  <span class="m-phone">+91 98765 43210</span>
-              </div>
-            </label>
+                            <label class="member-item">
+                                <input type="checkbox" name="member" value="+918660112233" checked>
+                                <div class="avatar color-2">IP</div>
+                                <div class="member-info">
+                                    <span class="m-name">Ishita Patel</span>
+                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20"> +91 86601 12233</span>
+                                </div>
+                            </label>
 
-            <label class="member-item">
-              <input type="checkbox" name="member" value="+918888777666">
-              <div class="member-info">
-                  <span class="m-name">Sneha Reddy</span>
-                  <span class="m-phone">+91 88887 77666</span>
-              </div>
-            </label>
+                            <label class="member-item">
+                                <input type="checkbox" name="member" value="+919876543210">
+                                <div class="avatar color-3">RC</div>
+                                <div class="member-info">
+                                    <span class="m-name">Rahul Chadchan</span>
+                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20"> +91 98765 43210</span>
+                                </div>
+                            </label>
 
-            <label class="member-item">
-              <input type="checkbox" name="member" value="+919999000111">
-              <div class="member-info">
-                  <span class="m-name">Vikram Singh</span>
-                  <span class="m-phone">+91 99990 00111</span>
-              </div>
-            </label>
+                            <label class="member-item">
+                                <input type="checkbox" name="member" value="+918888777666">
+                                <div class="avatar color-4">SR</div>
+                                <div class="member-info">
+                                    <span class="m-name">Sneha Reddy</span>
+                                    <span class="m-phone"><img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20">+91 88887 77666</span>
+                                </div>
+                            </label>
 
-            <label class="member-item">
-              <input type="checkbox" name="member" value="+917755443322">
-              <div class="member-info">
-                  <span class="m-name">Neha Gupta</span>
-                  <span class="m-phone">+91 77554 43322</span>
-              </div>
-            </label>
-          </div>
+                        </div>
 
-          <div class="actions">
-            <a href="/templates/diet-plans.html" class="btn cancel-btn">Cancel</a>
-            <button type="submit" class="btn send-btn">
-                <span class="icon">✈</span> Send via WhatsApp
-            </button>
-          </div>
+                        <div class="actions">
+                            <a href="/templates/diet-plans.html" class="btn cancel-btn">Cancel</a>
+                            <button type="submit" class="btn send-btn">
+                                <img src="../icons/whatsapp-brands-solid-full.svg" alt="Diet Plans" width="20"> Send Plan
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
-        </form>
-      </section>
+                <aside class="side-panel">
+                    
+                    <div class="info-card plan-summary">
+                        <div class="icon-box"><img src="../icons/note-sticky-solid-full.svg" alt="Diet Plans" width="20"></i></div>
+                        <div>
+                            <h3>Selected Plan</h3>
+                            <p class="highlight">Weight Loss Plan</p>
+                            <p class="muted">High Protein, Low Carb</p>
+                        </div>
+                    </div>
 
-      <aside class="sidebar-info">
-        <div class="panel info-card">
-          <h3>Selected Diet Plan</h3>
-          <p class="highlight">Weight Loss Plan</p>
-          <p class="muted">Calorie deficit plan designed for fat loss.</p>
-        </div>
+                    <div class="info-card note-card">
+                        <h3><img src="../icons/comment-dots-regular-full.svg" alt="Diet Plans" width="20"></i> Add Personal Note</h3>
+                        <textarea class="note-box" placeholder="E.g. Complete your protein goal..."></textarea>
+                    </div>
 
-        <div class="panel info-card">
-          <h3>Add a Note</h3>
-          <textarea class="note-box" placeholder="E.g. Stay hydrated, complete your protein goals..."></textarea>
-        </div>
-      </aside>
+                </aside>
 
-    </main>
+            </section>
 
-  </div>
+        </main>
+    </div>
 
 </body>
 </html>
