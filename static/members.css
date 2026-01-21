@@ -671,3 +671,93 @@ body {
     font-weight: 700;
     color: #1f2933;
 }
+
+/* ==================================================
+   FILTER DROPDOWN STYLES
+   ================================================== */
+.filter-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-filter {
+    background: #fff;
+    color: var(--text-main);
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.btn-filter:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.filter-menu {
+    display: none;
+    position: absolute;
+    top: 110%;
+    /* Just below the button */
+    right: 0;
+    background: #fff;
+    width: 200px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f3f4f6;
+    z-index: 1001;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.filter-dropdown:hover .filter-menu {
+    display: block;
+}
+
+.filter-menu h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.checkbox-option input[type="checkbox"] {
+    accent-color: var(--primary);
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-option:hover {
+    color: var(--primary);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

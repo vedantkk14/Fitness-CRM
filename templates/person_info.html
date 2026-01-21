@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member Profile</title>
-        
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../static/person_info.css">
 </head>
+
 <body>
 
     <div class="dashboard-container">
@@ -23,10 +26,17 @@
                     <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
                     <span>Dashboard</span>
                 </a>
-                <a href="members.html" class="nav-link active">
-                    <img src="../icons/users-solid-full.svg" alt="Members" width="20">
-                    <span>Members</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="members.html" class="nav-link active">
+                        <img src="../icons/users-solid-full.svg" alt="Members" width="20">
+                        <span>Members</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="personal_health.html">Add New Member</a>
+                        <a href="received_payment.html">Payment Details</a>
+                    </div>
+                </div>
                 <a href="diet-plans.html" class="nav-link">
                     <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
                     <span>Diet Plans</span>
@@ -48,10 +58,11 @@
         </aside>
 
         <main class="main-content">
-            
+
             <div class="profile-header">
                 <div class="user-identity">
-                    <img src="https://ui-avatars.com/api/?name=Sarah+Kanaki&background=F25C2A&color=fff&size=128" alt="Sarah" class="profile-avatar">
+                    <img src="https://ui-avatars.com/api/?name=Sarah+Kanaki&background=F25C2A&color=fff&size=128"
+                        alt="Sarah" class="profile-avatar">
                     <div class="user-text">
                         <h1>Sarah Kanaki</h1>
                         <p class="member-id">Member ID: #JOF-2024-88</p>
@@ -66,7 +77,7 @@
             <div class="profile-grid">
 
                 <div class="column-left">
-                    
+
                     <div class="info-card">
                         <h3><img src="../icons/clipboard-user-solid-full.svg" class="card-icon"> Health Details</h3>
                         <div class="details-grid">
@@ -126,31 +137,39 @@
 
                     <div class="info-card">
                         <h3><img src="../icons/star-half-stroke-solid-full.svg" class="card-icon"> Self Assessment</h3>
-                        
+
                         <div class="scale-item">
                             <div class="scale-label"><span>Mood</span> <strong>8/10</strong></div>
-                            <div class="progress-track"><div class="progress-fill green" style="width: 80%"></div></div>
+                            <div class="progress-track">
+                                <div class="progress-fill green" style="width: 80%"></div>
+                            </div>
                         </div>
 
                         <div class="scale-item">
                             <div class="scale-label"><span>Sleep Quality</span> <strong>7/10</strong></div>
-                            <div class="progress-track"><div class="progress-fill orange" style="width: 70%"></div></div>
+                            <div class="progress-track">
+                                <div class="progress-fill orange" style="width: 70%"></div>
+                            </div>
                         </div>
 
                         <div class="scale-item">
                             <div class="scale-label"><span>Energy Levels</span> <strong>9/10</strong></div>
-                            <div class="progress-track"><div class="progress-fill green" style="width: 90%"></div></div>
+                            <div class="progress-track">
+                                <div class="progress-fill green" style="width: 90%"></div>
+                            </div>
                         </div>
 
                         <div class="scale-item">
                             <div class="scale-label"><span>Hunger Control</span> <strong>6/10</strong></div>
-                            <div class="progress-track"><div class="progress-fill red" style="width: 60%"></div></div>
+                            <div class="progress-track">
+                                <div class="progress-fill red" style="width: 60%"></div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="info-card notes-card">
                         <h3><img src="../icons/pen-to-square-solid-full.svg" class="card-icon"> Trainer Notes</h3>
-                        
+
                         <div class="notes-history">
                             <div class="note-item">
                                 <div class="note-date">Jan 18, 2026</div>
@@ -176,4 +195,5 @@
     </div>
 
 </body>
+
 </html>
