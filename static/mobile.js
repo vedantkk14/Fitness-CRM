@@ -1,1 +1,1 @@
-// Mobile responsiveness disabled temporarily
+// Mobile interactions disabled

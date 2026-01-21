@@ -253,44 +253,7 @@ body {
     }
 }
 
-@media (max-width: 900px) {
-    .profile-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .profile-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .header-actions {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .user-identity {
-        flex-direction: row;
-        align-items: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .user-identity {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .stats-row {
-        grid-template-columns: 1fr;
-    }
-
-    .stat-card {
-        padding: 15px;
-    }
-}
+/* Responsive sections removed temporarily */
 
 
 /* --- MAIN CONTENT --- */
