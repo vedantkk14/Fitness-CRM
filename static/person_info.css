@@ -597,14 +597,4 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-    .dashboard-container {
-        grid-template-columns: 1fr;
-    }
-
-    /* Sidebar handled by dashboard.css / mobile.js */
-
-    .profile-grid {
-        grid-template-columns: 1fr;
-    }
-}
+/* Responsive section removed temporarily */

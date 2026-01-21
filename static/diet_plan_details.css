@@ -474,29 +474,4 @@ body {
     line-height: 1.5;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-
-    .dashboard-container {
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        display: none;
-    }
-
-    .stats-container {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .meal-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .meal-time {
-        margin-bottom: 10px;
-    }
-
-}
+/* Responsive section removed temporarily */
