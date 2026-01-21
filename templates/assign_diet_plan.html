@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send Diet Plan | JoF Fitness</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/assign_diet_plan.css" />
+</head>
+
+<body>
+
+  <div class="overlay">
+
+    <div class="modal">
+
+      <div class="modal-header">
+        <div>
+          <h2>Send Diet Plan</h2>
+          <p>Select members to send <b>Weight Loss Plan</b> to via WhatsApp.</p>
+        </div>
+
+        <a href="/templates/diet-plans.html" class="close-btn" aria-label="Close">✕</a>
+      </div>
+
+      <form class="assign-form" action="/templates/diet-plans.html">
+
+        <div class="form-group">
+          <label>Select Members</label>
+
+          <div class="member-list">
+
+            <label class="member-item">
+              <input type="checkbox" name="member" value="+917890123456">
+              <span>Vedant Sharma - +91 78901 23456</span>
+            </label>
+
+            <label class="member-item">
+              <input type="checkbox" name="member" value="+918660112233">
+              <span>Ishita Patel - +91 86601 12233</span>
+            </label>
+
+            <label class="member-item">
+              <input type="checkbox" name="member" value="+919876543210">
+              <span>Vrishabh Verma - +91 98765 49010</span>
+            </label>
+
+            <label class="member-item">
+              <input type="checkbox" name="member" value="+918888777666">
+              <span>Sneha Reddy - +91 88887 56786</span>
+            </label>
+
+            <label class="member-item">
+              <input type="checkbox" name="member" value="+919999000111">
+              <span>Kabir Singh - +91 99990 00111</span>
+            </label>
+
+            <label class="member-item">
+              <input type="checkbox" name="member" value="+917755443322">
+              <span>tanish Gupta - +91 77554 43322</span>
+            </label>
+
+            <label class="member-item">
+              <input type="checkbox" name="member" value="+919900112233">
+              <span>Vrishabh Chadchan - +91 8623980044</span>
+            </label>
+
+            <label class="member-item">
+              <input type="checkbox" name="member" value="+918181727272">
+              <span>Priya Nair - +91 81817 37272</span>
+            </label>
+
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <a href="/templates/diet-plans.html" class="btn cancel-btn">Cancel</a>
+
+          <a href="https://wa.me/" class="btn send-btn">
+            ✈ Send via WhatsApp
+          </a>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>
