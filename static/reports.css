@@ -304,11 +304,7 @@
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    .reports-actions {
-        grid-template-columns: 1fr;
-    }
-}
+/* Responsive section removed temporarily */
 
 /* --- Sidebar Accordion Dropdown --- */
 .nav-item-dropdown {

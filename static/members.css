@@ -190,14 +190,13 @@ body {
     color: #aaa;
 }
 
-/* --- NEW TOOLBAR STYLES --- */
-
 /* 1. Wrapper to keep Search and Filter together */
 .search-group {
     display: flex;
     align-items: center;
     gap: 15px;
-    /* Space between search bar and filter button */
+
+
 }
 
 /* 2. Filter Button Design */
@@ -206,12 +205,11 @@ body {
     border: none;
     padding: 12px 20px;
     border-radius: 30px;
-    /* Matches search bar roundness */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-    /* Matches search bar shadow */
 
-    color: #6B7280;
-    /* Muted text color */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+
+    color: #6B7280; 
+
     font-size: 14px;
     font-weight: 500;
     font-family: 'Poppins', sans-serif;
@@ -225,8 +223,9 @@ body {
 
 /* Hover Effect */
 .filter-btn:hover {
-    color: var(--primary);
-    /* Turns Orange */
+
+    color: var(--primary); 
+
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -679,9 +678,6 @@ body {
     color: #1f2933;
 }
 
-/* ==================================================
-   FILTER DROPDOWN STYLES
-   ================================================== */
 .filter-dropdown {
     position: relative;
     display: inline-block;
@@ -712,7 +708,6 @@ body {
     display: none;
     position: absolute;
     top: 110%;
-    /* Just below the button */
     right: 0;
     background: #fff;
     width: 200px;

@@ -134,14 +134,4 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .filter-form-container {
-        padding: 30px;
-        margin: 20px;
-    }
-}
+/* Responsive section removed temporarily */

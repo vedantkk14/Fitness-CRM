@@ -1,13 +1,13 @@
-/* --- 1. VARIABLES (Clean Theme) --- */
+/* --- VARIABLES --- */
 :root {
-    --primary: #F25C2A;          
+    --primary: #F25C2A;
     --primary-dark: #d94f23;
-    --text-dark: #111827;        
-    --text-grey: #6B7280;        
-    --bg-body: #F3F4F6;          
-    --bg-paper: #FFFFFF;         
-    --border: #c8cacc;           
-    --success: #10B981;          
+    --text-dark: #111827;
+    --text-grey: #6B7280;
+    --bg-body: #F3F4F6;
+    --bg-paper: #FFFFFF;
+    --border: #c8cacc;
+    --success: #10B981;
 }
 
 * {
@@ -23,18 +23,17 @@ body {
     color: var(--text-dark);
 }
 
-/* --- 2. INVOICE CONTAINER (The Paper) --- */
 .invoice-container {
     max-width: 800px;
     margin: 0 auto;
     background: var(--bg-paper);
     padding: 50px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft premium shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--border);
 }
 
-/* --- 3. HEADER --- */
+/* ---  HEADER --- */
 .invoice-header {
     display: flex;
     justify-content: space-between;
@@ -42,9 +41,8 @@ body {
     margin-bottom: 30px;
 }
 
-/* Logo Area */
 .logo-wrapper {
-    background: #000; /* Black box for logo contrast */
+    background: #000;
     padding: 10px 15px;
     border-radius: 8px;
     display: inline-block;
@@ -52,7 +50,7 @@ body {
 }
 
 .brand-logo {
-    height: 40px; /* Adjust height to fit your logo */
+    height: 40px;
     display: block;
 }
 
@@ -66,11 +64,10 @@ body {
     color: var(--text-dark);
 }
 
-/* Header Details (Right Side) */
 .invoice-title {
     font-size: 32px;
     font-weight: 700;
-    color: var(--primary); /* Orange Title */
+    color: var(--primary);
     text-align: right;
     margin-bottom: 15px;
     letter-spacing: 1px;
@@ -103,7 +100,6 @@ body {
     margin: 30px 0;
 }
 
-/* --- 4. BILLING SECTION --- */
 .billing-section {
     display: flex;
     justify-content: space-between;
@@ -145,7 +141,6 @@ body {
     border: 1px solid #D1FAE5;
 }
 
-/* --- 5. ITEMS TABLE --- */
 .items-section {
     margin-bottom: 40px;
 }
@@ -182,16 +177,23 @@ body {
     margin-top: 4px;
 }
 
-.center { text-align: center; }
-.right { text-align: right; }
+.center {
+    text-align: center;
+}
 
-.col-qty, .col-price, .col-total {
+.right {
+    text-align: right;
+}
+
+.col-qty,
+.col-price,
+.col-total {
     font-size: 14px;
     color: var(--text-dark);
     font-weight: 500;
 }
 
-/* --- 6. SUMMARY & TOTALS --- */
+/* --- SUMMARY & TOTALS --- */
 .summary-section {
     display: flex;
     justify-content: space-between;
@@ -234,14 +236,14 @@ body {
     border-top: 2px solid var(--border);
     font-size: 18px;
     font-weight: 700;
-    color: var(--primary); /* Orange Grand Total */
+    color: var(--primary);
 }
 
 .grand-total span:last-child {
     color: var(--primary);
 }
 
-/* --- 7. FOOTER & BUTTONS --- */
+/* --- FOOTER & BUTTONS --- */
 .footer-actions {
     margin-top: 50px;
     display: flex;
@@ -281,26 +283,16 @@ body {
 }
 
 .btn-primary {
-    background: var(--text-dark); /* Black button for premium feel */
+    background: var(--text-dark);
     color: #fff;
     border: none;
 }
 
 .btn-primary:hover {
-    background: var(--primary); /* Orange on hover */
+    background: var(--primary);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(242, 92, 42, 0.2);
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    .invoice-container { padding: 20px; }
-    .invoice-header { flex-direction: column; gap: 30px; }
-    .invoice-title { text-align: left; }
-    .meta-grid { align-items: flex-start; }
-    .table-header, .table-row { grid-template-columns: 2fr 1fr; gap: 10px; }
-    .col-qty, .col-price { display: none; } /* Hide details on very small screens */
-    .summary-section { flex-direction: column; gap: 30px; }
-    .totals-box { width: 100%; }
-    .footer-actions { flex-direction: column-reverse; gap: 20px; align-items: stretch; }
-}
+/* Responsive section removed temporarily */

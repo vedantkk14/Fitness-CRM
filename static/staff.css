@@ -478,15 +478,7 @@ body {
     border-color: var(--text-dark);
 }
 
-@media (max-width: 900px) {
-    .dashboard-container {
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        display: none;
-    }
-}
+/* Responsive section removed temporarily */
 
 /* --- Sidebar Accordion Dropdown --- */
 .nav-item-dropdown {

@@ -42,7 +42,6 @@ body {
     position: relative;
     border-right: 1px solid #1a1a1a;
     z-index: 1000;
-    /* Fix: Ensure sidebar stays above content */
 
 }
 
@@ -60,7 +59,6 @@ body {
 }
 
 .nav-link img {
-    /* Fix size */
     width: 20px;
     height: 20px;
 
@@ -125,7 +123,6 @@ body {
     background: var(--primary-gradient);
     color: #fff;
     box-shadow: 0 4px 15px rgba(242, 92, 42, 0.4);
-    /* Glowing Orange Shadow */
 }
 
 /* Decorative Sidebar Promo */
@@ -155,7 +152,9 @@ body {
     color: #888;
 }
 
-/* --- Sidebar Accordion Dropdown --- */
+
+
+
 .nav-item-dropdown {
     position: relative;
     width: 100%;
@@ -163,19 +162,19 @@ body {
 
 .sidebar-submenu {
     display: none;
-    position: static;
-    /* Standard flow, pushes content down */
-    width: 100%;
-    /* Fill sidebar */
-    background-color: rgba(255, 255, 255, 0.03);
-    /* Subtle dark contrast */
-    border-radius: 12px;
-    padding: 5px 0;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    box-shadow: none;
-    border-left: none;
-    animation: fadeIn 0.3s ease;
+
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 200px;
+    background-color: var(--dark-sidebar);
+    border-radius: 0 12px 12px 0;
+    padding: 10px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    border-left: 1px solid #333;
+    animation: slideRight 0.2s ease-out;
+
 }
 
 .nav-item-dropdown:hover .sidebar-submenu {
@@ -196,8 +195,9 @@ body {
 .sidebar-submenu a:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.05);
-    padding-left: 55px;
-    /* Slight movement */
+
+    padding-left: 25px;
+
 }
 
 .nav-arrow {
@@ -313,7 +313,6 @@ body {
 }
 
 
-/* --- STATS ROW --- */
 .stats-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -378,7 +377,6 @@ body {
 }
 
 
-/* --- MEAL LIST PANEL --- */
 .content-panel {
     background: var(--white);
     border-radius: 20px;
@@ -445,6 +443,7 @@ body {
 .sun {
     background: #FFF7ED;
     color: #F97316;
+
 }
 
 .cloud {
@@ -456,6 +455,53 @@ body {
     background: #EFF6FF;
     color: #3B82F6;
 }
+
+.moon {
+    background: #F5F3FF;
+    color: #7C3AED;
+}
+
+.meal-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.meal-content p {
+    font-size: 15px;
+    color: #4B5563;
+    line-height: 1.5;
+
+}
+
+.cloud {
+    background: #ECFDF5;
+    color: #10B981;
+}
+
+
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .stats-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .meal-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .meal-time {
+        margin-bottom: 10px;
+    }
+
 
 .moon {
     background: #F5F3FF;

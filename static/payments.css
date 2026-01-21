@@ -457,17 +457,4 @@ tbody tr:hover {
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 900px) {
-    .dashboard-container {
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        display: none;
-    }
-
-    /* Hide sidebar on mobile */
-    .main-content {
-        padding: 20px;
-    }
-}
+/* Responsive section removed temporarily */
