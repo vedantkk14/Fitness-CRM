@@ -6,9 +6,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diet Plan Details | JOF Fitness</title>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="../static/diet_plan_details.css" />
 
 </head>
@@ -57,16 +57,25 @@
                     <img src="../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
                     <span>Payments</span>
                 </a>
-                <a href="reports.html" class="nav-link">
-                    <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
-                    <span>Reports</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="reports.html" class="nav-link">
+                        <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
+                        <span>Reports</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="reports/cross_branch_report.html">Cross Branch</a>
+                        <a href="reports/renewal_report.html">Renewal Report</a>
+                        <a href="reports/revenue_source.html">Revenue Report</a>
+                        <a href="reports/trainer_performance.html">Trainer Performance</a>
+                    </div>
+                </div>
             </nav>
 
         </aside>
 
         <main class="main-content">
-            
+
             <div class="page-header">
                 <div class="header-left">
                     <h1>Weight Loss Plan</h1>
@@ -119,7 +128,7 @@
                 </div>
 
                 <div class="meal-list">
-                    
+
                     <div class="meal-row">
                         <div class="meal-time">
                             <div class="time-icon sun"><i class="fa-regular fa-sun"></i></div>

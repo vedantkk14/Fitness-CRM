@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOF Fitness | Cross-Branch Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../static/dashboard.css">
+    <link rel="stylesheet" href="../../static/reports.css">
+    <link rel="stylesheet" href="../../static/received_payment.css">
+    <style>
+        .top-performer-badge {
+            background: linear-gradient(135deg, #FFD700, #FDB931);
+            color: #744210;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .branch-select {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #E2E8F0;
+            background: #fff;
+            color: #2D3748;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="../../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
+            </div>
+
+            <div class="nav-label">MENU</div>
+            <nav class="navigation">
+                <a href="../dashboard.html" class="nav-link">
+                    <img src="../../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
+                    <span>Dashboard</span>
+                </a>
+                <div class="nav-item-dropdown">
+                    <a href="../members.html" class="nav-link">
+                        <img src="../../icons/users-solid-full.svg" alt="Members" width="20">
+                        <span>Members</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="../personal_health.html">Add New Member</a>
+                        <a href="../received_payment.html">Payment Details</a>
+                    </div>
+                </div>
+                <a href="../diet-plans.html" class="nav-link">
+                    <img src="../../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                    <span>Diet Plans</span>
+                </a>
+                <a href="../staff.html" class="nav-link">
+                    <img src="../../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
+                    <span>Staff</span>
+                </a>
+                <a href="../membership.html" class="nav-link">
+                    <img src="../../icons/credit-card-solid-full.svg" alt="Membership" width="20">
+                    <span>Membership</span>
+                </a>
+                <a href="../payments.html" class="nav-link">
+                    <img src="../../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
+                    <span>Payments</span>
+                </a>
+                <div class="nav-item-dropdown">
+                    <a href="../reports.html" class="nav-link active">
+                        <img src="../../icons/chart-line-solid-full.svg" alt="Reports" width="20">
+                        <span>Reports</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="cross_branch_report.html">Cross Branch</a>
+                        <a href="renewal_report.html">Renewal Report</a>
+                        <a href="revenue_source.html">Revenue Report</a>
+                        <a href="trainer_performance.html">Trainer Performance</a>
+                    </div>
+                </div>
+            </nav>
+
+        </aside>
+
+        <main class="main-content">
+
+            <div class="page-header" style="margin-bottom: 20px;">
+                <div class="header-text">
+                    <h1>Cross-Branch Performance</h1>
+                    <p>Compare metrics across different gym locations.</p>
+                </div>
+                <div class="header-actions">
+                    <div class="profile-pic">
+                        <img src="../../icons/JO.svg" alt="JO" width="20">
+                    </div>
+                </div>
+            </div>
+
+            <section class="report-controls">
+                <div class="control-left">
+                    <label>Select Branch:</label>
+                    <select class="branch-select">
+                        <option>All Branches</option>
+                        <option>Downtown - Branch A</option>
+                        <option>Westside - Branch B</option>
+                        <option>Uptown - Branch C</option>
+                    </select>
+                </div>
+                <div class="control-right">
+                    <button class="btn-export pdf">
+                        <img src="../../icons/file-solid-full.svg" width="14" class="btn-icon"> Export Report
+                    </button>
+                </div>
+            </section>
+
+            <div class="table-panel">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Branch Name</th>
+                                <th class="right">Total Members</th>
+                                <th class="right">Monthly Revenue</th>
+                                <th class="right">Member Growth</th>
+                                <th class="right">Retention Rate</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar blue">A</div>
+                                        <div>
+                                            <span class="bold">Downtown (Branch A)</span>
+                                            <span class="email-sub">Main St.</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="right">450</td>
+                                <td class="amount right">₹3,50,000</td>
+                                <td class="right" style="color: #48BB78; font-weight: 600;">+15%</td>
+                                <td class="right">92%</td>
+                                <td><span class="top-performer-badge"><i class="fa-solid fa-trophy"></i> Top
+                                        Performer</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar orange">B</div>
+                                        <div>
+                                            <span class="bold">Westside (Branch B)</span>
+                                            <span class="email-sub">Park Ave.</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="right">210</td>
+                                <td class="amount right">₹1,80,000</td>
+                                <td class="right" style="color: #ECC94B; font-weight: 600;">+5%</td>
+                                <td class="right">88%</td>
+                                <td><span class="pill" style="background:#EDF2F7; color:#4A5568;">Stable</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="user-info">
+                                        <div class="avatar">C</div>
+                                        <div>
+                                            <span class="bold">Uptown (Branch C)</span>
+                                            <span class="email-sub">Hill Rd.</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="right">320</td>
+                                <td class="amount right">₹2,40,000</td>
+                                <td class="right" style="color: #48BB78; font-weight: 600;">+10%</td>
+                                <td class="right">90%</td>
+                                <td><span class="pill" style="background:#EDF2F7; color:#4A5568;">Growing</span></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>

@@ -54,16 +54,22 @@
                 <img src="../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
                 <span>Payments</span>
             </a>
-            <a href="reports.html" class="nav-link">
-                <img src="../icons/chart-line-solid-full.svg" alt="Reports">
-                <span>Reports</span>
-            </a>
+            <div class="nav-item-dropdown">
+                <a href="reports.html" class="nav-link">
+                    <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
+                    <span>Reports</span>
+                    <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                </a>
+                <div class="sidebar-submenu">
+                    <a href="reports/cross_branch_report.html">Cross Branch</a>
+                    <a href="reports/renewal_report.html">Renewal Report</a>
+                    <a href="reports/revenue_source.html">Revenue Report</a>
+                    <a href="reports/trainer_performance.html">Trainer Performance</a>
+                </div>
+            </div>
         </nav>
 
-        <div class="sidebar-promo">
-            <p>Pro Plan Active</p>
-            <small>Valid until Dec 2026</small>
-        </div>
+
     </aside>
 
     <main class="main-content">
@@ -80,23 +86,23 @@
             </div>
         </header>
 
-    <div class="toolbar">
-        
-        <div class="search-group">
-            <div class="search-bar">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Search members...">
+        <div class="toolbar">
+
+            <div class="search-group">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search members...">
+                </div>
+
+                <button class="filter-btn">
+                    <i class="fa-solid fa-filter"></i> Filter
+                </button>
             </div>
 
-            <button class="filter-btn">
-                <i class="fa-solid fa-filter"></i> Filter
-            </button>
+            <a href="personal_health.html" class="btn-primary">
+                <i class="fa-solid fa-user-plus"></i> Add Member
+            </a>
         </div>
-
-        <a href="personal_health.html" class="btn-primary">
-            <i class="fa-solid fa-user-plus"></i> Add Member
-        </a>
-    </div>
 
         <div class="table-card">
             <table class="styled-table">
