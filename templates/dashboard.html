@@ -7,18 +7,18 @@
     <title>JOF Fitness | Premium Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../static/dashboard.css">
-    
-    <script>
-        const toggleBtn = document.getElementById('toggleBtn');
-        const body = document.body;
-
-        toggleBtn.addEventListener('click', () => {
-            body.classList.toggle('collapsed');
-        });
-    </script>
 </head>
 
 <body>
+    <!-- Mobile Toggle Button (visible only on mobile) -->
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Desktop Toggle Button (visible on desktop, outside sidebar) -->
+    <button class="toggle-sidebar-btn" id="toggleBtn">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
 
     <div class="dashboard-container">
 
@@ -26,10 +26,6 @@
             <div class="logo-area">
                 <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
             </div>
-
-            <button class="toggle-sidebar-btn" id="toggleBtn">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
 
             <div class="nav-label">MENU</div>
             <nav class="navigation">
@@ -62,7 +58,6 @@
                 <a href="staff.html" class="nav-link">
                     <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
-
                 </a>
                 <a href="membership.html" class="nav-link">
                     <img src="../icons/credit-card-regular-full.svg" alt="Staff" width="20">
@@ -73,7 +68,7 @@
                     <span>Payments</span>
                 </a>
                 <div class="nav-item-dropdown">
-                    <a href="reports.html" class="nav-link">
+                    <a href="reports_pg.html" class="nav-link">
                         <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
                         <span>Reports</span>
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
@@ -89,7 +84,7 @@
 
         </aside>
 
-    <main class="main-content">
+        <main class="main-content">
             <header class="header-banner">
                 <div class="header-text">
                     <h1>Hello, from team Joshuaa! 👋</h1>
@@ -134,8 +129,7 @@
                         <h3>Active Plans</h3>
                         <h2>42</h2>
                         <p class="growth neutral">
-                            <img src="../icons/circle-exclamation-solid-full.svg" alt="img" width="20"> 8 New <span>this
-                                week</span>
+                            <img src="../icons/circle-exclamation-solid-full.svg" alt="img" width="20"> 8 New <span>this week</span>
                         </p>
                     </div>
                 </div>
@@ -151,8 +145,7 @@
                         <h3>Revenue</h3>
                         <h2>₹7,200</h2>
                         <p class="growth positive">
-                            <img src="../icons/arrow-trend-up-solid-full.svg" alt="JO" width="20"> +22% <span>vs last
-                                month</span>
+                            <img src="../icons/arrow-trend-up-solid-full.svg" alt="JO" width="20"> +22% <span>vs last month</span>
                         </p>
                     </div>
                 </div>
@@ -214,8 +207,7 @@
                             </a>
                         </button>
                         <button class="action-btn">
-                            <div class="icon"><img src="../icons/calendar-plus-solid-full.svg" alt="JO" width="20">
-                            </div>
+                            <div class="icon"><img src="../icons/calendar-plus-solid-full.svg" alt="JO" width="20"></div>
                             <a href="create_diet_plan.html" class="btn-primary">
                                 <span>New Diet Plan</span>
                             </a>
@@ -227,6 +219,41 @@
 
         </main>
     </div>
+
+    <!-- JavaScript for Toggle Functionality -->
+    <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('toggleBtn');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const body = document.body;
+            const sidebar = document.querySelector('.sidebar');
+
+            // Desktop toggle button
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function() {
+                    body.classList.toggle('collapsed');
+                });
+            }
+
+            // Mobile toggle button
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function() {
+                    body.classList.toggle('sidebar-open');
+                });
+            }
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', function(event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnToggle = mobileToggle.contains(event.target);
+                
+                if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+                    body.classList.remove('sidebar-open');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>

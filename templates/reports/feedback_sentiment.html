@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOF Fitness | Feedback & Sentiment</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
     <link rel="stylesheet" href="../../static/dashboard.css">
-    <link rel="stylesheet" href="../../static/reports.css">
     <link rel="stylesheet" href="../../static/received_payment.css">
     <link rel="stylesheet" href="../../static/feedback_sentiment.css">
 
@@ -15,7 +14,15 @@
 
 <body>
 
+    <!-- Mobile Toggle Button (visible only on mobile) -->
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
+    <!-- Desktop Toggle Button (visible on desktop, outside sidebar) -->
+    <button class="toggle-sidebar-btn" id="toggleBtn">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
 
     <div class="dashboard-container">
 
@@ -57,7 +64,7 @@
                     <span>Staff</span>
                 </a>
                 <a href="../membership.html" class="nav-link">
-                    <img src="../../icons/credit-card-solid-full.svg" alt="Membership" width="20">
+                    <img src="../../icons/credit-card-regular-full.svg" alt="Staff" width="20">
                     <span>Membership</span>
                 </a>
                 <a href="../payments.html" class="nav-link">
@@ -65,7 +72,7 @@
                     <span>Payments</span>
                 </a>
                 <div class="nav-item-dropdown">
-                    <a href="../reports.html" class="nav-link active">
+                    <a href="../reports_pg.html" class="nav-link active">
                         <img src="../../icons/chart-line-solid-full.svg" alt="Reports" width="20">
                         <span>Reports</span>
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
@@ -266,7 +273,39 @@
         </main>
     </div>
 
+    <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('toggleBtn');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const body = document.body;
+            const sidebar = document.querySelector('.sidebar');
 
+            // Desktop toggle button
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function() {
+                    body.classList.toggle('collapsed');
+                });
+            }
+
+            // Mobile toggle button
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function() {
+                    body.classList.toggle('sidebar-open');
+                });
+            }
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', function(event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnToggle = mobileToggle.contains(event.target);
+                
+                if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+                    body.classList.remove('sidebar-open');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
