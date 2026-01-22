@@ -10,7 +10,6 @@
     --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --sidebar-width: 260px;
-    --primary: #F25C2A;
 }
 
 * {
@@ -26,19 +25,19 @@ body {
     overflow-x: hidden;
 }
 
-/* --- SIDEBAR TOGGLE BUTTON (Corner Tick) --- */
+/* --- MOBILE TOGGLE BUTTON --- */
 .mobile-toggle {
     position: fixed;
-    top: 25px;          
-    left: 20px;         
-    z-index: 2000;      
+    top: 25px;
+    left: 20px;
+    z-index: 2000;
     background: var(--primary);
     border: none;
     width: 40px;
     height: 40px;
     border-radius: 8px;
     cursor: pointer;
-    display: flex;       /* FORCE VISIBLE on all screens */
+    display: none; /* Hidden by default, shown on mobile */
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 10px rgba(242, 92, 42, 0.4);
@@ -56,15 +55,6 @@ body {
     background: #e04f1f;
 }
 
-/* When sidebar is open */
-body.sidebar-open .mobile-toggle {
-    left: 260px;
-}
-
-body.sidebar-open .mobile-toggle i {
-    transform: rotate(180deg);
-}
-
 /* --- LAYOUT --- */
 .dashboard-container {
     display: flex;
@@ -73,7 +63,9 @@ body.sidebar-open .mobile-toggle i {
     width: 100%;
 }
 
-/* --- SIDEBAR DESIGN --- */
+/* ============================================
+   SIDEBAR - DESKTOP VIEW
+   ============================================ */
 .sidebar {
     background-color: var(--dark-sidebar);
     color: #fff;
@@ -84,16 +76,28 @@ body.sidebar-open .mobile-toggle i {
     left: 0;
     z-index: 1001;
     border-right: 1px solid #1a1a1a;
-    
-    /* Smooth Transition for sliding */
+    padding: 30px 20px;
+    overflow-y: auto;
+    overflow-x: visible;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    
-    /* Ensure button is visible outside sidebar boundary */
-    overflow: visible; 
 }
 
-body.sidebar-open .sidebar {
-    left: 0;
+/* Custom scrollbar for sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .logo-area {
@@ -112,6 +116,10 @@ body.sidebar-open .sidebar {
     margin-bottom: 15px;
     font-weight: 600;
     padding-left: 15px;
+}
+
+.navigation {
+    padding-right: 5px;
 }
 
 .nav-link {
@@ -213,14 +221,15 @@ body.sidebar-open .sidebar {
     }
 }
 
+/* --- DESKTOP TOGGLE BUTTON --- */
 .toggle-sidebar-btn {
-    position: absolute;
-    top: 115px; /* Aligned roughly with Menu Label */
-    right: -15px; /* Stick out 15px to the right */
+    position: fixed;
+    top: 115px;
+    left: calc(var(--sidebar-width) - 15px);
     width: 30px;
     height: 30px;
     background-color: var(--primary);
-    border: 3px solid #F0F2F5; /* Matches body bg to look clean */
+    border: 3px solid var(--bg-body);
     border-radius: 50%;
     color: white;
     cursor: pointer;
@@ -228,9 +237,9 @@ body.sidebar-open .sidebar {
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1002;
-    transition: transform 0.4s ease, background 0.3s;
+    transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.3s, background 0.3s;
 }
 
 .toggle-sidebar-btn:hover {
@@ -242,13 +251,14 @@ body.sidebar-open .sidebar {
     transition: transform 0.4s ease;
 }
 
-/* --- MAIN CONTENT --- */
+
+/* ============================================
+   MAIN CONTENT - DESKTOP VIEW
+   ============================================ */
 .main-content {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
     padding: 30px 40px;
-    
-    /* Smooth Transition for expanding */
     transition: margin-left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.4s ease;
 }
 
@@ -258,6 +268,8 @@ body.sidebar-open .sidebar {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .header-text h1 {
@@ -311,7 +323,7 @@ body.sidebar-open .sidebar {
 /* --- KPI CARDS --- */
 .kpi-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-bottom: 40px;
 }
@@ -455,6 +467,7 @@ body.sidebar-open .sidebar {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 10px;
 }
 
 .bar-group {
@@ -463,14 +476,14 @@ body.sidebar-open .sidebar {
     align-items: center;
     height: 100%;
     justify-content: flex-end;
-    width: 10%;
+    flex: 1;
 }
 
 .bar {
     width: 100%;
     border-radius: 6px;
     background-color: #EDF2F7;
-    transition: height 1s ease-in-out;
+    transition: height 1s ease-in-out, background 0.3s;
 }
 
 .bar.active {
@@ -510,6 +523,7 @@ body.sidebar-open .sidebar {
     cursor: pointer;
     transition: all 0.2s;
     text-align: left;
+    width: 100%;
 }
 
 .action-btn .icon {
@@ -520,6 +534,7 @@ body.sidebar-open .sidebar {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .action-btn .icon img {
@@ -548,81 +563,192 @@ body.sidebar-open .sidebar {
     font-weight: 600;
 }
 
-/* --- COLLAPSED STATE (Logic) --- */
-
-/* 1. Sidebar slides out to the left */
+/* --- COLLAPSED STATE (Desktop) --- */
 body.collapsed .sidebar {
     transform: translateX(-100%);
 }
 
-/* 2. Content expands to fill screen */
 body.collapsed .main-content {
     margin-left: 0;
     width: 100%;
 }
 
-/* 3. Button Icon Rotates (Pointing Right >) */
+body.collapsed .toggle-sidebar-btn {
+    left: 15px;
+}
+
 body.collapsed .toggle-sidebar-btn i {
     transform: rotate(180deg);
 }
 
-/* 4. Button moves to stick to the screen edge */
-/* Since the button is inside the sidebar, and the sidebar moved left,
-   we need to push the button right to keep it visible on screen */
-body.collapsed .toggle-sidebar-btn {
-    right: -40px; /* Push it further right so it stays on screen edge */
-    border-color: transparent; /* Optional: cleaner look when docked */
-}
-
-/* --- MOBILE RESPONSIVE --- */
+/* --- TABLET RESPONSIVE (768px - 992px) --- */
 @media (max-width: 992px) {
-    /* 1. Show the toggle button on mobile */
+    /* ============================================
+       SIDEBAR - MOBILE/TABLET VIEW
+       ============================================ */
     .mobile-toggle {
-        display: flex; 
+        display: flex;
     }
 
-    /* 2. Hide Sidebar by default on mobile */
+    .toggle-sidebar-btn {
+        display: none;
+    }
+
     .sidebar {
         transform: translateX(-100%);
     }
 
-    /* 3. Show Sidebar when class 'sidebar-open' is added via JS */
     body.sidebar-open .sidebar {
         transform: translateX(0);
     }
 
-    /* 4. Reset Main Content to full width on mobile */
+    /* ============================================
+       MAIN CONTENT - MOBILE/TABLET VIEW
+       ============================================ */
     .main-content {
         margin-left: 0;
         width: 100%;
+        padding: 20px 30px;
     }
 
-    /* 5. Move toggle button when sidebar is open */
     body.sidebar-open .mobile-toggle {
-        left: 260px;
-    }
-    
-    body.sidebar-open .toggle-sidebar-btn i {
-        transform: rotate(180deg); 
+        left: calc(var(--sidebar-width) + 20px);
     }
 
     body.sidebar-open .mobile-toggle i {
         transform: rotate(180deg);
     }
 
+    /* Dark overlay when sidebar is open */
     body.sidebar-open::after {
-        content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.5); z-index: 1000;
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
     }
 }
 
+/* --- MOBILE RESPONSIVE (600px and below) --- */
 @media (max-width: 600px) {
+    .mobile-toggle {
+        top: 15px;
+        left: 15px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .main-content {
+        padding: 15px 20px;
+    }
+
+    .header-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
     .header-text h1 {
         font-size: 20px;
     }
 
+    .header-text p {
+        font-size: 13px;
+    }
+
     .header-actions {
         width: 100%;
-        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .search-bar {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .content-grid {
+        gap: 20px;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+
+    .panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .css-chart-container {
+        height: 180px;
+    }
+
+    .label {
+        font-size: 10px;
+    }
+}
+
+/* --- EXTRA SMALL DEVICES (400px and below) --- */
+@media (max-width: 400px) {
+    .main-content {
+        padding: 10px 15px;
+    }
+
+    .header-text h1 {
+        font-size: 18px;
+    }
+
+    .stat-body h2 {
+        font-size: 24px;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .stat-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .action-btn {
+        padding: 12px;
+    }
+
+    .action-btn .icon {
+        width: 35px;
+        height: 35px;
     }
 }
