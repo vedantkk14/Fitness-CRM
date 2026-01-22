@@ -1,82 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Membership Plan</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="../static/add_membership.css">
-</head>
-<body class="modal-body">
 
-    <div class="overlay">
-        <div class="modal">
-            
-            <div class="modal-header">
-                <div class="header-content">
-                    <div class="icon-box">
-                        <i class="fa-solid fa-crown"></i>
-                    </div>
-                    <div>
-                        <h2>Create Membership Plan</h2>
-                        <p>Configure a new pricing tier for your members.</p>
-                    </div>
-                </div>
-                <a href="membership.html" class="close-btn">
-                    <i class="fa-solid fa-xmark"></i>
-                </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Membership Plan | JOF Fitness</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/add_membership.css">
+</head>
+
+<body>
+
+  <div class="dashboard-container">
+
+    <aside class="sidebar">
+      <div class="logo-area">
+        <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
+      </div>
+
+      <div class="nav-label">MENU</div>
+
+      <nav class="navigation">
+        <a href="../templates/dashboard.html" class="nav-link">
+          <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard">
+          <span>Dashboard</span>
+        </a>
+
+        <a href="../templates/members.html" class="nav-link">
+          <img src="../icons/users-solid-full.svg" alt="Members">
+          <span>Members</span>
+        </a>
+
+        <a href="../templates/diet-plans.html" class="nav-link">
+          <img src="../icons/carrot-solid-full.svg" alt="Diet Plans">
+          <span>Diet Plans</span>
+        </a>
+
+        <a href="../templates/staff.html" class="nav-link">
+          <img src="../icons/clipboard-user-solid-full.svg" alt="Staff">
+          <span>Staff</span>
+        </a>
+
+        <a href="../templates/membership.html" class="nav-link active">
+          <img src="../icons/credit-card-solid-full.svg" alt="Membership" width="20">
+          <span>Membership</span>
+        </a>
+
+        <a href="../templates/payments.html" class="nav-link">
+          <img src="../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
+          <span>Payments</span>
+        </a>
+
+        <a href="../templates/reports.html" class="nav-link">
+          <img src="../icons/chart-line-solid-full.svg" alt="Reports">
+          <span>Reports</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="page-header">
+        <div>
+          <h1>Create Membership Plan</h1>
+          <p>Add a new pricing tier for your members.</p>
+        </div>
+      </header>
+
+      <div class="form-container">
+
+        <form class="membership-form" action="../templates/membership.html">
+
+          <div class="form-group">
+            <label for="planname">Plan Name</label>
+            <div class="field-line">
+              <img src="../icons/crown-solid-full.svg" class="field-icon" alt="Plan Icon">
+              <input type="text" id="planname" placeholder="e.g. Gold Membership" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" rows="2" placeholder="Describe the benefits..."></textarea>
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group">
+              <label for="price">Price (₹)</label>
+              <div class="field-line">
+                <img src="../icons/indian-rupee-sign-solid-full.svg" class="field-icon" alt="Price Icon">
+                <input type="number" id="price" placeholder="4999" step="0.01" required />
+              </div>
             </div>
 
-            <form class="membership-form" action="membership.html">
-                
-                <div class="form-group">
-                    <label>Plan Name</label>
-                    <input type="text" placeholder="e.g. Gold Membership" required /> 
-                </div>
+            <div class="form-group">
+              <label>Duration</label>
+              <div class="duration-box">
+                <img src="../icons/clock-solid-full.svg" class="field-icon" alt="Price Icon">
+                <input type="number" placeholder="1" min="1" required />
+                <select required>
+                  <option>Month</option>
+                  <option>Year</option>
+                  <option>Week</option>
+                </select>
+              </div>
+            </div>
 
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea placeholder="Briefly describe the benefits..." rows="2"></textarea>
-                </div>
+          </div>
 
-                <div class="row">
-                    <div class="form-group">
-                        <label>Price ($)</label>
-                        <input type="number" placeholder="49.99" step="0.01" required />
-                    </div>
+          <div class="form-group">
+            <label for="maxclasses">Max Classes / Month</label>
+            <div class="field-line">
+              <img src="../icons/chalkboard-user-solid-full.svg" class="field-icon" alt="Classes Icon">
+              <input type="text" id="maxclasses" placeholder="Leave empty for unlimited" />
+            </div>
+          </div>
 
-                    <div class="form-group">
-                        <label>Duration</label>
-                        <div class="duration-box">
-                            <input type="number" placeholder="1" min="1" required />
-                            <select>
-                                <option>Month</option>
-                                <option>Year</option>
-                                <option>Week</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+          <div class="form-group">
+            <label for="features">Features (One per line)</label>
+            <textarea id="features" rows="4"
+              placeholder="Access to gym floor&#10;Locker room access"></textarea>
+          </div>
 
-                <div class="form-group">
-                    <label>Max Classes / Month</label>
-                    <input type="text" placeholder="Leave empty for unlimited" />
-                </div>
+          <div class="form-actions">
+            <a href="../templates/membership.html" class="btn cancel-btn">Cancel</a>
+            <button type="submit" class="btn create-btn">Create Plan</button>
+          </div>
 
-                <div class="form-group">
-                    <label>Features (One per line)</label>
-                    <textarea rows="4" placeholder="Access to gym floor&#10;Locker room access"></textarea>
-                </div>
+        </form>
 
-                <div class="modal-actions">
-                    <a href="membership.html" class="btn cancel-btn">Cancel</a>
-                    <button type="submit" class="btn create-btn">Create Plan</button>
-                </div>
+      </div>
 
-            </form>
-        </div>
-    </div>
+    </main>
+
+  </div>
 
 </body>
+
 </html>
