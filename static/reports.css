@@ -64,8 +64,8 @@ body {
 }
 
 /* ============================================
-   SIDEBAR - DESKTOP VIEW
-   ============================================ */
+SIDEBAR - DESKTOP VIEW
+============================================ */
 .sidebar {
     background-color: var(--dark-sidebar);
     color: #fff;
@@ -252,8 +252,8 @@ body {
 }
 
 /* ============================================
-   MAIN CONTENT - DESKTOP VIEW
-   ============================================ */
+MAIN CONTENT - DESKTOP VIEW
+============================================ */
 .main-content {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
@@ -766,12 +766,12 @@ body.collapsed .toggle-sidebar-btn i {
 }
 
 /* ============================================
-   TABLET RESPONSIVE (768px - 992px)
-   ============================================ */
+TABLET RESPONSIVE (768px - 992px)
+============================================ */
 @media (max-width: 992px) {
-    /* ============================================
-       SIDEBAR - MOBILE/TABLET VIEW
-       ============================================ */
+/* ============================================
+SIDEBAR - MOBILE/TABLET VIEW
+============================================ */
     .mobile-toggle {
         display: flex;
     }
@@ -788,9 +788,9 @@ body.collapsed .toggle-sidebar-btn i {
         transform: translateX(0);
     }
 
-    /* ============================================
-       MAIN CONTENT - MOBILE/TABLET VIEW
-       ============================================ */
+/* ============================================
+MAIN CONTENT - MOBILE/TABLET VIEW
+============================================ */
     .main-content {
         margin-left: 0;
         width: 100%;
@@ -842,8 +842,8 @@ body.collapsed .toggle-sidebar-btn i {
 }
 
 /* ============================================
-   MOBILE RESPONSIVE (600px and below)
-   ============================================ */
+MOBILE RESPONSIVE (600px and below)
+============================================ */
 @media (max-width: 600px) {
     .mobile-toggle {
         top: 15px;
@@ -940,8 +940,8 @@ body.collapsed .toggle-sidebar-btn i {
 }
 
 /* ============================================
-   EXTRA SMALL DEVICES (400px and below)
-   ============================================ */
+EXTRA SMALL DEVICES (400px and below)
+============================================ */
 @media (max-width: 400px) {
     .main-content {
         padding: 10px 15px;
