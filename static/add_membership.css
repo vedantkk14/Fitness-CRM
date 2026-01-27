@@ -1,3 +1,4 @@
+/* --- GLOBAL VARIABLES --- */
 :root {
   --primary: #F25C2A;
   --primary-hover: #d94f23;
@@ -8,8 +9,8 @@
   --text-main: #111827;
   --text-muted: #6B7280;
   --border: #E5E7EB;
-  --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-                 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --sidebar-width: 260px;
 }
 
 * {
@@ -23,22 +24,32 @@ body {
   background-color: var(--bg-body);
   color: var(--text-main);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .dashboard-container {
-  display: grid;
-  grid-template-columns: 260px 1fr;
+  display: flex;
   min-height: 100vh;
+  position: relative;
+  width: 100%;
 }
 
-/* Sidebar */
+/* ============================================
+   SIDEBAR STYLES
+   ============================================ */
 .sidebar {
   background-color: var(--dark-sidebar);
   color: #fff;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
   border-right: 1px solid #1a1a1a;
+  padding: 30px 20px;
+  overflow-y: auto;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .logo-area {
@@ -48,7 +59,6 @@ body {
 
 .brand-logo {
   width: 140px;
-  display: block;
 }
 
 .nav-label {
@@ -99,12 +109,113 @@ body {
   box-shadow: 0 4px 15px rgba(242, 92, 42, 0.4);
 }
 
-/* Main Content */
+/* Sidebar Dropdown */
+.nav-item-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.sidebar-submenu {
+  display: none;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 5px 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  animation: fadeIn 0.3s ease;
+}
+
+.nav-item-dropdown:hover .sidebar-submenu {
+  display: block;
+}
+
+.sidebar-submenu a {
+  display: block;
+  padding: 10px 10px 10px 50px;
+  color: #888;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.2s;
+  border-radius: 8px;
+}
+
+.sidebar-submenu a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  padding-left: 55px;
+}
+
+.nav-arrow {
+  margin-left: auto;
+  font-size: 10px;
+  opacity: 0.5;
+  transition: transform 0.2s;
+}
+
+.nav-item-dropdown:hover .nav-arrow {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Toggle Buttons */
+.mobile-toggle {
+  position: fixed;
+  top: 25px;
+  left: 20px;
+  z-index: 2000;
+  background: var(--primary);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none; /* Mobile only */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(242, 92, 42, 0.4);
+}
+
+.mobile-toggle i {
+  color: #fff;
+  font-size: 18px;
+}
+
+.toggle-sidebar-btn {
+  position: fixed;
+  top: 115px;
+  left: calc(var(--sidebar-width) - 15px);
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary);
+  border: 3px solid var(--bg-body);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  z-index: 1002;
+  transition: left 0.4s, transform 0.3s;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
 .main-content {
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
   padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: margin-left 0.4s, width 0.4s;
 }
 
 .page-header {
@@ -125,7 +236,9 @@ body {
   margin-top: 5px;
 }
 
-/* Form Container */
+/* ============================================
+   FORM STYLES
+   ============================================ */
 .form-container {
   width: 100%;
   max-width: 800px;
@@ -163,12 +276,49 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* Inputs */
-input,
+/* --- FIXED ICON ALIGNMENT --- */
+/* We apply the border to the container (.field-line) instead of the input */
+.field-line {
+  display: flex;
+  align-items: center; /* Vertically center icon and input */
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fafafa;
+  transition: 0.2s;
+}
+
+.field-line:focus-within {
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0px 0px 0px 4px rgba(242, 92, 42, 0.1);
+}
+
+.field-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  margin-right: 12px; /* Space between icon and text */
+  flex-shrink: 0;
+}
+
+.field-line input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: var(--text-main);
+  height: 100%;
+  padding: 0; /* padding handled by parent */
+}
+
+/* Standalone inputs/textareas (no icon) */
 select,
 textarea {
   width: 100%;
-  height: 50px;
   padding: 10px 16px;
   border-radius: 10px;
   border: 1px solid var(--border);
@@ -179,50 +329,25 @@ textarea {
   transition: 0.2s;
 }
 
+select {
+    height: 50px;
+}
+
 textarea {
-  height: auto;
   min-height: 90px;
   resize: vertical;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+textarea:focus, select:focus {
   border-color: var(--primary);
   background: #fff;
   box-shadow: 0px 0px 0px 4px rgba(242, 92, 42, 0.1);
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #9ca3af;
-}
-
-/* Icon + Input line */
-.field-line {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.field-line input {
-  flex: 1;
-}
-
-.field-icon {
-  width: 20px;
-  height: 20px;
-  opacity: 0.7;
 }
 
 /* Duration box */
 .duration-box {
   display: flex;
   gap: 10px;
-}
-
-.duration-box input {
-  flex: 1;
 }
 
 .duration-box select {
@@ -276,33 +401,76 @@ textarea::placeholder {
   box-shadow: 0 6px 15px rgba(242, 92, 42, 0.4);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .dashboard-container {
-    grid-template-columns: 1fr;
-  }
+/* ============================================
+   COLLAPSED STATE (Desktop)
+   ============================================ */
+body.collapsed .sidebar {
+    transform: translateX(-100%);
+}
 
-  .sidebar {
+body.collapsed .main-content {
+    margin-left: 0;
+    width: 100%;
+}
+
+body.collapsed .toggle-sidebar-btn {
+    left: 15px;
+}
+
+body.collapsed .toggle-sidebar-btn i {
+    transform: rotate(180deg);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 992px) {
+  .mobile-toggle {
+    display: flex;
+  }
+  .toggle-sidebar-btn {
     display: none;
   }
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  body.sidebar-open .sidebar {
+    transform: translateX(0);
+  }
 
+  body.sidebar-open .mobile-toggle {
+    left: calc(var(--sidebar-width) + 20px);
+  }
+  body.sidebar-open .mobile-toggle i {
+    transform: rotate(180deg);
+  }
+  
+  body.sidebar-open::after {
+    content: '';
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); z-index: 1000;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 600px) {
   .form-row {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-
-  .main-content {
-    padding: 20px;
-  }
-
   .form-container {
     padding: 25px;
   }
-
   .form-actions {
     flex-direction: column-reverse;
   }
-
   .btn {
     width: 100%;
   }
