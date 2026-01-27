@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member Profile</title>
+    <title>Member Profile | JOF Fitness</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../static/person_info.css">
@@ -12,18 +12,14 @@
 
 <body>
 
-    <!-- Mobile Toggle Button (visible only on mobile) -->
     <button class="mobile-toggle" id="mobileToggle">
         <i class="fa-solid fa-bars"></i>
     </button>
-
-    <!-- Desktop Toggle Button (visible on desktop, outside sidebar) -->
     <button class="toggle-sidebar-btn" id="toggleBtn">
         <i class="fa-solid fa-chevron-left"></i>
     </button>
 
     <div class="dashboard-container">
-
 
         <aside class="sidebar">
             <div class="logo-area">
@@ -31,23 +27,27 @@
             </div>
 
             <div class="nav-label">MENU</div>
+            
             <nav class="navigation">
                 <a href="dashboard.html" class="nav-link">
                     <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
                     <span>Dashboard</span>
                 </a>
+
                 <div class="nav-item-dropdown">
                     <a href="members.html" class="nav-link active">
                         <img src="../icons/users-solid-full.svg" alt="Members" width="20">
                         <span>Members</span>
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
-                    <div class="sidebar-submenu">
+                    <div class="sidebar-submenu" style="display:block;">
+                        <a href="members.html">All Members</a>
                         <a href="add_member.html">Add New Member</a>
                         <a href="received_payments.html">Payment Details</a>
                         <a href="progress_report.html">Member Progress</a>
                     </div>
                 </div>
+
                 <div class="nav-item-dropdown">
                     <a href="diet-plans.html" class="nav-link">
                         <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
@@ -59,12 +59,14 @@
                         <a href="assign_diet_plan.html">Assign</a>
                     </div>
                 </div>
+
                 <a href="staff.html" class="nav-link">
                     <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
                 </a>
+
                 <a href="membership.html" class="nav-link">
-                    <img src="../icons/credit-card-solid-full.svg" alt="Membership" width="20">
+                    <img src="../icons/credit-card-regular-full.svg" alt="Membership" width="20">
                     <span>Membership</span>
                 </a>
                 <a href="payments.html" class="nav-link">
@@ -89,22 +91,18 @@
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="reports/feedback_sentiment.html">Feedback & Sentiment</a>
-                        <a href="reports/renewal_report.html">Renewal Report</a>
-                        <a href="reports/revenue_source.html">Revenue Report</a>
-                        <a href="reports/trainer_performance.html">Trainer Performance</a>
+                        <a href="reports/feedback_sentiment.html">Feedback</a>
+                        <a href="reports/revenue_source.html">Revenue</a>
                     </div>
                 </div>
             </nav>
-
         </aside>
 
         <main class="main-content">
 
             <div class="profile-header">
                 <div class="user-identity">
-                    <img src="https://ui-avatars.com/api/?name=Sarah+Kanaki&background=F25C2A&color=fff&size=128"
-                        alt="Sarah" class="profile-avatar">
+                    <img src="https://ui-avatars.com/api/?name=Sarah+Kanaki&background=F25C2A&color=fff&size=128" alt="Sarah" class="profile-avatar">
                     <div class="user-text">
                         <h1>Sarah Kanaki</h1>
                         <p class="member-id">Member ID: #JOF-2024-88</p>
@@ -122,6 +120,7 @@
 
                     <div class="info-card">
                         <h3><img src="../icons/clipboard-user-solid-full.svg" class="card-icon"> Health Details</h3>
+                        
                         <div class="details-grid">
                             <div class="detail-box">
                                 <label>Age</label> <span>28</span>
@@ -136,6 +135,7 @@
                                 <label>BMI</label> <span>22.8</span>
                             </div>
                         </div>
+
                         <div class="detail-full">
                             <label>Medical Issues / Injuries</label>
                             <p>None. Slight lower back pain after heavy lifting sessions.</p>
@@ -148,7 +148,7 @@
 
                     <div class="info-card">
                         <h3><img src="../icons/ruler-combined-solid-full.svg" class="card-icon"> Measurements</h3>
-                        <div class="measure-row">
+                        <div class="measure-grid">
                             <div class="measure-item">
                                 <span class="m-val">34"</span> <span class="m-label">Chest</span>
                             </div>
@@ -236,7 +236,6 @@
         </main>
     </div>
 
-    <!-- JavaScript for Toggle and Dropdown Functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const toggleBtn = document.getElementById('toggleBtn');
@@ -244,68 +243,16 @@
             const body = document.body;
             const sidebar = document.querySelector('.sidebar');
 
-            // Desktop toggle button
-            if (toggleBtn) {
-                toggleBtn.addEventListener('click', function () {
-                    body.classList.toggle('collapsed');
-                });
-            }
+            if (toggleBtn) toggleBtn.addEventListener('click', () => body.classList.toggle('collapsed'));
+            if (mobileToggle) mobileToggle.addEventListener('click', () => body.classList.toggle('sidebar-open'));
 
-            // Mobile toggle button
-            if (mobileToggle) {
-                mobileToggle.addEventListener('click', function () {
-                    body.classList.toggle('sidebar-open');
-                });
-            }
-
-            // Close sidebar when clicking outside on mobile
             document.addEventListener('click', function (event) {
-                const isClickInsideSidebar = sidebar.contains(event.target);
-                const isClickOnToggle = mobileToggle.contains(event.target);
-
-                if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+                if (!sidebar.contains(event.target) && !mobileToggle.contains(event.target) && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
                     body.classList.remove('sidebar-open');
-                }
-            });
-
-            // Dropdown toggle functionality
-            const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
-            dropdownItems.forEach(item => {
-                const navLink = item.querySelector('.nav-link');
-                const arrow = navLink ? navLink.querySelector('.nav-arrow') : null;
-
-                // Only prevent default when clicking the arrow
-                if (arrow) {
-                    arrow.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-
-                        // Close all other dropdowns
-                        document.querySelectorAll('.nav-item-dropdown').forEach(dropdown => {
-                            if (dropdown !== item) {
-                                dropdown.classList.remove('active');
-                            }
-                        });
-
-                        // Toggle current dropdown
-                        item.classList.toggle('active');
-                    });
-                }
-
-                // Allow clicking the main link text to navigate
-                if (navLink) {
-                    navLink.addEventListener('click', function (e) {
-                        // If clicking on the arrow, let the arrow handler handle it
-                        if (e.target.closest('.nav-arrow')) {
-                            return;
-                        }
-                        // Otherwise, allow navigation to href
-                    });
                 }
             });
         });
     </script>
 
 </body>
-
 </html>
