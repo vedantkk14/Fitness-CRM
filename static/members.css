@@ -448,6 +448,58 @@ body {
     color: #4B5563;
 }
 
+/* --- Wrapper to keep Pill and Bell together --- */
+.status-action-wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between pill and bell */
+}
+
+/* --- The Bell Button Styles --- */
+.btn-notify {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    background-color: #FEF2F2; /* Very light red */
+    color: #DC2626; /* Red icon color */
+    border: 1px solid #FEE2E2;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* --- Hover Effect: Turn red and shake --- */
+.btn-notify:hover {
+    background-color: #DC2626;
+    color: #ffffff;
+    border-color: #DC2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+}
+
+.btn-notify:hover i {
+    animation: bellShake 0.5s ease-in-out both;
+}
+
+/* --- Bell Shake Animation --- */
+@keyframes bellShake {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(-15deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0); }
+}
+
+/* --- Mobile Fix --- */
+/* Ensures the wrapper stays on the right side in mobile card view */
+@media (max-width: 600px) {
+    .styled-table tbody td .status-action-wrap {
+        margin-left: auto; /* Pushes content to the right edge */
+    }
+}
+
 .status-pill {
     display: inline-flex;
     align-items: center;
