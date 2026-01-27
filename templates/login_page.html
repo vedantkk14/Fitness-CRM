@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOF Admin | Login</title>
+    <link rel="stylesheet" href="../static/login_page.css">
+</head>
+<body>
+
+    <div class="success-overlay" id="successPopup">
+        <div class="success-modal">
+            <div class="success-icon-container">
+                <img src="../icons/check-solid-full.svg" class="success-icon" alt="Success">
+            </div>
+            <h3 id="popupTitle">Success!</h3>
+            <p id="popupMessage">Logging you in...</p>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <div class="auth-container">
+        
+        <div class="visual-side">
+            <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo-img">
+            <p class="brand-quote">
+                Get the best workouts & excercise plans tailored for you at JOF Fitness Center!
+            </p>
+        </div>
+
+        <div class="form-side">
+            
+            <div id="loginForm">
+                <div class="form-header">
+                    <h2>Welcome Back! 👋</h2>
+                    <p>Enter your details to access the admin panel.</p>
+                </div>
+
+                <form id="formLogin">
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-wrapper">
+                            <input type="email" class="form-input" placeholder="admin@gmail.com" required>
+                            <img src="../icons/envelope-solid-full.svg" class="input-icon" alt="email">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" class="form-input" placeholder="••••••••" required>
+                            <img src="../icons/lock-solid-full.svg" class="input-icon" alt="lock">
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <label class="remember-me">
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#" class="forgot-pass">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Sign In</button>
+                </form>
+
+                <div class="switch-form">
+                    Don't have an account? <a onclick="toggleForm()">Sign Up</a>
+                </div>
+            </div>
+
+            <div id="registerForm" class="hidden">
+                <div class="form-header">
+                    <h2>Create Account 🚀</h2>
+                    <p>Register a new admin for your fitness center.</p>
+                </div>
+
+                <form id="formRegister">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <div class="input-wrapper">
+                            <input type="text" class="form-input" placeholder="Vedant Kolhapure" required>
+                            <img src="../icons/user-solid-full.svg" class="input-icon" alt="user">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-wrapper">
+                            <input type="email" class="form-input" placeholder="name@example.com" required>
+                            <img src="../icons/envelope-solid-full.svg" class="input-icon" alt="email">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" class="form-input" placeholder="Create a password" required>
+                            <img src="../icons/lock-solid-full.svg" class="input-icon" alt="lock">
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Admin Secret Code</label>
+                        <div class="input-wrapper">
+                            <input type="password" class="form-input" placeholder="••••" required>
+                            <img src="../icons/shield-halved-solid-full.svg" class="input-icon" alt="security">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Register Admin</button>
+                </form>
+
+                <div class="switch-form">
+                    Already have an account? <a onclick="toggleForm()">Sign In</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Toggle between Login and Register views
+        function toggleForm() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+
+            if (loginForm.classList.contains('hidden')) {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+            } else {
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+            }
+        }
+
+        // Logic for Handling Submit and Popup
+        const popup = document.getElementById('successPopup');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupMessage = document.getElementById('popupMessage');
+
+        function triggerSuccess(type) {
+            // 1. Customize Message based on action
+            if(type === 'login') {
+                popupTitle.innerText = "Welcome Back!";
+                popupMessage.innerText = "Successfully logged in. Redirecting...";
+            } else {
+                popupTitle.innerText = "Account Created!";
+                popupMessage.innerText = "Registration successful. Redirecting...";
+            }
+
+            // 2. Show Popup
+            popup.classList.add('active');
+
+            // 3. Wait 2 seconds, then redirect
+            setTimeout(() => {
+                window.location.href = 'dashboard.html'; 
+            }, 2000);
+        }
+
+        // Attach listeners to forms
+        document.getElementById('formLogin').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            triggerSuccess('login');
+        });
+
+        document.getElementById('formRegister').addEventListener('submit', function(e) {
+            e.preventDefault();
+            triggerSuccess('register');
+        });
+    </script>
+</body>
+</html>

@@ -7,13 +7,18 @@
     <title>Received Payments | JoF Fitness</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
     <link rel="stylesheet" href="../static/received_payment.css" />
 </head>
 
 <body>
 
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
+    <button class="toggle-sidebar-btn" id="toggleBtn">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
 
     <div class="dashboard-container">
 
@@ -35,8 +40,9 @@
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="personal_health.html">Add New Member</a>
+                        <a href="add_member.html">Add New Member</a>
                         <a href="received_payments.html">Payment Details</a>
+                        <a href="progress_report.html">Member Progress</a>
                     </div>
                 </div>
                 <div class="nav-item-dropdown">
@@ -66,7 +72,7 @@
                     <a href="reports_pg.html" class="nav-link">
                         <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
                         <span>Reports</span>
-                        <i class="  "></i>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
                         <a href="reports/feedback_sentiment.html">Feedback & Sentiment</a>
@@ -104,8 +110,9 @@
                                 <th>Plan Details</th>
                                 <th>Date</th>
                                 <th>Payment Mode</th>
-                                <th class="left">Amount</th>
-                                <th class="left">Payment Status</th>
+                                <th class="right">Amount</th>
+                                <th class="right">Invoice</th>
+                                <th class="right">Notify</th>
                             </tr>
                         </thead>
 
@@ -122,16 +129,25 @@
                                 </td>
                                 <td><span class="plan-badge premium">Premium Plan</span></td>
                                 <td class="muted">Jan 05, 2025</td>
-                                <td><span class="pill upi"><img src="../icons/mobile-screen-solid-full.svg" alt="img" width="20"> UPI</span></td>
-                                <td class="amount left">+₹79.00</td>
-                                <td><span class="plan-badge premium">Due</span></td>
+                                <td><span class="pill upi"><img src="../icons/mobile-screen-solid-full.svg" alt="img"
+                                            width="20"> UPI</span></td>
+                                <td class="amount right">+₹79.00</td>
+                                <td class="right">
+                                    <button class="icon-btn" title="Download Invoice"><img
+                                            src="../icons/download-solid-full.svg" alt="img" width="20"></button>
+                                </td>
+                                <td class="right">
+                                    <a href="send_reminder.html?name=Sneha+Reddy&amount=79" class="icon-btn notify-btn"
+                                        title="Send Reminder">
+                                        <i class="fa-solid fa-bell"></i>
+                                    </a>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar blue">I</div>
+                                        <div class="avatar blue">M</div>
                                         <div>
                                             <span class="bold">Ishita Patel</span>
                                             <span class="email-sub">ishita@example.com</span>
@@ -140,15 +156,25 @@
                                 </td>
                                 <td><span class="plan-badge standard">Standard Plan</span></td>
                                 <td class="muted">Jan 08, 2025</td>
-                                <td><span class="pill cash"><img src="../icons/money-bill-wave-solid-full.svg" alt="img" width="20"> Cash</span></td>
-                                <td class="amount left">+₹49.00</td>
-                                <td><span class="plan-badge Standard">Paid</span></td></td>
+                                <td><span class="pill cash"><img src="../icons/money-bill-wave-solid-full.svg" alt="img"
+                                            width="20"> Cash</span></td>
+                                <td class="amount right">+₹49.00</td>
+                                <td class="right">
+                                    <button class="icon-btn" title="Download Invoice"><img
+                                            src="../icons/download-solid-full.svg" alt="img" width="20"></button>
+                                </td>
+                                <td class="right">
+                                    <a href="send_reminder.html?name=Ishita+Patel&amount=49" class="icon-btn notify-btn"
+                                        title="Send Reminder">
+                                        <i class="fa-solid fa-bell"></i>
+                                    </a>
+                                </td>
                             </tr>
 
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar orange">P</div>
+                                        <div class="avatar orange">E</div>
                                         <div>
                                             <span class="bold">Priya Nair</span>
                                             <span class="email-sub">priya@example.com</span>
@@ -157,15 +183,25 @@
                                 </td>
                                 <td><span class="plan-badge premium">Premium Plan</span></td>
                                 <td class="muted">Jan 10, 2025</td>
-                                <td><span class="pill card"><img src="../icons/credit-card-solid-full.svg" alt="img" width="20"> Card</span></td>
-                                <td class="amount left">+₹79.00</td>
-                                <td><span class="plan-badge premium">Due</span></td></td>
+                                <td><span class="pill card"><img src="../icons/credit-card-solid-full.svg" alt="img"
+                                            width="20"> Card</span></td>
+                                <td class="amount right">+₹79.00</td>
+                                <td class="right">
+                                    <button class="icon-btn" title="Download Invoice"><img
+                                            src="../icons/download-solid-full.svg" alt="img" width="20"></button>
+                                </td>
+                                <td class="right">
+                                    <a href="send_reminder.html?name=Priya+Nair&amount=79" class="icon-btn notify-btn"
+                                        title="Send Reminder">
+                                        <i class="fa-solid fa-bell"></i>
+                                    </a>
+                                </td>
                             </tr>
 
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar">V</div>
+                                        <div class="avatar">D</div>
                                         <div>
                                             <span class="bold">Vedant Sharma</span>
                                             <span class="email-sub">vedant@example.com</span>
@@ -174,15 +210,25 @@
                                 </td>
                                 <td><span class="plan-badge premium">Premium Plan</span></td>
                                 <td class="muted">Jan 12, 2025</td>
-                                <td><span class="pill upi"><img src="../icons/mobile-screen-solid-full.svg" alt="img" width="20"> UPI</span></td>
-                                <td class="amount left">+₹79.00</td>
-                                <td><span class="plan-badge premium">Due</span></td></td>
+                                <td><span class="pill upi"><img src="../icons/mobile-screen-solid-full.svg" alt="img"
+                                            width="20"> UPI</span></td>
+                                <td class="amount right">+₹79.00</td>
+                                <td class="right">
+                                    <button class="icon-btn" title="Download Invoice"><img
+                                            src="../icons/download-solid-full.svg" alt="img" width="20"></button>
+                                </td>
+                                <td class="right">
+                                    <a href="send_reminder.html?name=Vedant+Sharma&amount=79"
+                                        class="icon-btn notify-btn" title="Send Reminder">
+                                        <i class="fa-solid fa-bell"></i>
+                                    </a>
+                                </td>
                             </tr>
 
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar blue">K</div>
+                                        <div class="avatar blue">J</div>
                                         <div>
                                             <span class="bold">Kabir Naik</span>
                                             <span class="email-sub">kabir@example.com</span>
@@ -191,9 +237,19 @@
                                 </td>
                                 <td><span class="plan-badge standard">Standard Plan</span></td>
                                 <td class="muted">Jan 14, 2025</td>
-                                <td><span class="pill card"><img src="../icons/credit-card-solid-full.svg" alt="img" width="20"> Card</span></td>
-                                <td class="amount left">+₹49.00</td>
-                                <td><span class="plan-badge Standard">Paid</span></td></td>
+                                <td><span class="pill card"><img src="../icons/credit-card-solid-full.svg" alt="img"
+                                            width="20"> Card</span></td>
+                                <td class="amount right">+₹49.00</td>
+                                <td class="right">
+                                    <button class="icon-btn" title="Download Invoice"><img
+                                            src="../icons/download-solid-full.svg" alt="img" width="20"></button>
+                                </td>
+                                <td class="right">
+                                    <a href="send_reminder.html?name=Kabir+Naik&amount=49" class="icon-btn notify-btn"
+                                        title="Send Reminder">
+                                        <i class="fa-solid fa-bell"></i>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -203,6 +259,59 @@
         </main>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Toggle Logic
+            const toggleBtn = document.getElementById('toggleBtn');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const body = document.body;
+            const sidebar = document.querySelector('.sidebar');
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    body.classList.toggle('collapsed');
+                });
+            }
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function () {
+                    body.classList.toggle('sidebar-open');
+                });
+            }
+
+            document.addEventListener('click', function (event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnToggle = mobileToggle.contains(event.target);
+
+                if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+                    body.classList.remove('sidebar-open');
+                }
+            });
+
+            // Dropdown Logic
+            const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
+
+            dropdownItems.forEach(item => {
+                const link = item.querySelector('.nav-link');
+                const arrow = link ? link.querySelector('.nav-arrow') : null;
+
+                if (arrow) {
+                    arrow.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        dropdownItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+
+                        item.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 

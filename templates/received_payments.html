@@ -13,7 +13,15 @@
 
 <body>
 
+    <!-- Mobile Toggle Button (visible only on mobile) -->
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
+    <!-- Desktop Toggle Button (visible on desktop, outside sidebar) -->
+    <button class="toggle-sidebar-btn" id="toggleBtn">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
 
     <div class="dashboard-container">
 
@@ -37,6 +45,7 @@
                     <div class="sidebar-submenu">
                         <a href="personal_health.html">Add New Member</a>
                         <a href="received_payments.html">Payment Details</a>
+                        <a href="progress_report.html">Member Progress</a>
                     </div>
                 </div>
                 <div class="nav-item-dropdown">
@@ -54,7 +63,7 @@
                     <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
                 </a>
-                <a href="membership.html" class="nav-link ">
+                <a href="membership.html" class="nav-link">
                     <img src="../icons/credit-card-solid-full.svg" alt="Membership" width="20">
                     <span>Membership</span>
                 </a>
@@ -63,7 +72,7 @@
                     <span>Payments</span>
                 </a>
                 <div class="nav-item-dropdown">
-                    <a href="reports.html" class="nav-link">
+                    <a href="reports_pg.html" class="nav-link">
                         <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
                         <span>Reports</span>
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
@@ -102,11 +111,10 @@
                             <tr>
                                 <th>Member Name</th>
                                 <th>Plan Details</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
+                                <th>Date</th>
+                                <th>Payment Mode</th>
                                 <th class="right">Amount</th>
                                 <th class="right">Invoice</th>
-                                <th class="right">Reminder</th>
                             </tr>
                         </thead>
 
@@ -116,93 +124,88 @@
                                     <div class="user-info">
                                         <div class="avatar">S</div>
                                         <div>
-                                            <span class="bold">Sneha Reddy</span>
-                                            <span class="email-sub">sneha@example.com</span>
+                                            <span class="bold">Sarah Johnson</span>
+                                            <span class="email-sub">sarah@example.com</span>
                                         </div>
                                     </div>
                                 </td>
                                 <td><span class="plan-badge premium">Premium Plan</span></td>
-                                <td class="">Jan 05, 2025</td>
-                                <td class="">Feb 05, 2025</td>
-                                <td class="amount right">+₹79.00</td>
-                                <td class="right"><button class="icon-btn"><img src="../icons/download-solid-full.svg" alt="img" width="20"></button>
-                                <td class="right"><button class="icon-btn"><img src="../icons/bell-solid-full.svg" alt="img" width="20"></button>
+                                <td class="muted">Jan 05, 2025</td>
+                                <td><span class="pill upi"><i class="fa-solid fa-mobile-screen"></i> UPI</span></td>
+                                <td class="amount right">+$79.00</td>
+                                <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar blue">I</div>
+                                        <div class="avatar blue">M</div>
                                         <div>
-                                            <span class="bold">Ishita Patel</span>
-                                            <span class="email-sub">ishita.c@example.com</span>
+                                            <span class="bold">Michael Chen</span>
+                                            <span class="email-sub">mike.c@example.com</span>
                                         </div>
                                     </div>
                                 </td>
                                 <td><span class="plan-badge standard">Standard Plan</span></td>
-                                <td class="">Jan 08, 2025</td>
-                                <td class="">Feb 08, 2025</td>
-                                <td class="amount right">+₹49.00</td>
-                                <td class="right"><button class="icon-btn"><img src="../icons/download-solid-full.svg" alt="img" width="20"></button>
-                                <td class="right"><button class="icon-btn"><img src="../icons/bell-solid-full.svg" alt="img" width="20"></button>
+                                <td class="muted">Jan 08, 2025</td>
+                                <td><span class="pill cash"><i class="fa-solid fa-money-bill-wave"></i> Cash</span></td>
+                                <td class="amount right">+$49.00</td>
+                                <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar orange">P</div>
+                                        <div class="avatar orange">E</div>
                                         <div>
-                                            <span class="bold">Priya Nair</span>
-                                            <span class="email-sub">priya.n@example.com</span>
+                                            <span class="bold">Emily Rodriguez</span>
+                                            <span class="email-sub">emily.r@example.com</span>
                                         </div>
                                     </div>
                                 </td>
                                 <td><span class="plan-badge premium">Premium Plan</span></td>
-                                <td class="">Jan 10, 2025</td>
-                                <td class="">Feb 10, 2025</td>
-                                <td class="amount right">+₹79.00</td>
-                                <td class="right"><button class="icon-btn"><img src="../icons/download-solid-full.svg" alt="img" width="20"></button>
-                                <td class="right"><button class="icon-btn"><img src="../icons/bell-solid-full.svg" alt="img" width="20"></button>
+                                <td class="muted">Jan 10, 2025</td>
+                                <td><span class="pill card"><i class="fa-regular fa-credit-card"></i> Card</span></td>
+                                <td class="amount right">+$79.00</td>
+                                <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar">V</div>
+                                        <div class="avatar">D</div>
                                         <div>
-                                            <span class="bold">Vedant Sharma</span>
-                                            <span class="email-sub">vedant@example.com</span>
+                                            <span class="bold">David Martinez</span>
+                                            <span class="email-sub">david.m@example.com</span>
                                         </div>
                                     </div>
                                 </td>
                                 <td><span class="plan-badge premium">Premium Plan</span></td>
-                                <td class="">Jan 12, 2025</td>
-                                <td class="">Feb 12, 2025</td>
-                                <td class="amount right">+₹79.00</td>
-                                <td class="right"><button class="icon-btn"><img src="../icons/download-solid-full.svg" alt="img" width="20"></button>
-                                <td class="right"><button class="icon-btn"><img src="../icons/bell-solid-full.svg" alt="img" width="20"></button>
+                                <td class="muted">Jan 12, 2025</td>
+                                <td><span class="pill upi"><i class="fa-solid fa-mobile-screen"></i> UPI</span></td>
+                                <td class="amount right">+$79.00</td>
+                                <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td>
                                     <div class="user-info">
-                                        <div class="avatar blue">K</div>
+                                        <div class="avatar blue">J</div>
                                         <div>
-                                            <span class="bold">Kabir Naik</span>
-                                            <span class="email-sub">kabir@example.com</span>
+                                            <span class="bold">Jessica Lee</span>
+                                            <span class="email-sub">jess.lee@example.com</span>
                                         </div>
                                     </div>
                                 </td>
                                 <td><span class="plan-badge standard">Standard Plan</span></td>
-                                <td class="">Jan 14, 2025</td>
-                                <td class="">Feb 14, 2025</td>
-                                <td class="amount right">+₹49.00</td>
-                                <td class="right"><button class="icon-btn"><img src="../icons/download-solid-full.svg" alt="img" width="20"></button>
-                                <td class="right"><button class="icon-btn"><img src="../icons/bell-solid-full.svg" alt="img" width="20"></button>
+                                <td class="muted">Jan 14, 2025</td>
+                                <td><span class="pill card"><i class="fa-regular fa-credit-card"></i> Card</span></td>
+                                <td class="amount right">+$49.00</td>
+                                <td class="right"><button class="icon-btn"><i class="fa-solid fa-download"></i></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -213,6 +216,39 @@
         </main>
     </div>
 
+    <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleBtn');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const body = document.body;
+            const sidebar = document.querySelector('.sidebar');
+
+            // Desktop toggle button
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    body.classList.toggle('collapsed');
+                });
+            }
+
+            // Mobile toggle button
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function () {
+                    body.classList.toggle('sidebar-open');
+                });
+            }
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', function (event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnToggle = mobileToggle.contains(event.target);
+
+                if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+                    body.classList.remove('sidebar-open');
+                }
+            });
+        });
+    </script>
 
 </body>
 

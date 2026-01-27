@@ -4,139 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOF India | Create Diet Plan</title>
-        
     <link rel="stylesheet" href="../static/create_diet_plan.css">
 </head>
-
 <body>
 
-    <div class="split-layout">
-
-        <div class="brand-panel">
-            <img src="../icons/logo-light(1).png" class="brand-logo" alt="Logo">
-            <h2>JOF India</h2>
-            <p>Design the perfect fuel<br>for your client's goals.</p>
+    <div class="container">
+        
+        <div class="card-header">
+            <div class="brand-area">
+                <img src="../icons/logo-dark(1).png" class="brand-logo" alt="JOF">
+                <div class="brand-text">
+                    <h2>Create Diet Plan</h2>
+                    <p>Design the perfect fuel for your client.</p>
+                </div>
+            </div>
+            <a href="diet-plans.html" class="close-btn">
+                <img src="../icons/xmark-solid-full.svg" alt="close">
+            </a>
         </div>
 
-        <div class="form-panel">
-            <div class="form-header-group">
-                <h2 class="page-title">Create Diet Plan</h2>
-                <p class="sub-text">Fill in the nutritional details below.</p>
-            </div>
-
-            <form class="form-card">
+        <div class="card-body">
+            <form>
                 
-                <div class="form-section">
-                    <h3 class="section-heading">
-                        <img src="../icons/clipboard-user-solid-full.svg" alt="icon"> 
-                        Plan Details
-                    </h3>
+                <div class="section-title">
+                    <img src="../icons/clipboard-user-solid-full.svg" alt="icon">
+                    <span>Plan Details</span>
+                </div>
+
+                <div class="form-grid">
                     
-                    <label>Plan Name</label>
-                    <input type="text" placeholder="e.g. Summer Shred - Phase 1">
-
-                    <div class="section-label">Diet Preference</div>
-                    <div class="diet-type-selector">
-                        
-                        <label class="radio-card">
-                            <input type="radio" name="diet_type" value="veg" checked>
-                            <div class="card-content">
-                                <div class="icon-circle green">
-                                    <img src="../icons/leaf-solid-full.svg" alt="Veg">
-                                </div>
-                                <span>Vegetarian</span>
-                            </div>
-                        </label>
-
-                        <label class="radio-card">
-                            <input type="radio" name="diet_type" value="non-veg">
-                            <div class="card-content">
-                                <div class="icon-circle red">
-                                    <img src="../icons/drumstick-bite-solid-full.svg" alt="Non-Veg">
-                                </div>
-                                <span>Non-Veg</span>
-                            </div>
-                        </label>
+                    <div class="input-group full-width">
+                        <label>Plan Name</label>
+                        <div class="input-wrapper">
+                            <input type="text" class="form-input" placeholder="e.g. Summer Shred - Phase 1">
+                            <img src="../icons/pen-to-square-solid-full.svg" class="input-icon" alt="edit">
+                        </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Target Goal</label>
-                            <select>
+                    <div class="input-group full-width">
+                        <label>Diet Preference</label>
+                        <div class="diet-type-group">
+                            <label class="radio-card">
+                                <input type="radio" name="diet" value="veg" checked>
+                                <div class="card-content">
+                                    <div class="icon-box green-bg">
+                                        <img src="../icons/leaf-solid-full.svg" alt="veg">
+                                    </div>
+                                    <span>Vegetarian</span>
+                                </div>
+                            </label>
+                            
+                            <label class="radio-card">
+                                <input type="radio" name="diet" value="nonveg">
+                                <div class="card-content">
+                                    <div class="icon-box red-bg">
+                                        <img src="../icons/drumstick-bite-solid-full.svg" alt="nonveg">
+                                    </div>
+                                    <span>Non-Veg</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Target Goal</label>
+                        <div class="input-wrapper">
+                            <select class="form-input">
                                 <option value="" disabled selected>Select Goal</option>
-                                <option value="weight_loss">Weight Loss</option>
-                                <option value="muscle_gain">Muscle Gain</option>
-                                <option value="maintenance">Maintenance</option>
+                                <option>Weight Loss</option>
+                                <option>Muscle Gain</option>
+                                <option>Maintenance</option>
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Duration (Weeks)</label>
-                            <input type="number" placeholder="e.g. 12">
+                            <img src="../icons/bullseye-solid-full.svg" class="input-icon" alt="goal">
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Daily Calorie Target</label>
-                            <input type="number" placeholder="e.g. 2200">
-                        </div>
-                        <div class="form-group">
-                            <label>Member Capacity</label>
-                            <input type="number" placeholder="e.g. 10">
+                    <div class="input-group">
+                        <label>Duration (Weeks)</label>
+                        <div class="input-wrapper">
+                            <input type="number" class="form-input" placeholder="12">
+                            <img src="../icons/calendar-day-solid-full.svg" class="input-icon" alt="days">
                         </div>
                     </div>
 
-                    <label>Assign Trainer</label>
-                    <select>
-                        <option value="" disabled selected>Select Trainer</option>
-                        <option value="vedant">Vedant K.</option>
-                        <option value="shri">Shri K.</option>
-                        <option value="vrishabh">Vrishabh C.</option>
-                    </select>
+                    <div class="input-group">
+                        <label>Daily Calorie Target</label>
+                        <div class="input-wrapper">
+                            <input type="number" class="form-input" placeholder="2200">
+                            <img src="../icons/fire-solid-full.svg" class="input-icon" alt="cals">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Assign Trainer</label>
+                        <div class="input-wrapper">
+                            <select class="form-input">
+                                <option value="" disabled selected>Select Trainer</option>
+                                <option>Vedant K.</option>
+                                <option>Shri K.</option>
+                                <option>Vrishabh C.</option>
+                            </select>
+                            <img src="../icons/user-tie-solid-full.svg" class="input-icon" alt="trainer">
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="form-section">
-                    <h3 class="section-heading">
-                        <img src="../icons/utensils-solid-full.svg" alt="icon">
-                        Meal Schedule
-                    </h3>
+                <div class="section-title">
+                    <img src="../icons/utensils-solid-full.svg" alt="icon">
+                    <span>Meal Schedule</span>
+                </div>
+
+                <div class="meal-grid">
                     
-                    <div class="meal-input">
-                        <label>
-                            <img src="../icons/sun-solid-full.svg" alt="icon"> Breakfast
-                        </label>
-                        <textarea placeholder="e.g. 3 Boiled Eggs, 1 Slice Brown Bread with peanut butter..."></textarea>
+                    <div class="meal-row">
+                        <div class="meal-label">
+                            <img src="../icons/sun-solid-full.svg" alt="sun"> Breakfast
+                        </div>
+                        <div class="meal-input-area">
+                            <textarea class="form-input" placeholder="e.g. 3 Boiled Eggs, Oatmeal..."></textarea>
+                        </div>
                     </div>
 
-                    <div class="meal-input">
-                        <label>
-                            <img src="../icons/cloud-sun-solid-full.svg" alt="icon"> Lunch
-                        </label>
-                        <textarea placeholder="e.g. Chicken breast, Salad, chapatis..."></textarea>
+                    <div class="meal-row">
+                        <div class="meal-label">
+                            <img src="../icons/cloud-sun-solid-full.svg" alt="cloud"> Lunch
+                        </div>
+                        <div class="meal-input-area">
+                            <textarea class="form-input" placeholder="e.g. Grilled Chicken, Rice, Salad..."></textarea>
+                        </div>
                     </div>
 
-                    <div class="meal-input">
-                        <label>
-                            <img src="../icons/mug-hot-solid-full.svg" alt="icon"> Snacks / Pre-Workout
-                        </label>
-                        <textarea placeholder="e.g. Whey Protein, Banana..."></textarea>
+                    <div class="meal-row">
+                        <div class="meal-label">
+                            <img src="../icons/mug-hot-solid-full.svg" alt="snack"> Snack
+                        </div>
+                        <div class="meal-input-area">
+                            <textarea class="form-input" placeholder="e.g. Whey Protein, Banana..."></textarea>
+                        </div>
                     </div>
 
-                    <div class="meal-input">
-                        <label>
-                            <img src="../icons/moon-solid-full.svg" alt="icon"> Dinner
-                        </label>
-                        <textarea placeholder="e.g.Rice, dal, steamed vegetables..."></textarea>
+                    <div class="meal-row">
+                        <div class="meal-label">
+                            <img src="../icons/moon-solid-full.svg" alt="moon"> Dinner
+                        </div>
+                        <div class="meal-input-area">
+                            <textarea class="form-input" placeholder="e.g. Fish, Steamed Veggies..."></textarea>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-actions space-between">
-                    <a href="diet_plans.html" class="back-btn">Cancel</a>
-                    <button type="button" class="submit-btn">Save & Publish Plan</button>
                 </div>
 
             </form>
         </div>
+
+        <div class="card-footer">
+            <a href="diet_plans.html" class="btn btn-secondary">Cancel</a>
+            <button type="button" class="btn btn-primary">Save & Publish Plan</button>
+        </div>
+
     </div>
 
 </body>

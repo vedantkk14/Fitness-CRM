@@ -23,6 +23,11 @@ body {
     color: var(--text-dark);
 }
 
+/* --- NEW: MOBILE APP HEADER (Hidden on Desktop) --- */
+.mobile-app-header {
+    display: none;
+}
+
 .invoice-container {
     max-width: 800px;
     margin: 0 auto;
@@ -104,6 +109,8 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .bill-to h3 {
@@ -141,6 +148,7 @@ body {
     border: 1px solid #D1FAE5;
 }
 
+/* --- TABLE LAYOUT --- */
 .items-section {
     margin-bottom: 40px;
 }
@@ -177,17 +185,10 @@ body {
     margin-top: 4px;
 }
 
-.center {
-    text-align: center;
-}
+.center { text-align: center; }
+.right { text-align: right; }
 
-.right {
-    text-align: right;
-}
-
-.col-qty,
-.col-price,
-.col-total {
+.col-qty, .col-price, .col-total {
     font-size: 14px;
     color: var(--text-dark);
     font-weight: 500;
@@ -198,6 +199,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .bank-details h3 {
@@ -249,6 +252,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .thank-you {
@@ -277,22 +282,108 @@ body {
     color: var(--text-dark);
 }
 
-.btn-secondary:hover {
-    background: #F9FAFB;
-    border-color: #D1D5DB;
-}
-
 .btn-primary {
     background: var(--text-dark);
     color: #fff;
     border: none;
 }
 
-.btn-primary:hover {
-    background: var(--primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(242, 92, 42, 0.2);
-}
+/* --- RESPONSIVE MOBILE (< 700px) --- */
+@media (max-width: 700px) {
+    
+    /* 1. Remove Body padding so header touches edges */
+    body {
+        padding: 0;
+        background-color: var(--bg-paper); /* Matches invoice bg for cleaner look */
+    }
 
-/* --- RESPONSIVE --- */
-/* Responsive section removed temporarily */
+    /* 2. Show Mobile Header */
+    .mobile-app-header {
+        display: flex;
+        background-color: #000000;
+        padding: 20px;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        color: #fff;
+    }
+
+    .mobile-app-header img {
+        width: 40px;
+        height: auto;
+    }
+
+    .mobile-app-header span {
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+    }
+
+    /* 3. Adjust Invoice Container */
+    .invoice-container {
+        padding: 20px;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    /* 4. Hide original logo wrapper on mobile (since we have the top header now) */
+    .logo-wrapper {
+        display: none;
+    }
+
+    .invoice-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .invoice-title {
+        text-align: left;
+    }
+
+    .meta-grid {
+        align-items: flex-start;
+    }
+
+    .billing-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* --- MOBILE TABLE: CARD STYLE --- */
+    .table-header { display: none; }
+
+    .table-row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 15px 0;
+        position: relative;
+    }
+
+    .col-desc { width: 100%; margin-bottom: 5px; }
+
+    .col-qty, .col-price, .col-total {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .col-qty::before { content: "Qty:"; color: #999; }
+    .col-price::before { content: "Price:"; color: #999; }
+    .col-total::before { content: "Total:"; color: var(--text-dark); font-weight: 700; }
+
+    /* Summary Section */
+    .summary-section { flex-direction: column; }
+    .totals-box { width: 100%; }
+
+    .footer-actions { flex-direction: column; text-align: center; }
+    .buttons { width: 100%; justify-content: center; }
+    .btn { flex: 1; justify-content: center; display: flex; }
+}
