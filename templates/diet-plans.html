@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOF Fitness | Diet Plans</title>
-
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
-
     <link rel="stylesheet" href="../static/diet-plans.css">
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
 
+    <button class="toggle-sidebar-btn" id="toggleBtn">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
 
     <div class="dashboard-container">
 
@@ -28,23 +29,24 @@
             <div class="nav-label">MENU</div>
             <nav class="navigation">
                 <a href="dashboard.html" class="nav-link">
-                    <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard">
+                    <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
                     <span>Dashboard</span>
                 </a>
                 <div class="nav-item-dropdown">
                     <a href="members.html" class="nav-link">
-                        <img src="../icons/users-solid-full.svg" alt="Members">
+                        <img src="../icons/users-solid-full.svg" alt="Members" width="20">
                         <span>Members</span>
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="personal_health.html">Add New Member</a>
+                        <a href="add_member.html">Add New Member</a>
                         <a href="received_payments.html">Payment Details</a>
+                        <a href="progress_report.html">Member Progress</a>
                     </div>
                 </div>
                 <div class="nav-item-dropdown">
                     <a href="diet-plans.html" class="nav-link active">
-                        <img src="../icons/carrot-solid-full.svg" alt="Diet Plans">
+                        <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
                         <span>Diet Plans</span>
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
@@ -54,7 +56,7 @@
                     </div>
                 </div>
                 <a href="staff.html" class="nav-link">
-                    <img src="../icons/clipboard-user-solid-full.svg" alt="Staff">
+                    <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
                 </a>
                 <a href="membership.html" class="nav-link">
@@ -66,8 +68,19 @@
                     <span>Payments</span>
                 </a>
                 <div class="nav-item-dropdown">
+                    <a href="sales_leads.html" class="nav-link">
+                        <img src="../icons/chart-line-solid-full.svg" alt="Sales" width="20">
+                        <span>Sales Management</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="sales_leads.html">New Leads</a>
+                        <a href="sales_reports.html">Conversion Reports</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
                     <a href="reports_pg.html" class="nav-link">
-                        <img src="../icons/chart-line-solid-full.svg" alt="Reports">
+                        <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
                         <span>Reports</span>
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
@@ -79,8 +92,6 @@
                     </div>
                 </div>
             </nav>
-
-            
         </aside>
 
         <main class="main-content">
@@ -132,10 +143,10 @@
                     </div>
 
                     <div class="diet-card-footer">
-                        <a href="/templates/diet_plan_details.html" class="btn-outline"
+                        <a href="../templates/diet_plan_details.html" class="btn-outline"
                             style="text-decoration: none; display: inline-flex; justify-content: center; align-items: center;">View
                             Details</a>
-                        <a href="/templates/assign_diet_plan.html" class="btn-fill"
+                        <a href="../templates/assign_diet_plan.html" class="btn-fill"
                             style="text-decoration:none; display:inline-flex; justify-content:center; align-items:center;">
                             Assign
                         </a>
@@ -172,10 +183,10 @@
                     </div>
 
                     <div class="diet-card-footer">
-                        <a href="/templates/diet_plan_details.html" class="btn-outline"
+                        <a href="../templates/diet_plan_details.html" class="btn-outline"
                             style="text-decoration: none; display: inline-flex; justify-content: center; align-items: center;">View
                             Details</a>
-                        <a href="/templates/assign_diet_plan.html" class="btn-fill"
+                        <a href="../templates/assign_diet_plan.html" class="btn-fill"
                             style="text-decoration:none; display:inline-flex; justify-content:center; align-items:center;">
                             Assign
                         </a>
@@ -212,10 +223,10 @@
                     </div>
 
                     <div class="diet-card-footer">
-                        <a href="/templates/diet_plan_details.html" class="btn-outline"
+                        <a href="../templates/diet_plan_details.html" class="btn-outline"
                             style="text-decoration: none; display: inline-flex; justify-content: center; align-items: center;">View
                             Details</a>
-                        <a href="/templates/assign_diet_plan.html" class="btn-fill"
+                        <a href="../templates/assign_diet_plan.html" class="btn-fill"
                             style="text-decoration:none; display:inline-flex; justify-content:center; align-items:center;">
                             Assign
                         </a>
@@ -268,6 +279,223 @@
         </main>
     </div>
 
+    <!-- AI Nutritionist Chat Widget -->
+    <div class="ai-chat-widget">
+        <!-- Floating Action Button -->
+        <button class="ai-chat-fab" id="aiChatFab" aria-label="Open AI Assistant">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div class="ai-chat-window" id="aiChatWindow">
+            <!-- Chat Header -->
+            <div class="ai-chat-header">
+                <div class="ai-header-left">
+                    <div class="ai-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="ai-header-text">
+                        <h3>JOF AI Assistant</h3>
+                        <p class="ai-status">Online</p>
+                    </div>
+                </div>
+                <button class="ai-close-btn" id="aiCloseBtn" aria-label="Close chat">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Chat Messages Area -->
+            <div class="ai-chat-messages" id="aiChatMessages">
+                <!-- Welcome Message -->
+                <div class="ai-message ai-message-bot">
+                    <div class="ai-message-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="ai-message-content">
+                        <p>Hi! I'm your JOF AI Nutritionist 🍎</p>
+                        <p>I can help you with:</p>
+                        <ul>
+                            <li>🥗 Generate personalized diet plans</li>
+                            <li>📱 Send diet plans via WhatsApp</li>
+                            <li>💡 Nutritional advice & tips</li>
+                        </ul>
+                        <p>What can I help you with today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="ai-chat-input-area">
+                <div class="ai-quick-actions">
+                    <button class="ai-quick-btn" data-message="Create a diet plan for me">
+                        <i class="fa-solid fa-utensils"></i> Create Diet Plan
+                    </button>
+                    <button class="ai-quick-btn" data-message="Send diet plan to WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i> Send to WhatsApp
+                    </button>
+                </div>
+                <div class="ai-input-wrapper">
+                    <input type="text" id="aiMessageInput" class="ai-message-input" placeholder="Type your message..."
+                        autocomplete="off" />
+                    <button class="ai-send-btn" id="aiSendBtn" aria-label="Send message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Toggle Logic
+            const toggleBtn = document.getElementById('toggleBtn');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const body = document.body;
+            const sidebar = document.querySelector('.sidebar');
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    body.classList.toggle('collapsed');
+                });
+            }
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function () {
+                    body.classList.toggle('sidebar-open');
+                });
+            }
+
+            document.addEventListener('click', function (event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnToggle = mobileToggle.contains(event.target);
+
+                if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+                    body.classList.remove('sidebar-open');
+                }
+            });
+
+            // Dropdown Logic
+            const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
+
+            dropdownItems.forEach(item => {
+                const link = item.querySelector('.nav-link');
+                const arrow = link ? link.querySelector('.nav-arrow') : null;
+
+                if (arrow) {
+                    arrow.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        dropdownItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+
+                        item.classList.toggle('active');
+                    });
+                }
+            });
+
+            // ===== AI CHAT WIDGET FUNCTIONALITY =====
+            const aiChatFab = document.getElementById('aiChatFab');
+            const aiChatWindow = document.getElementById('aiChatWindow');
+            const aiCloseBtn = document.getElementById('aiCloseBtn');
+            const aiMessageInput = document.getElementById('aiMessageInput');
+            const aiSendBtn = document.getElementById('aiSendBtn');
+            const aiChatMessages = document.getElementById('aiChatMessages');
+            const quickBtns = document.querySelectorAll('.ai-quick-btn');
+
+            // Toggle chat window
+            function toggleChat() {
+                aiChatWindow.classList.toggle('active');
+                if (aiChatWindow.classList.contains('active')) {
+                    aiMessageInput.focus();
+                }
+            }
+
+            aiChatFab.addEventListener('click', toggleChat);
+            aiCloseBtn.addEventListener('click', toggleChat);
+
+            // Add user message to chat
+            function addUserMessage(message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'ai-message ai-message-user';
+                messageDiv.innerHTML = `
+                    <div class="ai-message-content">
+                        <p>${message}</p>
+                    </div>
+                `;
+                aiChatMessages.appendChild(messageDiv);
+                aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+            }
+
+            // Add bot response
+            function addBotMessage(message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'ai-message ai-message-bot';
+                messageDiv.innerHTML = `
+                    <div class="ai-message-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="ai-message-content">
+                        <p>${message}</p>
+                    </div>
+                `;
+                aiChatMessages.appendChild(messageDiv);
+                aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+            }
+
+            // Get AI response based on user message
+            function getBotResponse(userMessage) {
+                const msg = userMessage.toLowerCase();
+
+                if (msg.includes('diet plan') || msg.includes('create')) {
+                    return "Great! I can create a personalized diet plan for you. To get started, I'll need some information:<br><br>• Your fitness goal (weight loss, muscle gain, maintenance)<br>• Dietary preferences (veg, non-veg, vegan)<br>• Any allergies or restrictions<br><br>This is a demo - In the full version, I would generate a complete meal plan! 🥗";
+                } else if (msg.includes('whatsapp') || msg.includes('send')) {
+                    return "Perfect! I can send the diet plan directly to WhatsApp. In the full version, you'd receive:<br><br>📱 Complete meal breakdown<br>🍽️ Recipes & portions<br>⏰ Meal timing suggestions<br><br>This feature will be available soon! 🚀";
+                } else if (msg.includes('help') || msg.includes('hi') || msg.includes('hello')) {
+                    return "I'm here to help! You can ask me to:<br>• Create personalized diet plans<br>• Send plans via WhatsApp<br>• Provide nutritional advice<br><br>Just click the quick action buttons or type your request! 😊";
+                } else {
+                    return "Thanks for trying the JOF AI Assistant demo! ✨<br><br>In the full version, I'll understand your request and provide detailed nutritional guidance. For now, try clicking the quick action buttons below to see the concept! 💪";
+                }
+            }
+
+            // Send message function
+            function sendMessage() {
+                const message = aiMessageInput.value.trim();
+                if (message) {
+                    addUserMessage(message);
+                    aiMessageInput.value = '';
+
+                    // Simulate bot "typing" delay
+                    setTimeout(() => {
+                        const response = getBotResponse(message);
+                        addBotMessage(response);
+                    }, 800);
+                }
+            }
+
+            // Send button click
+            aiSendBtn.addEventListener('click', sendMessage);
+
+            // Enter key to send
+            aiMessageInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Quick action buttons
+            quickBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const message = this.getAttribute('data-message');
+                    aiMessageInput.value = message;
+                    sendMessage();
+                });
+            });
+        });
+    </script>
 
 </body>
 

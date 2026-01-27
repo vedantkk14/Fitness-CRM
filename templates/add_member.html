@@ -1,60 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>JOF India | Add Member</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOF India | Add Member</title>
     <link rel="stylesheet" href="../static/add_member.css">
 </head>
-
 <body>
 
-    <div class="add-member-page">
-
-        <div class="brand-panel">
-            <img src="../icons/logo-light(1).png" class="brand-logo" alt="Logo">
-            <h2>JOF India</h2>
-            <p>Transforming Health.<br>One Member at a Time.</p>
-        </div>
-
-        <div class="form-panel">
-            <h2 class="page-title">Health Details</h2>
-
-            <div class="step-tabs">
-                <span class="tab active">Health</span>
-                <span class="tab">Metrics</span>
-                <span class="tab">Measurements</span>
-            </div>
-
-            <div class="form-card">
-                <label>Full Name</label>
-                <input type="text" placeholder="e.g. Joshuaa">
-
-                <label>Age</label>
-                <input type="number" placeholder="e.g. 24">
-
-                <label>Height (cm)</label>
-                <input type="number" placeholder="e.g. 175">
-
-                <label>Body Weight (kg)</label>
-                <input type="number" placeholder="e.g. 70">
-
-                <label>Email ID</label>
-                <input type="email" placeholder="client@email.com">
-
-                <label>Medical Issues / Injuries</label>
-                <textarea placeholder="List any injuries or conditions..."></textarea>
-
-                <div class="form-actions space-between">
-                    <a href="members.html" class="back-btn">&larr; Back</a>
-                    <a href="metrics.html" class="next-btn">Next Step &rarr;</a>
+    <div class="container">
+        
+        <div class="card-header">
+            <div class="brand-area">
+                <img src="../icons/logo-dark(1).png" class="brand-logo" alt="JOF">
+                <div class="brand-text">
+                    <h2>Add New Member</h2>
+                    <p>Enter health details to get started.</p>
                 </div>
             </div>
+            <a href="members.html" class="close-btn">
+                <img src="../icons/xmark-solid-full.svg" alt="close">
+            </a>
+        </div>
+
+        <div class="stepper-container">
+            <div class="stepper">
+                <div class="step-item active">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Health</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Metrics</span>
+                </div>
+                <div class="step-item">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Finish</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <form>
+                <div class="form-grid">
+                    
+                    <div class="input-group full-width">
+                        <label>Full Name</label>
+                        <div class="input-wrapper">
+                            <input type="text" class="form-input" placeholder="e.g. Shrivardhan">
+                            <img src="../icons/user-solid-full.svg" class="input-icon" alt="user">
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label>Email Address</label>
+                        <div class="input-wrapper">
+                            <input type="email" class="form-input" placeholder="client@email.com">
+                            <img src="../icons/envelope-solid-full.svg" class="input-icon" alt="email">
+                        </div>
+                    </div>
+
+                    <div class="full-width">
+                        <div class="three-cols">
+                            <div class="input-group">
+                                <label>Age</label>
+                                <div class="input-wrapper">
+                                    <input type="number" class="form-input" placeholder="24">
+                                    <img src="../icons/cake-candles-solid-full.svg" class="input-icon" alt="age">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Height (cm)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" class="form-input" placeholder="175">
+                                    <img src="../icons/ruler-vertical-solid-full.svg" class="input-icon" alt="height">
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Weight (kg)</label>
+                                <div class="input-wrapper">
+                                    <input type="number" class="form-input" placeholder="70">
+                                    <img src="../icons/weight-scale-solid-full.svg" class="input-icon" alt="weight">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label>Medical Issues / Injuries</label>
+                        <textarea class="form-input" placeholder="List any injuries, surgeries, or medical conditions..."></textarea>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="card-footer">
+            <a href="members.html" class="btn btn-secondary">Cancel</a>
+            <a href="metrics.html" class="btn btn-primary">Continue to Metrics &rarr;</a>
         </div>
 
     </div>
 
 </body>
-
 </html>

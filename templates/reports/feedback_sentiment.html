@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOF Fitness | Feedback & Sentiment</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../../static/dashboard.css">
     <link rel="stylesheet" href="../../static/received_payment.css">
     <link rel="stylesheet" href="../../static/feedback_sentiment.css">
@@ -44,8 +44,9 @@
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="../personal_health.html">Add New Member</a>
+                        <a href="../add_member.html">Add New Member</a>
                         <a href="../received_payments.html">Payment Details</a>
+                        <a href="../progress_report.html">Member Progress</a>
                     </div>
                 </div>
                 <div class="nav-item-dropdown">
@@ -275,7 +276,7 @@
 
     <script>
         // Wait for DOM to load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const toggleBtn = document.getElementById('toggleBtn');
             const mobileToggle = document.getElementById('mobileToggle');
             const body = document.body;
@@ -283,23 +284,23 @@
 
             // Desktop toggle button
             if (toggleBtn) {
-                toggleBtn.addEventListener('click', function() {
+                toggleBtn.addEventListener('click', function () {
                     body.classList.toggle('collapsed');
                 });
             }
 
             // Mobile toggle button
             if (mobileToggle) {
-                mobileToggle.addEventListener('click', function() {
+                mobileToggle.addEventListener('click', function () {
                     body.classList.toggle('sidebar-open');
                 });
             }
 
             // Close sidebar when clicking outside on mobile
-            document.addEventListener('click', function(event) {
+            document.addEventListener('click', function (event) {
                 const isClickInsideSidebar = sidebar.contains(event.target);
                 const isClickOnToggle = mobileToggle.contains(event.target);
-                
+
                 if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
                     body.classList.remove('sidebar-open');
                 }

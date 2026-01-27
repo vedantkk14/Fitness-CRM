@@ -4,17 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Invoice | JoF Fitness</title>
-  <link rel="stylesheet" href="/static/invoice.css" />
+  <link rel="stylesheet" href="../static/invoice.css" />
 </head>
 
 <body>
+
+  <div class="mobile-app-header">
+      <img src="../icons/logo-light(1).png" alt="JoF Logo">
+      <span>JOF India</span>
+  </div>
 
   <div class="invoice-container">
     
     <header class="invoice-header">
       <div class="header-brand">
         <div class="logo-wrapper">
-            <img src="/icons/logo-light(1).png" alt="JoF Logo" class="brand-logo">
+            <img src="../icons/logo-light(1).png" alt="JoF Logo" class="brand-logo">
         </div>
         <div class="company-address">
             <p><b>JoF Fitness Studio</b></p>
@@ -125,7 +130,7 @@
         <p class="thank-you">Thank you for choosing JOF!</p>
         <div class="buttons">
             <button class="btn btn-secondary">Print</button>
-            <a href="../templates/invoice.html" download class="download-btn">
+            <a href="/templates/invoice.html" download class="download-btn">
                 <button class="btn btn-primary">Download PDF</button>
             </a>
         </div>

@@ -15,6 +15,14 @@
 
 <body>
 
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <button class="toggle-sidebar-btn" id="toggleBtn">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
 
 
     <div class="dashboard-container">
@@ -37,8 +45,9 @@
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="../personal_health.html">Add New Member</a>
+                        <a href="../add_member.html">Add New Member</a>
                         <a href="../received_payments.html">Payment Details</a>
+                        <a href="../progress_report.html">Member Progress</a>
                     </div>
                 </div>
                 <div class="nav-item-dropdown">
@@ -196,6 +205,57 @@
         </main>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleBtn');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const body = document.body;
+            const sidebar = document.querySelector('.sidebar');
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    body.classList.toggle('collapsed');
+                });
+            }
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function () {
+                    body.classList.toggle('sidebar-open');
+                });
+            }
+
+            document.addEventListener('click', function (event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnToggle = mobileToggle.contains(event.target);
+
+                if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+                    body.classList.remove('sidebar-open');
+                }
+            });
+
+            const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
+
+            dropdownItems.forEach(item => {
+                const link = item.querySelector('.nav-link');
+                const arrow = link ? link.querySelector('.nav-arrow') : null;
+
+                if (arrow) {
+                    arrow.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        dropdownItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+
+                        item.classList.toggle('active');
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 
