@@ -1,0 +1,244 @@
+/* --- NOTIFY MEMBER PAGE STYLES --- */
+
+/* Main Card Container */
+.notify-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow-soft);
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* Member Summary Section (Top of card) */
+.member-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #edf2f7;
+    margin-bottom: 30px;
+}
+
+.member-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #FEE2E2; /* Light Red */
+    color: #DC2626;      /* Dark Red */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(220, 38, 38, 0.1);
+}
+
+.member-details h2 {
+    font-size: 20px;
+    color: #1a202c;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.member-details p {
+    color: #718096;
+    font-size: 14px;
+}
+
+.status-expired-text {
+    color: #DC2626; 
+    font-weight: 600;
+}
+
+.contact-info {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #A0AEC0;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 14px;
+}
+
+/* Channel Selection (Radio Cards) */
+.channel-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.channel-radio {
+    display: none; /* Hide default radio button */
+}
+
+.channel-card {
+    flex: 1;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    min-width: 120px;
+    background: #fff;
+}
+
+.channel-card i {
+    font-size: 24px;
+    margin-bottom: 8px;
+    display: block;
+    color: #a0aec0;
+    transition: color 0.2s;
+}
+
+.channel-card span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #718096;
+    transition: color 0.2s;
+}
+
+/* Selected State for Channel Cards */
+.channel-radio:checked + .channel-card {
+    border-color: var(--primary);
+    background-color: #FFF5F0; /* Very light orange tint */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(242, 92, 42, 0.15);
+}
+
+.channel-radio:checked + .channel-card i,
+.channel-radio:checked + .channel-card span {
+    color: var(--primary);
+}
+
+/* Input Fields */
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #2d3748;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(242, 92, 42, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.6;
+}
+
+/* Form Actions (Buttons) */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.btn-cancel {
+    padding: 12px 24px;
+    border-radius: 12px;
+    background: #f7fafc;
+    color: #718096;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background: #edf2f7;
+    color: #4a5568;
+}
+
+/* --- SUCCESS OVERLAY MODAL --- */
+.success-overlay {
+    position: fixed;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); /* Dim background */
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease;
+}
+
+.success-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: scale(0.9);
+    animation: popIn 0.3s forwards cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.success-icon {
+    width: 60px; height: 60px;
+    background: #DCFCE7;
+    color: #166534;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popIn {
+    to { transform: scale(1); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .notify-card { 
+        padding: 25px; 
+    }
+    .member-summary { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 15px;
+    }
+    .channel-options { 
+        flex-direction: column; 
+    }
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+    .btn-primary, .btn-cancel {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOF India | Send Notification</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../static/members.css">
+    
+    <link rel="stylesheet" href="../static/notify_member.css">
+</head>
+
+<body>
+
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <button class="toggle-sidebar-btn" id="toggleBtn">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
+            </div>
+
+            <div class="nav-label">MENU</div>
+
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-link">
+                    <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
+                    <span>Dashboard</span>
+                </a>
+
+                <div class="nav-item-dropdown">
+                    <a href="#" class="nav-link active">
+                        <img src="../icons/users-solid-full.svg" alt="Members" width="20">
+                        <span>Members</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu" style="display: block;">
+                        <a href="members.html">All Members</a>
+                        <a href="add_member.html">Add New Member</a>
+                        <a href="received_payments.html">Payment Details</a>
+                        <a href="progress_report.html">Member Progress</a>
+                    </div>
+                </div>
+
+                <div class="nav-item-dropdown">
+                    <a href="diet-plans.html" class="nav-link">
+                        <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                        <span>Diet Plans</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="create_diet_plan.html">Create Diet Plan</a>
+                        <a href="assign_diet_plan.html">Assign</a>
+                    </div>
+                </div>
+
+                <a href="staff.html" class="nav-link">
+                    <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
+                    <span>Staff</span>
+                </a>
+                <a href="membership.html" class="nav-link">
+                    <img src="../icons/credit-card-solid-full.svg" alt="Membership" width="20">
+                    <span>Membership</span>
+                </a>
+                <a href="payments.html" class="nav-link">
+                    <img src="../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
+                    <span>Payments</span>
+                </a>
+                <div class="nav-item-dropdown">
+                    <a href="sales_leads.html" class="nav-link">
+                        <img src="../icons/chart-line-solid-full.svg" alt="Sales" width="20">
+                        <span>Sales Management</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="sales_leads.html">New Leads</a>
+                        <a href="sales_reports.html">Conversion Reports</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a href="reports_pg.html" class="nav-link">
+                        <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
+                        <span>Reports</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="reports/feedback_sentiment.html">Feedback & Sentiment</a>
+                        <a href="reports/renewal_report.html">Renewal Report</a>
+                        <a href="reports/revenue_source.html">Revenue Report</a>
+                        <a href="reports/trainer_performance.html">Trainer Performance</a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="header-banner">
+                <div class="header-text">
+                    <h1>Notify Member</h1>
+                    <p>Send expiry reminders and payment alerts</p>
+                </div>
+                <div class="header-actions">
+                    <a href="members.html" class="btn-cancel" style="background:white; border:1px solid #e2e8f0; display:flex; align-items:center; gap:8px;">
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                    </a>
+                </div>
+            </header>
+
+            <div class="notify-card">
+                
+                <div class="member-summary">
+                    <div class="member-avatar">IP</div>
+                    <div class="member-details">
+                        <h2>Ishita Patel</h2>
+                        <p>Standard Membership • <span class="status-expired-text">Expired 3 Days ago</span></p>
+                        <p class="contact-info">
+                            <i class="fa-regular fa-envelope"></i> ishita@email.com &nbsp;|&nbsp; 
+                            <i class="fa-solid fa-phone"></i> +91 98765 43210
+                        </p>
+                    </div>
+                </div>
+
+                <form id="notificationForm">
+                    
+                    <div class="form-group">
+                        <label class="form-label">Notification Channel</label>
+                        <div class="channel-options">
+                            <label>
+                                <input type="radio" name="channel" class="channel-radio" value="email" checked onchange="updateTemplate()">
+                                <div class="channel-card">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span>Email</span>
+                                </div>
+                            </label>
+                            
+                            <label>
+                                <input type="radio" name="channel" class="channel-radio" value="whatsapp" onchange="updateTemplate()">
+                                <div class="channel-card">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </div>
+                            </label>
+                            
+                            <label>
+                                <input type="radio" name="channel" class="channel-radio" value="sms" onchange="updateTemplate()">
+                                <div class="channel-card">
+                                    <i class="fa-solid fa-comment-sms"></i>
+                                    <span>SMS</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="subjectGroup">
+                        <label class="form-label">Subject</label>
+                        <input type="text" class="form-control" value="Action Required: Your Gym Membership has Expired">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" id="messageBox">Hi Ishita,
+
+We hope you are doing well! 
+
+This is a friendly reminder that your Standard Membership at JOF India expired on Jan 24, 2026. We'd love to see you back in the gym.
+
+Please visit the front desk or click the link below to renew your plan and keep your streak alive!
+
+Renew Link: https://jof-india.com/renew/ishita123
+
+Best,
+JOF Admin Team</textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-primary" onclick="sendNotification()">
+                            <i class="fa-solid fa-paper-plane"></i> Send Notification
+                        </button>
+                        <a href="members.html" class="btn-cancel">Cancel</a>
+                    </div>
+
+                </form>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="success-overlay" id="successModal">
+        <div class="success-card">
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>Sent Successfully!</h3>
+            <p style="color:#718096; margin-top:10px;">The notification has been sent to Ishita Patel via Email.</p>
+            <button class="btn-primary" style="margin-top:20px; width:100%; justify-content:center;" onclick="closeModal()">Done</button>
+        </div>
+    </div>
+
+    <script>
+        // Sidebar Toggle Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleBtn');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const body = document.body;
+            const sidebar = document.querySelector('.sidebar');
+
+            // Desktop Toggle
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function () {
+                    body.classList.toggle('collapsed');
+                });
+            }
+
+            // Mobile Toggle
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', function () {
+                    body.classList.toggle('sidebar-open');
+                });
+            }
+
+            // Close sidebar on outside click (Mobile)
+            document.addEventListener('click', function (event) {
+                const isClickInsideSidebar = sidebar.contains(event.target);
+                const isClickOnToggle = mobileToggle.contains(event.target);
+
+                if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+                    body.classList.remove('sidebar-open');
+                }
+            });
+        });
+
+        // Template Changing Logic
+        function updateTemplate() {
+            const channel = document.querySelector('input[name="channel"]:checked').value;
+            const messageBox = document.getElementById('messageBox');
+            const subjectGroup = document.getElementById('subjectGroup');
+
+            if (channel === 'email') {
+                subjectGroup.style.display = 'block';
+                messageBox.value = "Hi Ishita,\n\nWe hope you are doing well!\n\nThis is a friendly reminder that your Standard Membership at JOF India expired on Jan 24, 2026. We'd love to see you back in the gym.\n\nPlease visit the front desk or click the link below to renew your plan.\n\nRenew Link: https://jof-india.com/renew/ishita123\n\nBest,\nJOF Admin Team";
+            } else if (channel === 'whatsapp') {
+                subjectGroup.style.display = 'none';
+                messageBox.value = "*Membership Expiry Alert* 🚨\n\nHi Ishita! Your gym membership expired 3 days ago. Don't break your streak! 💪\n\nRenew here: https://jof-india.com/renew/ishita123";
+            } else {
+                subjectGroup.style.display = 'none';
+                messageBox.value = "JOF Gym: Hi Ishita, your membership has expired. Please renew to continue access. Link: jof.in/u/ishita123";
+            }
+        }
+
+        // Send Button Animation
+        function sendNotification() {
+            const btn = document.querySelector('.btn-primary');
+            const originalText = btn.innerHTML;
+            
+            // Loading State
+            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
+            btn.style.opacity = '0.7';
+
+            setTimeout(() => {
+                // Show Success Modal
+                document.getElementById('successModal').style.display = 'flex';
+                btn.innerHTML = originalText;
+                btn.style.opacity = '1';
+            }, 1000);
+        }
+
+        function closeModal() {
+            window.location.href = 'members.html';
+        }
+    </script>
+
+</body>
+</html>
