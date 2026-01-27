@@ -11,6 +11,15 @@
 </head>
 
 <body>
+  <!-- Mobile Toggle Button (visible only on mobile) -->
+  <button class="mobile-toggle" id="mobileToggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- Desktop Toggle Button (visible on desktop, outside sidebar) -->
+  <button class="toggle-sidebar-btn" id="toggleBtn">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
 
     <button class="mobile-toggle" id="mobileToggle">
         <i class="fa-solid fa-bars"></i>
@@ -168,6 +177,43 @@
 
     </div>
 
+
+
+
+  <!-- JavaScript for Toggle Functionality -->
+  <script>
+    // Wait for DOM to load
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleBtn = document.getElementById('toggleBtn');
+      const mobileToggle = document.getElementById('mobileToggle');
+      const body = document.body;
+      const sidebar = document.querySelector('.sidebar');
+
+      // Desktop toggle button
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', function () {
+          body.classList.toggle('collapsed');
+        });
+      }
+
+      // Mobile toggle button
+      if (mobileToggle) {
+        mobileToggle.addEventListener('click', function () {
+          body.classList.toggle('sidebar-open');
+        });
+      }
+
+      // Close sidebar when clicking outside on mobile
+      document.addEventListener('click', function (event) {
+        const isClickInsideSidebar = sidebar.contains(event.target);
+        const isClickOnToggle = mobileToggle.contains(event.target);
+
+        if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+          body.classList.remove('sidebar-open');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>

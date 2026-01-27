@@ -681,8 +681,8 @@ body.collapsed .toggle-sidebar-btn i {
     /* ===== MAIN CONTENT SPACING ===== */
     .main-content {
         padding: 24px 20px;
-        padding-top: 90px;
-        /* Clear space for FAB */
+        padding-top: 100px;
+        /* Clear space for FAB + extra breathing room */
     }
 
     /* ===== HEADER ENHANCEMENT ===== */
@@ -693,10 +693,15 @@ body.collapsed .toggle-sidebar-btn i {
         margin-bottom: 32px;
     }
 
+    .header-text {
+        padding-left: 0;
+        width: 100%;
+    }
+
     .header-text h1 {
-        font-size: 28px;
+        font-size: 22px;
         font-weight: 800;
-        line-height: 1.2;
+        line-height: 1.3;
         background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
         background-clip: text;
         -webkit-background-clip: text;
@@ -704,10 +709,10 @@ body.collapsed .toggle-sidebar-btn i {
     }
 
     .header-text p {
-        font-size: 15px;
+        font-size: 14px;
         color: #6B7280;
         line-height: 1.5;
-        margin-top: 8px;
+        margin-top: 6px;
     }
 
     .header-actions {

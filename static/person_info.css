@@ -42,7 +42,7 @@ body {
     z-index: 1001;
     border-right: 1px solid #1a1a1a;
     padding: 30px 20px;
-    overflow-y: auto;
+    overflow-y: hidden;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -254,7 +254,7 @@ body.collapsed .toggle-sidebar-btn { left: 15px; }
 body.collapsed .toggle-sidebar-btn i { transform: rotate(180deg); }
 
 /* ============================================
-   RESPONSIVE MEDIA QUERIES
+RESPONSIVE MEDIA QUERIES
    ============================================ */
 
 /* Tablet & Mobile (Below 992px) */
