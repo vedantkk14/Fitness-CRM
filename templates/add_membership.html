@@ -6,13 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Membership Plan | JOF Fitness</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="../static/add_membership.css">
 </head>
 
 <body>
+  <!-- Mobile Toggle Button (visible only on mobile) -->
+  <button class="mobile-toggle" id="mobileToggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- Desktop Toggle Button (visible on desktop, outside sidebar) -->
+  <button class="toggle-sidebar-btn" id="toggleBtn">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
 
   <div class="dashboard-container">
 
@@ -122,8 +130,7 @@
 
           <div class="form-group">
             <label for="features">Features (One per line)</label>
-            <textarea id="features" rows="4"
-              placeholder="Access to gym floor&#10;Locker room access"></textarea>
+            <textarea id="features" rows="4" placeholder="Access to gym floor&#10;Locker room access"></textarea>
           </div>
 
           <div class="form-actions">
@@ -138,6 +145,41 @@
     </main>
 
   </div>
+
+  <!-- JavaScript for Toggle Functionality -->
+  <script>
+    // Wait for DOM to load
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleBtn = document.getElementById('toggleBtn');
+      const mobileToggle = document.getElementById('mobileToggle');
+      const body = document.body;
+      const sidebar = document.querySelector('.sidebar');
+
+      // Desktop toggle button
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', function () {
+          body.classList.toggle('collapsed');
+        });
+      }
+
+      // Mobile toggle button
+      if (mobileToggle) {
+        mobileToggle.addEventListener('click', function () {
+          body.classList.toggle('sidebar-open');
+        });
+      }
+
+      // Close sidebar when clicking outside on mobile
+      document.addEventListener('click', function (event) {
+        const isClickInsideSidebar = sidebar.contains(event.target);
+        const isClickOnToggle = mobileToggle.contains(event.target);
+
+        if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+          body.classList.remove('sidebar-open');
+        }
+      });
+    });
+  </script>
 
 </body>
 
