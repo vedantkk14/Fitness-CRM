@@ -452,7 +452,8 @@ body {
 .status-action-wrap {
     display: flex;
     align-items: center;
-    gap: 15px; /* Space between pill and bell */
+    gap: 15px;
+    /* Space between pill and bell */
 }
 
 /* --- The Bell Button Styles --- */
@@ -462,9 +463,12 @@ body {
     justify-content: center;
     width: 32px;
     height: 32px;
-    border-radius: 50%; /* Makes it a perfect circle */
-    background-color: #FEF2F2; /* Very light red */
-    color: #DC2626; /* Red icon color */
+    border-radius: 50%;
+    /* Makes it a perfect circle */
+    background-color: #FEF2F2;
+    /* Very light red */
+    color: #DC2626;
+    /* Red icon color */
     border: 1px solid #FEE2E2;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -485,18 +489,33 @@ body {
 
 /* --- Bell Shake Animation --- */
 @keyframes bellShake {
-    0% { transform: rotate(0); }
-    25% { transform: rotate(15deg); }
-    50% { transform: rotate(-15deg); }
-    75% { transform: rotate(5deg); }
-    100% { transform: rotate(0); }
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
 }
 
 /* --- Mobile Fix --- */
 /* Ensures the wrapper stays on the right side in mobile card view */
 @media (max-width: 600px) {
     .styled-table tbody td .status-action-wrap {
-        margin-left: auto; /* Pushes content to the right edge */
+        margin-left: auto;
+        /* Pushes content to the right edge */
     }
 }
 
@@ -826,5 +845,323 @@ body.collapsed .toggle-sidebar-btn i {
     .styled-table td {
         padding: 10px 12px;
         font-size: 12px;
+    }
+}
+
+/* ============================================
+   PERSONAL TRAINING (PT) STYLES
+   ============================================ */
+
+/* --- PT Status Badges --- */
+.pt-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pt-status::before {
+    content: "●";
+    margin-right: 6px;
+    font-size: 8px;
+}
+
+.pt-status.active {
+    background-color: #DCFCE7;
+    color: #166534;
+}
+
+.pt-status.completed {
+    background-color: #F3F4F6;
+    color: #4B5563;
+}
+
+.pt-status.expired {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+.pt-status.pending-status {
+    background-color: #FEF3C7;
+    color: #92400E;
+}
+
+/* --- Sessions Remaining Highlight --- */
+.sessions-remaining {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* --- PT Card Styles --- */
+.pt-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.pt-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.pt-card .card-icon-fa {
+    color: var(--primary);
+    font-size: 18px;
+}
+
+.pt-card .card-subtitle {
+    color: #718096;
+    font-size: 13px;
+    margin-top: -12px;
+    margin-bottom: 20px;
+}
+
+/* --- PT Details Grid --- */
+.pt-card .details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.pt-card .detail-box {
+    background: #f9fafb;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+.pt-card .detail-box label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #718096;
+    margin-bottom: 6px;
+}
+
+.pt-card .detail-box span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.pt-card .highlight-box {
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+    border: 1px solid #FED7AA;
+}
+
+.pt-card .remaining-count {
+    color: var(--primary) !important;
+    font-size: 18px !important;
+}
+
+.pt-yes {
+    color: #16a34a !important;
+}
+
+.paid-amount {
+    color: #16a34a !important;
+}
+
+.pending-amount {
+    color: #dc2626 !important;
+}
+
+/* --- Session Tracking Grid --- */
+.session-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.session-pill {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.session-pill.completed {
+    background: linear-gradient(135deg, #F25C2A 0%, #ff8c69 100%);
+    color: #fff;
+    box-shadow: 0 2px 6px rgba(242, 92, 42, 0.3);
+}
+
+.session-pill.pending {
+    background: #fff;
+    border: 2px dashed #e2e8f0;
+    color: #a0aec0;
+}
+
+.session-pill:hover {
+    transform: scale(1.1);
+}
+
+/* --- Session Legend --- */
+.session-legend {
+    display: flex;
+    gap: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #718096;
+}
+
+.legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.legend-dot.completed {
+    background: var(--primary);
+}
+
+.legend-dot.pending {
+    border: 2px dashed #e2e8f0;
+    background: #fff;
+}
+
+/* --- Trainer Info Box --- */
+.trainer-info-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 12px;
+}
+
+.trainer-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trainer-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.trainer-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.trainer-role {
+    font-size: 13px;
+    color: #718096;
+}
+
+.trainer-specialty {
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* --- Toggle Switch (CSS Only) --- */
+.toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-switch {
+    width: 52px;
+    height: 28px;
+    background: #e2e8f0;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.toggle-input:checked+.toggle-switch {
+    background: linear-gradient(135deg, #F25C2A 0%, #ff8c69 100%);
+}
+
+.toggle-input:checked+.toggle-switch .toggle-slider {
+    transform: translateX(24px);
+}
+
+.toggle-label {
+    font-size: 14px;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* --- PT Config Section --- */
+.pt-config-section {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* --- Responsive PT Styles --- */
+@media (max-width: 768px) {
+    .pt-card .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .session-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .session-pill {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+    }
+
+    .trainer-info-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .session-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }

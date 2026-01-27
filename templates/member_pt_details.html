@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member PT Details | JOF Fitness</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/person_info.css">
+    <link rel="stylesheet" href="../static/members.css">
+</head>
+
+<body>
+
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <button class="toggle-sidebar-btn" id="toggleBtn">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
+            </div>
+
+            <div class="nav-label">MENU</div>
+
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-link">
+                    <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
+                    <span>Dashboard</span>
+                </a>
+
+                <div class="nav-item-dropdown">
+                    <a href="members.html" class="nav-link active">
+                        <img src="../icons/users-solid-full.svg" alt="Members" width="20">
+                        <span>Members</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu" style="display:block;">
+                        <a href="members.html">View Members</a>
+                        <a href="add_member.html">Add Member</a>
+                        <a href="personal_training.html" class="active">Personal Training (PT)</a>
+                    </div>
+                </div>
+
+                <div class="nav-item-dropdown">
+                    <a href="diet-plans.html" class="nav-link">
+                        <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                        <span>Diet Plans</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="create_diet_plan.html">Create Diet Plan</a>
+                        <a href="assign_diet_plan.html">Assign</a>
+                    </div>
+                </div>
+
+                <a href="staff.html" class="nav-link">
+                    <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
+                    <span>Staff</span>
+                </a>
+                <a href="membership.html" class="nav-link">
+                    <img src="../icons/credit-card-solid-full.svg" alt="Membership" width="20">
+                    <span>Membership</span>
+                </a>
+                <div class="nav-item-dropdown">
+                    <a href="payments.html" class="nav-link">
+                        <img src="../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
+                        <span>Payments</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="payments.html">View Payments</a>
+                        <a href="payment_installments.html">Installment Payments</a>
+                        <a href="outstanding_dues.html">Outstanding Dues</a>
+                        <a href="payment_recovery_communication.html">Recovery Communication</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a href="sales_leads.html" class="nav-link">
+                        <img src="../icons/chart-line-solid-full.svg" alt="Sales" width="20">
+                        <span>Sales Management</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="sales_leads.html">New Leads</a>
+                        <a href="sales_reports.html">Conversion Reports</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a href="reports_pg.html" class="nav-link">
+                        <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
+                        <span>Reports</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="reports/feedback_sentiment.html">Feedback & Sentiment</a>
+                        <a href="reports/renewal_report.html">Renewal Report</a>
+                        <a href="reports/revenue_source.html">Revenue Report</a>
+                        <a href="reports/trainer_performance.html">Trainer Performance</a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="profile-header">
+                <div class="user-identity">
+                    <img src="https://ui-avatars.com/api/?name=Sneha+Reddy&background=F25C2A&color=fff&size=128"
+                        alt="Sneha" class="profile-avatar">
+                    <div class="user-text">
+                        <h1>Sneha Reddy</h1>
+                        <p class="member-id">Member ID: #JOF-2024-42</p>
+                        <span class="status-badge">Active Member</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="personal_training.html" class="action-btn">Back to PT List</a>
+                </div>
+            </div>
+
+            <div class="profile-grid">
+
+                <div class="column-left">
+
+                    <!-- Personal Training Details Card -->
+                    <div class="info-card pt-card">
+                        <h3><i class="fa-solid fa-dumbbell card-icon-fa"></i> Personal Training Details</h3>
+
+                        <div class="details-grid">
+                            <div class="detail-box">
+                                <label>PT Included</label>
+                                <span class="pt-yes">Yes</span>
+                            </div>
+                            <div class="detail-box">
+                                <label>Trainer Assigned</label>
+                                <span>Mike Johnson</span>
+                            </div>
+                            <div class="detail-box">
+                                <label>PT Start Date</label>
+                                <span>Jan 15, 2026</span>
+                            </div>
+                            <div class="detail-box">
+                                <label>PT End Date</label>
+                                <span>Mar 15, 2026</span>
+                            </div>
+                            <div class="detail-box">
+                                <label>Total Sessions</label>
+                                <span>24</span>
+                            </div>
+                            <div class="detail-box">
+                                <label>Sessions Used</label>
+                                <span>16</span>
+                            </div>
+                            <div class="detail-box highlight-box">
+                                <label>Sessions Remaining</label>
+                                <span class="remaining-count">8</span>
+                            </div>
+                            <div class="detail-box">
+                                <label>PT Status</label>
+                                <span class="pt-status active">Active</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PT Payment Details -->
+                    <div class="info-card pt-card">
+                        <h3><i class="fa-solid fa-indian-rupee-sign card-icon-fa"></i> PT Payment Details</h3>
+
+                        <div class="details-grid">
+                            <div class="detail-box">
+                                <label>PT Total Fees</label>
+                                <span>₹12,000</span>
+                            </div>
+                            <div class="detail-box">
+                                <label>Paid Amount</label>
+                                <span class="paid-amount">₹10,000</span>
+                            </div>
+                            <div class="detail-box">
+                                <label>Pending Amount</label>
+                                <span class="pending-amount">₹2,000</span>
+                            </div>
+                            <div class="detail-box">
+                                <label>Payment Status</label>
+                                <span class="pt-status pending-status">Partial</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="column-right">
+
+                    <!-- Session Tracking -->
+                    <div class="info-card pt-card">
+                        <h3><i class="fa-solid fa-calendar-check card-icon-fa"></i> Session Tracking</h3>
+                        <p class="card-subtitle">16 of 24 sessions completed</p>
+
+                        <div class="session-grid">
+                            <!-- Completed sessions (filled) -->
+                            <div class="session-pill completed">1</div>
+                            <div class="session-pill completed">2</div>
+                            <div class="session-pill completed">3</div>
+                            <div class="session-pill completed">4</div>
+                            <div class="session-pill completed">5</div>
+                            <div class="session-pill completed">6</div>
+                            <div class="session-pill completed">7</div>
+                            <div class="session-pill completed">8</div>
+                            <div class="session-pill completed">9</div>
+                            <div class="session-pill completed">10</div>
+                            <div class="session-pill completed">11</div>
+                            <div class="session-pill completed">12</div>
+                            <div class="session-pill completed">13</div>
+                            <div class="session-pill completed">14</div>
+                            <div class="session-pill completed">15</div>
+                            <div class="session-pill completed">16</div>
+                            <!-- Pending sessions (outlined) -->
+                            <div class="session-pill pending">17</div>
+                            <div class="session-pill pending">18</div>
+                            <div class="session-pill pending">19</div>
+                            <div class="session-pill pending">20</div>
+                            <div class="session-pill pending">21</div>
+                            <div class="session-pill pending">22</div>
+                            <div class="session-pill pending">23</div>
+                            <div class="session-pill pending">24</div>
+                        </div>
+
+                        <div class="session-legend">
+                            <div class="legend-item">
+                                <span class="legend-dot completed"></span>
+                                <span>Completed</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot pending"></span>
+                                <span>Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trainer Info Card -->
+                    <div class="info-card pt-card">
+                        <h3><i class="fa-solid fa-user-tie card-icon-fa"></i> Trainer Info</h3>
+
+                        <div class="trainer-info-box">
+                            <img src="https://ui-avatars.com/api/?name=Mike+Johnson&background=6366F1&color=fff&size=64"
+                                alt="Mike" class="trainer-avatar">
+                            <div class="trainer-text">
+                                <span class="trainer-name">Mike Johnson</span>
+                                <span class="trainer-role">Senior Trainer</span>
+                                <span class="trainer-specialty">Strength & Conditioning</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('toggleBtn');
+            const mobileToggle = document.getElementById('mobileToggle');
+            const body = document.body;
+            const sidebar = document.querySelector('.sidebar');
+
+            if (toggleBtn) toggleBtn.addEventListener('click', () => body.classList.toggle('collapsed'));
+            if (mobileToggle) mobileToggle.addEventListener('click', () => body.classList.toggle('sidebar-open'));
+
+            document.addEventListener('click', function (event) {
+                if (!sidebar.contains(event.target) && !mobileToggle.contains(event.target) && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+                    body.classList.remove('sidebar-open');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
