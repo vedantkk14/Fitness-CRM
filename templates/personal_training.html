@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOF Fitness | Premium Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../static/dashboard.css">
+    <title>Personal Training | JOF Fitness</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/members.css">
 </head>
 
 <body>
+
     <!-- Mobile Toggle Button (visible only on mobile) -->
     <button class="mobile-toggle" id="mobileToggle">
         <i class="fa-solid fa-bars"></i>
@@ -29,13 +30,15 @@
             </div>
 
             <div class="nav-label">MENU</div>
+
             <nav class="navigation">
-                <a href="#" class="nav-link active">
+                <a href="dashboard.html" class="nav-link">
                     <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
                     <span>Dashboard</span>
                 </a>
+
                 <div class="nav-item-dropdown">
-                    <a href="members.html" class="nav-link">
+                    <a href="members.html" class="nav-link active">
                         <img src="../icons/users-solid-full.svg" alt="Members" width="20">
                         <span>Members</span>
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
@@ -43,9 +46,10 @@
                     <div class="sidebar-submenu">
                         <a href="members.html">View Members</a>
                         <a href="add_member.html">Add Member</a>
-                        <a href="personal_training.html">Personal Training (PT)</a>
+                        <a href="personal_training.html" class="active">Personal Training (PT)</a>
                     </div>
                 </div>
+
                 <div class="nav-item-dropdown">
                     <a href="diet-plans.html" class="nav-link">
                         <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
@@ -57,12 +61,13 @@
                         <a href="assign_diet_plan.html">Assign</a>
                     </div>
                 </div>
+
                 <a href="staff.html" class="nav-link">
                     <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
                 </a>
                 <a href="membership.html" class="nav-link">
-                    <img src="../icons/credit-card-regular-full.svg" alt="Staff" width="20">
+                    <img src="../icons/credit-card-solid-full.svg" alt="Membership" width="20">
                     <span>Membership</span>
                 </a>
                 <div class="nav-item-dropdown">
@@ -107,146 +112,143 @@
         </aside>
 
         <main class="main-content">
+
             <header class="header-banner">
                 <div class="header-text">
-                    <h1>Hello, from team Joshuaa! 👋</h1>
-                    <p>Here's what's happening at <b>Outdoor Fitness</b> today.</p>
+                    <h1>Personal Training</h1>
+                    <p>Track trainer assignments, sessions, and PT status</p>
                 </div>
                 <div class="header-actions">
-                    <div class="search-bar">
-                        <img src="../icons/magnifying-glass-solid-full.svg" alt="search" width="20">
-                        <input type="text" placeholder="Search members...">
-                    </div>
                     <div class="profile-pic">
-                        <img src="../icons/JO.svg" alt="JO" width="20">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=F25C2A&color=fff" alt="Profile">
                     </div>
                 </div>
             </header>
 
-            <section class="kpi-grid">
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div class="stat-icon orange-gradient">
-                            <img src="../icons/dumbbell-solid-full.svg" alt="JO" width="20">
-                        </div>
-                        <div class="menu-dots"><img src="../icons/ellipsis-solid-full.svg" alt="img" width="20"></div>
+            <div class="toolbar">
+                <div class="search-group">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search PT members...">
                     </div>
-                    <div class="stat-body">
-                        <h3>Total Members</h3>
-                        <h2>284</h2>
-                        <p class="growth positive">
-                            <img src="../icons/arrow-trend-up-solid-full.svg" alt="JO" width="20"> +12% <span>vs last
-                                month</span>
-                        </p>
-                    </div>
+
+                    <button class="filter-btn">
+                        <i class="fa-solid fa-filter"></i> Filter
+                    </button>
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div class="stat-icon purple-gradient">
-                            <img src="../icons/fire-solid-full.svg" alt="JO" width="20">
-                        </div>
-                        <div class="menu-dots"><img src="../icons/ellipsis-solid-full.svg" alt="img" width="20"></div>
-                    </div>
-                    <div class="stat-body">
-                        <h3>Active Plans</h3>
-                        <h2>42</h2>
-                        <p class="growth neutral">
-                            <img src="../icons/circle-exclamation-solid-full.svg" alt="img" width="20"> 8 New <span>this
-                                week</span>
-                        </p>
-                    </div>
-                </div>
+                <a href="membership_pt.html" class="btn-primary">
+                    <i class="fa-solid fa-plus"></i> Add PT Package
+                </a>
+            </div>
 
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <div class="stat-icon green-gradient">
-                            <img src="../icons/wallet-solid-full.svg" alt="JO" width="20">
-                        </div>
-                        <div class="menu-dots"><img src="../icons/ellipsis-solid-full.svg" alt="img" width="20"></div>
-                    </div>
-                    <div class="stat-body">
-                        <h3>Revenue</h3>
-                        <h2>₹7,200</h2>
-                        <p class="growth positive">
-                            <img src="../icons/arrow-trend-up-solid-full.svg" alt="JO" width="20"> +22% <span>vs last
-                                month</span>
-                        </p>
-                    </div>
-                </div>
-            </section>
+            <div class="table-card">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Membership Plan</th>
+                            <th>Assigned Trainer</th>
+                            <th>Total Sessions</th>
+                            <th>Used</th>
+                            <th>Remaining</th>
+                            <th>PT Valid Till</th>
+                            <th>PT Status</th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
 
-            <section class="content-grid">
+                    <tbody>
+                        <tr>
+                            <td><span class="fw-bold">Sneha Reddy</span></td>
+                            <td><span class="badge purple">Premium</span></td>
+                            <td>Mike Johnson</td>
+                            <td>24</td>
+                            <td>16</td>
+                            <td class="sessions-remaining">8</td>
+                            <td>Mar 15, 2026</td>
+                            <td><span class="pt-status active">Active</span></td>
+                            <td>
+                                <a href="member_pt_details.html" class="btn-view"><i class="fa-solid fa-eye"></i></a>
+                            </td>
+                        </tr>
 
-                <div class="panel chart-panel">
-                    <div class="panel-header">
-                        <h3>Monthly Revenue</h3>
-                        <select class="dropdown">
-                            <option>This Year</option>
-                            <option>Last Year</option>
-                        </select>
-                    </div>
-                    <div class="css-chart-container">
-                        <div class="bar-group">
-                            <div class="bar" style="height: 40%"></div>
-                            <span class="label">Jan</span>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar" style="height: 60%"></div>
-                            <span class="label">Feb</span>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar" style="height: 35%"></div>
-                            <span class="label">Mar</span>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar active" style="height: 85%"></div>
-                            <span class="label">Apr</span>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar" style="height: 55%"></div>
-                            <span class="label">May</span>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar" style="height: 70%"></div>
-                            <span class="label">Jun</span>
-                        </div>
-                    </div>
-                </div>
+                        <tr>
+                            <td><span class="fw-bold">Ishita Patel</span></td>
+                            <td><span class="badge gray">Standard</span></td>
+                            <td>Sarah Lee</td>
+                            <td>12</td>
+                            <td>12</td>
+                            <td class="sessions-remaining">0</td>
+                            <td>Jan 20, 2026</td>
+                            <td><span class="pt-status completed">Completed</span></td>
+                            <td>
+                                <a href="member_pt_details.html" class="btn-view"><i class="fa-solid fa-eye"></i></a>
+                            </td>
+                        </tr>
 
-                <div class="panel side-panel">
-                    <div class="panel-header">
-                        <h3>Quick Actions</h3>
-                    </div>
-                    <div class="action-list">
-                        <button class="action-btn">
-                            <div class="icon"><img src="../icons/user-plus-solid-full.svg" alt="JO" width="20"></div>
-                            <a href="personal_health.html" class="btn-primary">
-                                <span>Add Member</span>
-                            </a>
-                        </button>
-                        <button class="action-btn">
-                            <div class="icon"><img src="../icons/file-invoice-solid-full.svg" alt="JO" width="20"></div>
-                            <a href="invoice.html" class="btn-primary">
-                                <span>Create Invoice</span>
-                            </a>
-                        </button>
-                        <button class="action-btn">
-                            <div class="icon"><img src="../icons/calendar-plus-solid-full.svg" alt="JO" width="20">
-                            </div>
-                            <a href="create_diet_plan.html" class="btn-primary">
-                                <span>New Diet Plan</span>
-                            </a>
-                        </button>
-                    </div>
-                </div>
+                        <tr>
+                            <td><span class="fw-bold">Priya Nair</span></td>
+                            <td><span class="badge purple">Premium</span></td>
+                            <td>David Chen</td>
+                            <td>20</td>
+                            <td>8</td>
+                            <td class="sessions-remaining">12</td>
+                            <td>Dec 10, 2025</td>
+                            <td><span class="pt-status expired">Expired</span></td>
+                            <td>
+                                <a href="member_pt_details.html" class="btn-view"><i class="fa-solid fa-eye"></i></a>
+                            </td>
+                        </tr>
 
-            </section>
+                        <tr>
+                            <td><span class="fw-bold">Vedant Sharma</span></td>
+                            <td><span class="badge purple">Premium</span></td>
+                            <td>Mike Johnson</td>
+                            <td>30</td>
+                            <td>22</td>
+                            <td class="sessions-remaining">8</td>
+                            <td>Apr 25, 2026</td>
+                            <td><span class="pt-status active">Active</span></td>
+                            <td>
+                                <a href="member_pt_details.html" class="btn-view"><i class="fa-solid fa-eye"></i></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="fw-bold">Kabir Naik</span></td>
+                            <td><span class="badge gray">Standard</span></td>
+                            <td>Sarah Lee</td>
+                            <td>15</td>
+                            <td>15</td>
+                            <td class="sessions-remaining">0</td>
+                            <td>Feb 01, 2026</td>
+                            <td><span class="pt-status completed">Completed</span></td>
+                            <td>
+                                <a href="member_pt_details.html" class="btn-view"><i class="fa-solid fa-eye"></i></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="fw-bold">Ramnath K</span></td>
+                            <td><span class="badge purple">Premium</span></td>
+                            <td>David Chen</td>
+                            <td>24</td>
+                            <td>5</td>
+                            <td class="sessions-remaining">19</td>
+                            <td>May 30, 2026</td>
+                            <td><span class="pt-status active">Active</span></td>
+                            <td>
+                                <a href="member_pt_details.html" class="btn-view"><i class="fa-solid fa-eye"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
         </main>
     </div>
 
-    <!-- JavaScript for Toggle Functionality -->
     <script>
         // Wait for DOM to load
         document.addEventListener('DOMContentLoaded', function () {
