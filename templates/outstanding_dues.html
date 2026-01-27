@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Received Payments | JoF Fitness</title>
+    <title>Outstanding Dues | JoF Fitness</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="../static/received_payment.css" />
+    <link rel="stylesheet" href="../static/payment_installments.css" />
 </head>
 
 <body>
@@ -71,9 +71,9 @@
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
-                        <a href="payments.html" class="active">View Payments</a>
+                        <a href="payments.html">View Payments</a>
                         <a href="payment_installments.html">Installment Payments</a>
-                        <a href="outstanding_dues.html">Outstanding Dues</a>
+                        <a href="outstanding_dues.html" class="active">Outstanding Dues</a>
                         <a href="payment_recovery_communication.html">Recovery Communication</a>
                     </div>
                 </div>
@@ -109,167 +109,143 @@
 
             <div class="page-header">
                 <div class="header-text">
-                    <h1>Payment History</h1>
-                    <p>View all recent transactions and payment statuses.</p>
-                </div>
-
-                <div class="header-actions">
-                    <div class="search-box">
-                        <img src="../icons/magnifying-glass-solid-full.svg" alt="img" width="20">
-                        <input type="text" placeholder="Search transaction...">
-                    </div>
+                    <h1>Outstanding Fees – Exited Members</h1>
+                    <p>Track pending payments from members who have left the gym</p>
                 </div>
             </div>
 
+            <!-- Exited Members - Outstanding Dues -->
             <div class="table-panel">
+                <div class="panel-header">
+                    <h2>Exited Members With Pending Fees</h2>
+                </div>
                 <div class="table-responsive">
                     <table>
                         <thead>
                             <tr>
                                 <th>Member Name</th>
-                                <th>Plan Details</th>
-                                <th>Date</th>
-                                <th>Payment Mode</th>
-                                <th class="right">Amount</th>
-                                <th class="right">Invoice</th>
-                                <th class="right">Notify</th>
+                                <th>Membership End Date</th>
+                                <th>Total Fees</th>
+                                <th>Paid Amount</th>
+                                <th>Outstanding Amount</th>
+                                <th>Last Payment Date</th>
+                                <th class="right">Contact Status</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
-                                <td>
+                                <td data-label="Member Name">
                                     <div class="user-info">
-                                        <div class="avatar">S</div>
+                                        <div class="avatar">K</div>
                                         <div>
-                                            <span class="bold">Sneha Reddy</span>
-                                            <span class="email-sub">sneha@example.com</span>
+                                            <span class="bold">Karan Patel</span>
+                                            <span class="email-sub">karan.p@example.com</span>
                                         </div>
                                     </div>
                                 </td>
-                                <td><span class="plan-badge premium">Premium Plan</span></td>
-                                <td class="muted">Jan 05, 2025</td>
-                                <td><span class="pill upi"><img src="../icons/mobile-screen-solid-full.svg" alt="img"
-                                            width="20"> UPI</span></td>
-                                <td class="amount right">+₹79.00</td>
-                                <td class="right">
-                                    <button class="icon-btn" title="Download Invoice"><img
-                                            src="../icons/download-solid-full.svg" alt="img" width="20"></button>
-                                </td>
-                                <td class="right">
-                                    <a href="send_reminder.html?name=Sneha+Reddy&amount=79" class="icon-btn notify-btn"
-                                        title="Send Reminder">
-                                        <i class="fa-solid fa-bell"></i>
-                                    </a>
-                                </td>
+                                <td data-label="Membership End Date" class="muted">Dec 31, 2025</td>
+                                <td data-label="Total Fees" class="amount-total">₹12,000</td>
+                                <td data-label="Paid Amount" class="amount-paid">₹8,000</td>
+                                <td data-label="Outstanding Amount" class="amount-outstanding">₹4,000</td>
+                                <td data-label="Last Payment Date" class="muted">Nov 15, 2025</td>
+                                <td data-label="Contact Status" class="right"><span
+                                        class="status-badge status-not-contacted">Not Contacted</span></td>
                             </tr>
 
                             <tr>
-                                <td>
+                                <td data-label="Member Name">
                                     <div class="user-info">
-                                        <div class="avatar blue">M</div>
+                                        <div class="avatar blue">S</div>
                                         <div>
-                                            <span class="bold">Ishita Patel</span>
-                                            <span class="email-sub">ishita@example.com</span>
+                                            <span class="bold">Sanjay Kumar</span>
+                                            <span class="email-sub">sanjay.k@example.com</span>
                                         </div>
                                     </div>
                                 </td>
-                                <td><span class="plan-badge standard">Standard Plan</span></td>
-                                <td class="muted">Jan 08, 2025</td>
-                                <td><span class="pill cash"><img src="../icons/money-bill-wave-solid-full.svg" alt="img"
-                                            width="20"> Cash</span></td>
-                                <td class="amount right">+₹49.00</td>
-                                <td class="right">
-                                    <button class="icon-btn" title="Download Invoice"><img
-                                            src="../icons/download-solid-full.svg" alt="img" width="20"></button>
-                                </td>
-                                <td class="right">
-                                    <a href="send_reminder.html?name=Ishita+Patel&amount=49" class="icon-btn notify-btn"
-                                        title="Send Reminder">
-                                        <i class="fa-solid fa-bell"></i>
-                                    </a>
-                                </td>
+                                <td data-label="Membership End Date" class="muted">Jan 10, 2026</td>
+                                <td data-label="Total Fees" class="amount-total">₹15,000</td>
+                                <td data-label="Paid Amount" class="amount-paid">₹10,000</td>
+                                <td data-label="Outstanding Amount" class="amount-outstanding">₹5,000</td>
+                                <td data-label="Last Payment Date" class="muted">Dec 20, 2025</td>
+                                <td data-label="Contact Status" class="right"><span
+                                        class="status-badge status-reminder-sent">Reminder Sent</span></td>
                             </tr>
 
                             <tr>
-                                <td>
+                                <td data-label="Member Name">
                                     <div class="user-info">
-                                        <div class="avatar orange">E</div>
+                                        <div class="avatar orange">M</div>
                                         <div>
-                                            <span class="bold">Priya Nair</span>
-                                            <span class="email-sub">priya@example.com</span>
+                                            <span class="bold">Maya Reddy</span>
+                                            <span class="email-sub">maya.r@example.com</span>
                                         </div>
                                     </div>
                                 </td>
-                                <td><span class="plan-badge premium">Premium Plan</span></td>
-                                <td class="muted">Jan 10, 2025</td>
-                                <td><span class="pill card"><img src="../icons/credit-card-solid-full.svg" alt="img"
-                                            width="20"> Card</span></td>
-                                <td class="amount right">+₹79.00</td>
-                                <td class="right">
-                                    <button class="icon-btn" title="Download Invoice"><img
-                                            src="../icons/download-solid-full.svg" alt="img" width="20"></button>
-                                </td>
-                                <td class="right">
-                                    <a href="send_reminder.html?name=Priya+Nair&amount=79" class="icon-btn notify-btn"
-                                        title="Send Reminder">
-                                        <i class="fa-solid fa-bell"></i>
-                                    </a>
-                                </td>
+                                <td data-label="Membership End Date" class="muted">Nov 30, 2025</td>
+                                <td data-label="Total Fees" class="amount-total">₹9,000</td>
+                                <td data-label="Paid Amount" class="amount-paid">₹6,000</td>
+                                <td data-label="Outstanding Amount" class="amount-outstanding">₹3,000</td>
+                                <td data-label="Last Payment Date" class="muted">Oct 25, 2025</td>
+                                <td data-label="Contact Status" class="right"><span
+                                        class="status-badge status-reminder-sent">Reminder Sent</span></td>
                             </tr>
 
                             <tr>
-                                <td>
+                                <td data-label="Member Name">
                                     <div class="user-info">
-                                        <div class="avatar">D</div>
+                                        <div class="avatar purple">D</div>
                                         <div>
-                                            <span class="bold">Vedant Sharma</span>
-                                            <span class="email-sub">vedant@example.com</span>
+                                            <span class="bold">Deepak Verma</span>
+                                            <span class="email-sub">deepak.v@example.com</span>
                                         </div>
                                     </div>
                                 </td>
-                                <td><span class="plan-badge premium">Premium Plan</span></td>
-                                <td class="muted">Jan 12, 2025</td>
-                                <td><span class="pill upi"><img src="../icons/mobile-screen-solid-full.svg" alt="img"
-                                            width="20"> UPI</span></td>
-                                <td class="amount right">+₹79.00</td>
-                                <td class="right">
-                                    <button class="icon-btn" title="Download Invoice"><img
-                                            src="../icons/download-solid-full.svg" alt="img" width="20"></button>
-                                </td>
-                                <td class="right">
-                                    <a href="send_reminder.html?name=Vedant+Sharma&amount=79"
-                                        class="icon-btn notify-btn" title="Send Reminder">
-                                        <i class="fa-solid fa-bell"></i>
-                                    </a>
-                                </td>
+                                <td data-label="Membership End Date" class="muted">Jan 05, 2026</td>
+                                <td data-label="Total Fees" class="amount-total">₹18,000</td>
+                                <td data-label="Paid Amount" class="amount-paid">₹15,000</td>
+                                <td data-label="Outstanding Amount" class="amount-outstanding">₹3,000</td>
+                                <td data-label="Last Payment Date" class="muted">Nov 30, 2025</td>
+                                <td data-label="Contact Status" class="right"><span
+                                        class="status-badge status-not-contacted">Not Contacted</span></td>
                             </tr>
 
                             <tr>
-                                <td>
+                                <td data-label="Member Name">
                                     <div class="user-info">
-                                        <div class="avatar blue">J</div>
+                                        <div class="avatar blue">A</div>
                                         <div>
-                                            <span class="bold">Kabir Naik</span>
-                                            <span class="email-sub">kabir@example.com</span>
+                                            <span class="bold">Anjali Joshi</span>
+                                            <span class="email-sub">anjali.j@example.com</span>
                                         </div>
                                     </div>
                                 </td>
-                                <td><span class="plan-badge standard">Standard Plan</span></td>
-                                <td class="muted">Jan 14, 2025</td>
-                                <td><span class="pill card"><img src="../icons/credit-card-solid-full.svg" alt="img"
-                                            width="20"> Card</span></td>
-                                <td class="amount right">+₹49.00</td>
-                                <td class="right">
-                                    <button class="icon-btn" title="Download Invoice"><img
-                                            src="../icons/download-solid-full.svg" alt="img" width="20"></button>
+                                <td data-label="Membership End Date" class="muted">Dec 15, 2025</td>
+                                <td data-label="Total Fees" class="amount-total">₹10,000</td>
+                                <td data-label="Paid Amount" class="amount-paid">₹5,000</td>
+                                <td data-label="Outstanding Amount" class="amount-outstanding">₹5,000</td>
+                                <td data-label="Last Payment Date" class="muted">Sep 20, 2025</td>
+                                <td data-label="Contact Status" class="right"><span
+                                        class="status-badge status-reminder-sent">Reminder Sent</span></td>
+                            </tr>
+
+                            <tr>
+                                <td data-label="Member Name">
+                                    <div class="user-info">
+                                        <div class="avatar orange">R</div>
+                                        <div>
+                                            <span class="bold">Rohan Gupta</span>
+                                            <span class="email-sub">rohan.g@example.com</span>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td class="right">
-                                    <a href="send_reminder.html?name=Kabir+Naik&amount=49" class="icon-btn notify-btn"
-                                        title="Send Reminder">
-                                        <i class="fa-solid fa-bell"></i>
-                                    </a>
-                                </td>
+                                <td data-label="Membership End Date" class="muted">Dec 20, 2025</td>
+                                <td data-label="Total Fees" class="amount-total">₹20,000</td>
+                                <td data-label="Paid Amount" class="amount-paid">₹12,000</td>
+                                <td data-label="Outstanding Amount" class="amount-outstanding">₹8,000</td>
+                                <td data-label="Last Payment Date" class="muted">Oct 10, 2025</td>
+                                <td data-label="Contact Status" class="right"><span
+                                        class="status-badge status-not-contacted">Not Contacted</span></td>
                             </tr>
                         </tbody>
                     </table>

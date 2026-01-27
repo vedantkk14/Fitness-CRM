@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Membership Plans | JoF Fitness</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Installment | JoF Fitness</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../static/membership.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../static/payment_installments.css" />
 </head>
 
 <body>
@@ -60,19 +60,19 @@
                     <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
                     <span>Staff</span>
                 </a>
-                <a href="membership.html" class="nav-link active">
+                <a href="membership.html" class="nav-link">
                     <img src="../icons/credit-card-solid-full.svg" alt="Membership" width="20">
                     <span>Membership</span>
                 </a>
-                <div class="nav-item-dropdown">
-                    <a href="payments.html" class="nav-link">
+                <div class="nav-item-dropdown active">
+                    <a href="payments.html" class="nav-link active">
                         <img src="../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
                         <span>Payments</span>
                         <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
                     </a>
                     <div class="sidebar-submenu">
                         <a href="payments.html">View Payments</a>
-                        <a href="payment_installments.html">Installment Payments</a>
+                        <a href="payment_installments.html" class="active">Installment Payments</a>
                         <a href="outstanding_dues.html">Outstanding Dues</a>
                         <a href="payment_recovery_communication.html">Recovery Communication</a>
                     </div>
@@ -107,135 +107,105 @@
 
         <main class="main-content">
 
-            <header class="page-header">
+            <div class="page-header">
                 <div class="header-text">
-                    <h1>Membership Plans</h1>
-                    <p>Create and manage pricing tiers for your studio.</p>
+                    <h1>Update Installment Details</h1>
+                    <p>Modify payment installment information for the member</p>
                 </div>
+            </div>
 
-                <div class="header-actions">
-                    <a href="add_membership.html" class="add-btn">
-                        <i class="fa-solid fa-plus"></i> Create Plan
-                    </a>
+            <!-- Update Form -->
+            <div class="form-panel">
+                <div class="panel-header">
+                    <h2>Member Payment Information</h2>
                 </div>
-            </header>
+                <div class="form-container">
+                    <form class="update-form">
+                        <div class="form-grid">
+                            <!-- Member Name -->
+                            <div class="form-group">
+                                <label for="memberName">Member Name</label>
+                                <input type="text" id="memberName" name="memberName" value="Rahul Mehta" required>
+                            </div>
 
-            <section class="plans-grid">
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="memberEmail">Email Address</label>
+                                <input type="email" id="memberEmail" name="memberEmail" value="rahul@example.com"
+                                    required>
+                            </div>
 
-                <div class="plan-card">
-                    <div class="color-strip blue"></div>
-                    <div class="plan-header">
-                        <h2>Basic</h2>
-                        <div class="price">
-                            <span class="currency">₹</span>29<span class="period">/mo</span>
+                            <!-- Membership Plan -->
+                            <div class="form-group">
+                                <label for="membershipPlan">Membership Plan</label>
+                                <select id="membershipPlan" name="membershipPlan">
+                                    <option value="standard">Standard Plan</option>
+                                    <option value="premium" selected>Premium Plan</option>
+                                    <option value="elite">Elite Plan</option>
+                                </select>
+                            </div>
+
+                            <!-- Total Amount -->
+                            <div class="form-group">
+                                <label for="totalAmount">Total Amount (₹)</label>
+                                <input type="number" id="totalAmount" name="totalAmount" value="15000" required>
+                            </div>
+
+                            <!-- Amount Paid -->
+                            <div class="form-group">
+                                <label for="amountPaid">Amount Paid (₹)</label>
+                                <input type="number" id="amountPaid" name="amountPaid" value="10000" required>
+                            </div>
+
+                            <!-- Pending Amount -->
+                            <div class="form-group">
+                                <label for="pendingAmount">Pending Amount (₹)</label>
+                                <input type="number" id="pendingAmount" name="pendingAmount" value="5000" readonly>
+                            </div>
+
+                            <!-- Installments Paid -->
+                            <div class="form-group">
+                                <label for="installmentsPaid">Installments Paid</label>
+                                <input type="number" id="installmentsPaid" name="installmentsPaid" value="2" required>
+                            </div>
+
+                            <!-- Total Installments -->
+                            <div class="form-group">
+                                <label for="totalInstallments">Total Installments</label>
+                                <input type="number" id="totalInstallments" name="totalInstallments" value="3" required>
+                            </div>
+
+                            <!-- Next Due Date -->
+                            <div class="form-group">
+                                <label for="nextDueDate">Next Due Date</label>
+                                <input type="date" id="nextDueDate" name="nextDueDate" value="2026-02-10" required>
+                            </div>
+
+                            <!-- Payment Status -->
+                            <div class="form-group">
+                                <label for="paymentStatus">Payment Status</label>
+                                <select id="paymentStatus" name="paymentStatus">
+                                    <option value="paid">Paid</option>
+                                    <option value="partial" selected>Partial</option>
+                                    <option value="overdue">Overdue</option>
+                                </select>
+                            </div>
                         </div>
-                        <p class="desc">Perfect for beginners getting started with fitness.</p>
-                    </div>
 
-                    <div class="stats-row">
-                        <div class="stat"><i class="fa-solid fa-users"></i> 45 Active</div>
-                        <div class="stat"><i class="fa-regular fa-clock"></i> 8 Classes</div>
-                    </div>
-
-                    <ul class="features">
-                        <li><i class="fa-solid fa-check"></i> Access to gym floor</li>
-                        <li><i class="fa-solid fa-check"></i> 8 classes per month</li>
-                        <li><i class="fa-solid fa-check"></i> Locker room access</li>
-                        <li><i class="fa-solid fa-check"></i> Mobile app access</li>
-                    </ul>
-
-                    <div class="plan-footer">
-                        <button class="icon-btn edit"><i class="fa-solid fa-pen"></i></button>
-                        <button class="icon-btn delete"><i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="plan-card popular">
-                    <div class="color-strip purple"></div>
-                    <div class="badge">Most Popular</div>
-                    <div class="plan-header">
-                        <h2>Standard</h2>
-                        <div class="price">
-                            <span class="currency">₹</span>49<span class="period">/mo</span>
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel"
+                                onclick="window.location.href='payment_installments.html'">
+                                <i class="fa-solid fa-xmark"></i> Cancel
+                            </button>
+                            <button type="submit" class="btn-save">
+                                <i class="fa-solid fa-floppy-disk"></i> Save Changes
+                            </button>
                         </div>
-                        <p class="desc">Most popular plan for regular fitness enthusiasts.</p>
-                    </div>
-
-                    <div class="stats-row">
-                        <div class="stat"><i class="fa-solid fa-users"></i> 128 Active</div>
-                        <div class="stat"><i class="fa-regular fa-clock"></i> 20 Classes</div>
-                    </div>
-
-                    <ul class="features">
-                        <li><i class="fa-solid fa-check"></i> Access to gym floor</li>
-                        <li><i class="fa-solid fa-check"></i> 20 classes per month</li>
-                        <li><i class="fa-solid fa-check"></i> Locker room access</li>
-                        <li><i class="fa-solid fa-check"></i> 1 Personal Training</li>
-                    </ul>
-
-                    <div class="plan-footer">
-                        <button class="icon-btn edit"><i class="fa-solid fa-pen"></i></button>
-                        <button class="icon-btn delete"><i class="fa-solid fa-trash"></i></button>
-                    </div>
+                    </form>
                 </div>
+            </div>
 
-                <div class="plan-card">
-                    <div class="color-strip orange"></div>
-                    <div class="plan-header">
-                        <h2>Premium</h2>
-                        <div class="price">
-                            <span class="currency">₹</span>79<span class="period">/mo</span>
-                        </div>
-                        <p class="desc">Ultimate fitness experience with unlimited access.</p>
-                    </div>
-
-                    <div class="stats-row">
-                        <div class="stat"><i class="fa-solid fa-users"></i> 86 Active</div>
-                        <div class="stat"><i class="fa-solid fa-infinity"></i> Unlimited</div>
-                    </div>
-
-                    <ul class="features">
-                        <li><i class="fa-solid fa-check"></i> Unlimited gym access</li>
-                        <li><i class="fa-solid fa-check"></i> Unlimited classes</li>
-                        <li><i class="fa-solid fa-check"></i> 4 Personal Training</li>
-                        <li><i class="fa-solid fa-check"></i> Sauna access</li>
-                    </ul>
-
-                    <div class="plan-footer">
-                        <button class="icon-btn edit"><i class="fa-solid fa-pen"></i></button>
-                        <button class="icon-btn delete"><i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
-                <div class="plan-card">
-                    <div class="color-strip green"></div>
-                    <div class="plan-header">
-                        <h2>Annual VIP</h2>
-                        <div class="price">
-                            <span class="currency">₹</span>799<span class="period">/yr</span>
-                        </div>
-                        <p class="desc">Best value - Save 15% with annual commitment.</p>
-                    </div>
-
-                    <div class="stats-row">
-                        <div class="stat"><i class="fa-solid fa-users"></i> 25 Active</div>
-                        <div class="stat"><i class="fa-solid fa-infinity"></i> Unlimited</div>
-                    </div>
-
-                    <ul class="features">
-                        <li><i class="fa-solid fa-check"></i> All Premium Benefits</li>
-                        <li><i class="fa-solid fa-check"></i> 6 Personal Training</li>
-                        <li><i class="fa-solid fa-check"></i> Guest pass (4/month)</li>
-                        <li><i class="fa-solid fa-check"></i> Free merchandise</li>
-                    </ul>
-
-                    <div class="plan-footer">
-                        <button class="icon-btn edit"><i class="fa-solid fa-pen"></i></button>
-                        <button class="icon-btn delete"><i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
-            </section>
         </main>
     </div>
 
@@ -290,6 +260,20 @@
                     });
                 }
             });
+
+            // Auto-calculate pending amount
+            const totalAmountField = document.getElementById('totalAmount');
+            const amountPaidField = document.getElementById('amountPaid');
+            const pendingAmountField = document.getElementById('pendingAmount');
+
+            function calculatePending() {
+                const total = parseFloat(totalAmountField.value) || 0;
+                const paid = parseFloat(amountPaidField.value) || 0;
+                pendingAmountField.value = Math.max(0, total - paid);
+            }
+
+            totalAmountField.addEventListener('input', calculatePending);
+            amountPaidField.addEventListener('input', calculatePending);
         });
     </script>
 
