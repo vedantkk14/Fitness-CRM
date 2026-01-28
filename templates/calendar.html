@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOF | Admin Calendar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/calendar.css">
+</head>
+
+<body>
+    <!-- Mobile Toggle Button (visible only on mobile) -->
+    <button class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Desktop Toggle Button (visible on desktop, outside sidebar) -->
+    <button class="toggle-sidebar-btn" id="toggleBtn">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo-area">
+                <img src="../icons/logo-light(1).png" alt="JOF Logo" class="brand-logo">
+            </div>
+
+            <div class="nav-label">MENU</div>
+            <nav class="navigation">
+                <a href="dashboard.html" class="nav-link">
+                    <img src="../icons/chart-pie-solid-full.svg" alt="Dashboard" width="20">
+                    <span>Dashboard</span>
+                </a>
+                <div class="nav-item-dropdown">
+                    <a href="members.html" class="nav-link">
+                        <img src="../icons/users-solid-full.svg" alt="Members" width="20">
+                        <span>Members</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="members.html">View Members</a>
+                        <a href="add_member.html">Add Member</a>
+                        <a href="personal_training.html">Personal Training (PT)</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a href="diet-plans.html" class="nav-link">
+                        <img src="../icons/carrot-solid-full.svg" alt="Diet Plans" width="20">
+                        <span>Diet Plans</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="create_diet_plan.html">Create Diet Plan</a>
+                        <a href="assign_diet_plan.html">Assign</a>
+                    </div>
+                </div>
+                <a href="staff.html" class="nav-link">
+                    <img src="../icons/clipboard-user-solid-full.svg" alt="Staff" width="20">
+                    <span>Staff</span>
+                </a>
+                <a href="membership.html" class="nav-link">
+                    <img src="../icons/credit-card-regular-full.svg" alt="Staff" width="20">
+                    <span>Membership</span>
+                </a>
+                <div class="nav-item-dropdown">
+                    <a href="payments.html" class="nav-link">
+                        <img src="../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
+                        <span>Payments</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="payments.html">View Payments</a>
+                        <a href="payment_installments.html">Installment Payments</a>
+                        <a href="outstanding_dues.html">Outstanding Dues</a>
+                        <a href="payment_recovery_communication.html">Recovery Communication</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a href="sales_leads.html" class="nav-link">
+                        <img src="../icons/chart-line-solid-full.svg" alt="Sales" width="20">
+                        <span>Sales Management</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="sales_leads.html">New Leads</a>
+                        <a href="sales_reports.html">Conversion Reports</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a href="reports_pg.html" class="nav-link">
+                        <img src="../icons/chart-line-solid-full.svg" alt="Reports" width="20">
+                        <span>Reports</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="reports/feedback_sentiment.html">Feedback & Sentiment</a>
+                        <a href="reports/renewal_report.html">Renewal Report</a>
+                        <a href="reports/revenue_source.html">Revenue Report</a>
+                        <a href="reports/trainer_performance.html">Trainer Performance</a>
+                    </div>
+                </div>
+            </nav>
+
+        </aside>
+
+        <main class="main-content">
+
+            <div class="calendar-wrapper">
+                
+                <div class="calendar-main">
+                    <div class="calendar-header">
+                        <div class="month-year">
+                            <h2 id="monthYear">January 2026</h2>
+                        </div>
+                        <div class="cal-actions">
+                            <button class="cal-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="cal-btn" id="todayBtn">Today</button>
+                            <button class="cal-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="days-grid">
+                        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                    </div>
+
+                    <div class="dates-grid" id="datesGrid">
+                        </div>
+                </div>
+
+                <div class="events-panel">
+                    <div class="panel-header">
+                        <h3>Upcoming Events</h3>
+                        <button class="add-event-btn" onclick="openModal()">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class="event-list" id="eventList">
+                        <div class="empty-state">No upcoming events</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="eventModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Add New Event</h3>
+                <button onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label>Event Title</label>
+                    <input type="text" id="eventTitle" placeholder="e.g. Staff Meeting" required>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="eventDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Time</label>
+                    <input type="time" id="eventTime" required>
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <select id="eventType">
+                        <option value="meeting">Meeting</option>
+                        <option value="training">Training</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-save">Save Event</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">
+        <div class="toast-icon"><i class="fa-solid fa-bell"></i></div>
+        <div class="toast-body">
+            <h4>Event Reminder</h4>
+            <p id="toastMessage">Meeting starting now!</p>
+        </div>
+    </div>
+
+    <script>
+        const dateGrid = document.getElementById('datesGrid');
+        const monthYear = document.getElementById('monthYear');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const todayBtn = document.getElementById('todayBtn');
+        const eventList = document.getElementById('eventList');
+        const modal = document.getElementById('eventModal');
+        const eventForm = document.getElementById('eventForm');
+
+        let currentDate = new Date();
+        let events = JSON.parse(localStorage.getItem('jof_events')) || [];
+
+        // Request Notification Permission
+        if (Notification.permission !== "granted") {
+            Notification.requestPermission();
+        }
+
+        // 1. Render Calendar
+        function renderCalendar() {
+            dateGrid.innerHTML = "";
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const lastDate = new Date(year, month + 1, 0).getDate();
+            const lastDayIndex = new Date(year, month + 1, 0).getDay();
+            const prevLastDate = new Date(year, month, 0).getDate();
+
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            monthYear.innerHTML = `${months[month]} ${year}`;
+
+            // Previous Month Dates
+            for (let i = firstDay; i > 0; i--) {
+                dateGrid.innerHTML += `<div class="date prev-date">${prevLastDate - i + 1}</div>`;
+            }
+
+            // Current Month Dates
+            for (let i = 1; i <= lastDate; i++) {
+                let isToday = i === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear() ? "today" : "";
+                
+                // Check for events on this day
+                let dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+                let dayEvents = events.filter(e => e.date === dateString);
+                let eventDot = dayEvents.length > 0 ? '<div class="event-dot"></div>' : '';
+
+                dateGrid.innerHTML += `<div class="date ${isToday}" onclick="openModal('${dateString}')">${i}${eventDot}</div>`;
+            }
+
+            // Next Month Dates
+            for (let i = 1; i <= 7 - lastDayIndex - 1; i++) {
+                dateGrid.innerHTML += `<div class="date next-date">${i}</div>`;
+            }
+
+            renderEventList();
+        }
+
+        // 2. Render Sidebar List
+        function renderEventList() {
+            eventList.innerHTML = "";
+            // Sort events by date
+            const sortedEvents = events.sort((a, b) => new Date(a.date + ' ' + a.time) - new Date(b.date + ' ' + b.time));
+            
+            // Filter only future events (or today)
+            const futureEvents = sortedEvents.filter(e => new Date(e.date) >= new Date().setHours(0,0,0,0));
+
+            if(futureEvents.length === 0) {
+                eventList.innerHTML = '<div class="empty-state">No upcoming events</div>';
+                return;
+            }
+
+            futureEvents.forEach((event, index) => {
+                const eventHTML = `
+                    <div class="event-card ${event.type}">
+                        <div class="event-time">
+                            <span>${new Date(event.date).getDate()}</span>
+                            <small>${event.time}</small>
+                        </div>
+                        <div class="event-info">
+                            <h4>${event.title}</h4>
+                            <p>${event.type}</p>
+                        </div>
+                        <button class="delete-btn" onclick="deleteEvent(${index})"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `;
+                eventList.innerHTML += eventHTML;
+            });
+        }
+
+        // 3. Modal Logic
+        function openModal(dateStr) {
+            modal.classList.add('active');
+            if(dateStr) {
+                document.getElementById('eventDate').value = dateStr;
+            } else {
+                document.getElementById('eventDate').valueAsDate = new Date();
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            eventForm.reset();
+        }
+
+        // 4. Add Event
+        eventForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newEvent = {
+                title: document.getElementById('eventTitle').value,
+                date: document.getElementById('eventDate').value,
+                time: document.getElementById('eventTime').value,
+                type: document.getElementById('eventType').value
+            };
+            events.push(newEvent);
+            localStorage.setItem('jof_events', JSON.stringify(events));
+            closeModal();
+            renderCalendar();
+        });
+
+        // 5. Delete Event
+        window.deleteEvent = function(index) {
+            if(confirm('Delete this event?')) {
+                events.splice(index, 1);
+                localStorage.setItem('jof_events', JSON.stringify(events));
+                renderCalendar();
+            }
+        }
+
+        // Navigation Listeners
+        prevBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() - 1); renderCalendar(); });
+        nextBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() + 1); renderCalendar(); });
+        todayBtn.addEventListener('click', () => { currentDate = new Date(); renderCalendar(); });
+
+        // 6. Notification Logic (Runs every 30 seconds)
+        setInterval(() => {
+            const now = new Date();
+            const currentTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+            const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
+            events.forEach(event => {
+                if (event.date === todayStr && event.time === currentTime && !event.notified) {
+                    showNotification(event.title);
+                    event.notified = true; // Prevent double alert
+                    localStorage.setItem('jof_events', JSON.stringify(events));
+                }
+            });
+        }, 30000);
+
+        function showNotification(title) {
+            // 1. In-App Toast
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = `${title} is starting now!`;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 5000);
+
+            // 2. Browser Notification
+            if (Notification.permission === "granted") {
+                new Notification("JOF Fitness Alert", {
+                    body: `${title} is starting now!`,
+                    icon: "../icons/logo-dark(1).png"
+                });
+            }
+        }
+
+        // ========== SIDEBAR TOGGLE ==========
+        const toggleBtn = document.getElementById('toggleBtn');
+        const mobileToggle = document.getElementById('mobileToggle');
+        const body = document.body;
+        const sidebar = document.querySelector('.sidebar');
+
+        // Desktop toggle button
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function () {
+                body.classList.toggle('collapsed');
+            });
+        }
+
+        // Mobile toggle button
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function () {
+                body.classList.toggle('sidebar-open');
+            });
+        }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function (event) {
+            const isClickInsideSidebar = sidebar.contains(event.target);
+            const isClickOnToggle = mobileToggle.contains(event.target);
+
+            if (!isClickInsideSidebar && !isClickOnToggle && body.classList.contains('sidebar-open') && window.innerWidth <= 992) {
+                body.classList.remove('sidebar-open');
+            }
+        });
+
+        // Dropdown Logic
+        const dropdownItems = document.querySelectorAll('.nav-item-dropdown');
+
+        dropdownItems.forEach(item => {
+            const link = item.querySelector('.nav-link');
+            const arrow = link ? link.querySelector('.nav-arrow') : null;
+
+            if (arrow) {
+                arrow.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    dropdownItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    item.classList.toggle('active');
+                });
+            }
+        });
+
+        // Initial Render
+        renderCalendar();
+    </script>
+</body>
+</html>

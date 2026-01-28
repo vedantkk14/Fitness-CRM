@@ -109,13 +109,62 @@
         <main class="main-content">
             <header class="header-banner">
                 <div class="header-text">
-                    <h1>Hello, from team Joshuaa! 👋</h1>
+                    <h1>Hello, from Joshuaa! 👋</h1>
                     <p>Here's what's happening at <b>Outdoor Fitness</b> today.</p>
                 </div>
                 <div class="header-actions">
                     <div class="search-bar">
                         <img src="../icons/magnifying-glass-solid-full.svg" alt="search" width="20">
                         <input type="text" placeholder="Search members...">
+                    </div>
+                    <div class="notification-container">
+                        <button class="notification-btn" id="notificationBtn">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="notification-badge" id="notificationBadge">3</span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Notifications</h4>
+                                <button class="close-notification-btn" onclick="closeNotifications()">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                            <div class="notification-list" id="notificationList">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon" style="background: #FFE8E0;">
+                                        <i class="fa-solid fa-user-plus" style="color: #F25C2A;"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">New Member Joined</p>
+                                        <p class="notification-text">Shrivardhan registered for membership</p>
+                                        <span class="notification-time">5 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon" style="background: #E0F2FE;">
+                                        <i class="fa-solid fa-payment" style="color: #3B82F6;"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">Payment Received</p>
+                                        <p class="notification-text">₹5,000 received from Vrishabh Kanaki</p>
+                                        <span class="notification-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon" style="background: #F0FDF4;">
+                                        <i class="fa-solid fa-dumbbell" style="color: #10B981;"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p class="notification-title">Diet Plan Assigned</p>
+                                        <p class="notification-text">Personalized diet plan created for Vedant</p>
+                                        <span class="notification-time">4 hours ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <a href="view_notifications.html" class="view-all-notifications">View All Notifications</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="profile-pic">
                         <img src="../icons/JO.svg" alt="JO" width="20">
@@ -178,39 +227,26 @@
 
             <section class="content-grid">
 
-                <div class="panel chart-panel">
+                <div class="panel calendar-panel">
                     <div class="panel-header">
-                        <h3>Monthly Revenue</h3>
-                        <select class="dropdown">
-                            <option>This Year</option>
-                            <option>Last Year</option>
-                        </select>
+                        <h3>Calendar</h3>
+                        <div class="cal-actions">
+                            <button class="cal-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="cal-btn" id="todayBtn">Today</button>
+                            <button class="cal-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
                     </div>
-                    <div class="css-chart-container">
-                        <div class="bar-group">
-                            <div class="bar" style="height: 40%"></div>
-                            <span class="label">Jan</span>
+                    <div class="mini-calendar">
+                        <div class="month-year">
+                            <h4 id="monthYear">January 2026</h4>
                         </div>
-                        <div class="bar-group">
-                            <div class="bar" style="height: 60%"></div>
-                            <span class="label">Feb</span>
+                        <div class="days-grid">
+                            <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
                         </div>
-                        <div class="bar-group">
-                            <div class="bar" style="height: 35%"></div>
-                            <span class="label">Mar</span>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar active" style="height: 85%"></div>
-                            <span class="label">Apr</span>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar" style="height: 55%"></div>
-                            <span class="label">May</span>
-                        </div>
-                        <div class="bar-group">
-                            <div class="bar" style="height: 70%"></div>
-                            <span class="label">Jun</span>
-                        </div>
+                        <div class="dates-grid" id="datesGrid"></div>
+                    </div>
+                    <div class="calendar-footer">
+                        <a href="calendar.html" class="view-full-btn">View Full Calendar</a>
                     </div>
                 </div>
 
@@ -299,6 +335,99 @@
 
                         item.classList.toggle('active');
                     });
+                }
+            });
+        });
+
+        // ========== CALENDAR FUNCTIONALITY ==========
+        const dateGrid = document.getElementById('datesGrid');
+        const monthYear = document.getElementById('monthYear');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const todayBtn = document.getElementById('todayBtn');
+
+        let currentDate = new Date();
+        let events = JSON.parse(localStorage.getItem('jof_events')) || [];
+
+        // Render Calendar
+        function renderCalendar() {
+            dateGrid.innerHTML = "";
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            const firstDay = new Date(year, month, 1).getDay();
+            const lastDate = new Date(year, month + 1, 0).getDate();
+            const lastDayIndex = new Date(year, month + 1, 0).getDay();
+            const prevLastDate = new Date(year, month, 0).getDate();
+
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            monthYear.innerHTML = `${months[month]} ${year}`;
+
+            // Previous Month Dates
+            for (let i = firstDay; i > 0; i--) {
+                dateGrid.innerHTML += `<div class="date prev-date">${prevLastDate - i + 1}</div>`;
+            }
+
+            // Current Month Dates
+            for (let i = 1; i <= lastDate; i++) {
+                let isToday = i === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear() ? "today" : "";
+                
+                // Check for events on this day
+                let dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+                let dayEvents = events.filter(e => e.date === dateString);
+                let eventDot = dayEvents.length > 0 ? '<div class="event-dot"></div>' : '';
+
+                dateGrid.innerHTML += `<div class="date ${isToday}">${i}${eventDot}</div>`;
+            }
+
+            // Next Month Dates
+            for (let i = 1; i <= 7 - lastDayIndex - 1; i++) {
+                dateGrid.innerHTML += `<div class="date next-date">${i}</div>`;
+            }
+        }
+
+        // Navigation Listeners
+        prevBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() - 1); renderCalendar(); });
+        nextBtn.addEventListener('click', () => { currentDate.setMonth(currentDate.getMonth() + 1); renderCalendar(); });
+        todayBtn.addEventListener('click', () => { currentDate = new Date(); renderCalendar(); });
+
+        // Initial Render
+        renderCalendar();
+
+        // ========== NOTIFICATION FUNCTIONALITY ==========
+        const notificationBtn = document.getElementById('notificationBtn');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        const notificationBadge = document.getElementById('notificationBadge');
+
+        // Toggle notification dropdown
+        notificationBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            notificationDropdown.classList.toggle('active');
+        });
+
+        // Close notification dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = notificationDropdown.contains(event.target) || notificationBtn.contains(event.target);
+            if (!isClickInside && notificationDropdown.classList.contains('active')) {
+                notificationDropdown.classList.remove('active');
+            }
+        });
+
+        // Close notifications function
+        window.closeNotifications = function() {
+            notificationDropdown.classList.remove('active');
+        };
+
+        // Mark notification as read when clicked
+        const notificationItems = document.querySelectorAll('.notification-item');
+        notificationItems.forEach((item, index) => {
+            item.addEventListener('click', function() {
+                this.classList.remove('unread');
+                // Update badge count
+                const unreadCount = document.querySelectorAll('.notification-item.unread').length;
+                notificationBadge.textContent = unreadCount;
+                if (unreadCount === 0) {
+                    notificationBadge.style.display = 'none';
                 }
             });
         });
