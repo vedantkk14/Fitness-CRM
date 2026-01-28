@@ -259,21 +259,90 @@
             }
 
             futureEvents.forEach((event, index) => {
+                const eventDate = new Date(event.date);
+                const dayName = eventDate.toLocaleDateString('en-US', { weekday: 'short' });
+                const monthName = eventDate.toLocaleDateString('en-US', { month: 'short' });
+                const dateNum = eventDate.getDate();
+                const fullDate = `${dayName}, ${monthName} ${dateNum}`;
+                
+                // Determine if event is today or upcoming
+                const today = new Date();
+                const isToday = eventDate.toDateString() === today.toDateString();
+                const daysUntil = Math.floor((eventDate - today) / (1000 * 60 * 60 * 24));
+                
+                let statusText = '';
+                let statusClass = '';
+                if (isToday) {
+                    statusText = 'Today';
+                    statusClass = 'status-today';
+                } else if (daysUntil === 1) {
+                    statusText = 'Tomorrow';
+                    statusClass = 'status-tomorrow';
+                } else if (daysUntil < 7) {
+                    statusText = `${daysUntil} days away`;
+                    statusClass = 'status-upcoming';
+                } else {
+                    statusText = `${Math.ceil(daysUntil / 7)} weeks away`;
+                    statusClass = 'status-upcoming';
+                }
+
                 const eventHTML = `
                     <div class="event-card ${event.type}">
-                        <div class="event-time">
-                            <span>${new Date(event.date).getDate()}</span>
-                            <small>${event.time}</small>
+                        <div class="event-badge" style="background-color: ${getTypeColor(event.type)};">
+                            <i class="fa-solid ${getTypeIcon(event.type)}"></i>
                         </div>
-                        <div class="event-info">
-                            <h4>${event.title}</h4>
-                            <p>${event.type}</p>
+                        <div class="event-details">
+                            <div class="event-header">
+                                <h4>${event.title}</h4>
+                                <span class="event-status ${statusClass}">${statusText}</span>
+                            </div>
+                            <div class="event-meta">
+                                <div class="meta-item">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    <span>${fullDate}</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span>${event.time}</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fa-solid fa-tag"></i>
+                                    <span class="event-type-badge ${event.type}">${capitalizeFirst(event.type)}</span>
+                                </div>
+                            </div>
                         </div>
-                        <button class="delete-btn" onclick="deleteEvent(${index})"><i class="fa-solid fa-trash"></i></button>
+                        <button class="delete-btn" onclick="deleteEvent(${index})" title="Delete event">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
                     </div>
                 `;
                 eventList.innerHTML += eventHTML;
             });
+        }
+
+        // Helper function to get icon for event type
+        function getTypeIcon(type) {
+            switch(type) {
+                case 'meeting': return 'fa-handshake';
+                case 'training': return 'fa-person-running';
+                case 'maintenance': return 'fa-wrench';
+                default: return 'fa-calendar-check';
+            }
+        }
+
+        // Helper function to get color for event type
+        function getTypeColor(type) {
+            switch(type) {
+                case 'meeting': return '#3B82F6';
+                case 'training': return '#10B981';
+                case 'maintenance': return '#EF4444';
+                default: return '#F25C2A';
+            }
+        }
+
+        // Helper function to capitalize first letter
+        function capitalizeFirst(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
         }
 
         // 3. Modal Logic

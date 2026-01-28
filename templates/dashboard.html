@@ -225,6 +225,28 @@
                 </div>
             </section>
 
+            <!-- Quick Actions Row -->
+            <section class="quick-actions-row">
+                <a href="personal_health.html" class="quick-action-card">
+                    <div class="quick-action-icon">
+                        <img src="../icons/user-plus-solid-full.svg" alt="Add Member" width="20">
+                    </div>
+                    <span>Add Member</span>
+                </a>
+                <a href="invoice.html" class="quick-action-card">
+                    <div class="quick-action-icon">
+                        <img src="../icons/file-invoice-solid-full.svg" alt="Create Invoice" width="20">
+                    </div>
+                    <span>Create Invoice</span>
+                </a>
+                <a href="create_diet_plan.html" class="quick-action-card">
+                    <div class="quick-action-icon">
+                        <img src="../icons/calendar-plus-solid-full.svg" alt="New Diet Plan" width="20">
+                    </div>
+                    <span>New Diet Plan</span>
+                </a>
+            </section>
+
             <section class="content-grid">
 
                 <div class="panel calendar-panel">
@@ -252,28 +274,10 @@
 
                 <div class="panel side-panel">
                     <div class="panel-header">
-                        <h3>Quick Actions</h3>
+                        <h3>Upcoming Events</h3>
                     </div>
-                    <div class="action-list">
-                        <button class="action-btn">
-                            <div class="icon"><img src="../icons/user-plus-solid-full.svg" alt="JO" width="20"></div>
-                            <a href="personal_health.html" class="btn-primary">
-                                <span>Add Member</span>
-                            </a>
-                        </button>
-                        <button class="action-btn">
-                            <div class="icon"><img src="../icons/file-invoice-solid-full.svg" alt="JO" width="20"></div>
-                            <a href="invoice.html" class="btn-primary">
-                                <span>Create Invoice</span>
-                            </a>
-                        </button>
-                        <button class="action-btn">
-                            <div class="icon"><img src="../icons/calendar-plus-solid-full.svg" alt="JO" width="20">
-                            </div>
-                            <a href="create_diet_plan.html" class="btn-primary">
-                                <span>New Diet Plan</span>
-                            </a>
-                        </button>
+                    <div class="event-list-dashboard" id="eventListDashboard">
+                        <div class="empty-state">No upcoming events</div>
                     </div>
                 </div>
 
@@ -431,6 +435,43 @@
                 }
             });
         });
+
+        // ========== UPCOMING EVENTS FROM CALENDAR ==========
+        function renderUpcomingEvents() {
+            const eventListDashboard = document.getElementById('eventListDashboard');
+            let events = JSON.parse(localStorage.getItem('jof_events')) || [];
+            
+            // Sort events by date
+            const sortedEvents = events.sort((a, b) => new Date(a.date + ' ' + a.time) - new Date(b.date + ' ' + b.time));
+            
+            // Filter only future events (or today)
+            const futureEvents = sortedEvents.filter(e => new Date(e.date) >= new Date().setHours(0,0,0,0));
+
+            if(futureEvents.length === 0) {
+                eventListDashboard.innerHTML = '<div class="empty-state">No upcoming events</div>';
+                return;
+            }
+
+            eventListDashboard.innerHTML = '';
+            futureEvents.slice(0, 5).forEach((event, index) => {
+                const eventHTML = `
+                    <div class="event-card-dashboard ${event.type}">
+                        <div class="event-time-dashboard">
+                            <span>${new Date(event.date).getDate()}</span>
+                            <small>${event.time}</small>
+                        </div>
+                        <div class="event-info-dashboard">
+                            <h4>${event.title}</h4>
+                            <p>${event.type}</p>
+                        </div>
+                    </div>
+                `;
+                eventListDashboard.innerHTML += eventHTML;
+            });
+        }
+
+        // Initial call to render upcoming events
+        renderUpcomingEvents();
     </script>
 
 </body>
