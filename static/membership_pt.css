@@ -1,0 +1,135 @@
+/* --- RESET & VARIABLES --- */
+:root {
+    --primary: #F25C2A;
+    --primary-hover: #d64518;
+    --text-dark: #111827;
+    --text-muted: #6B7280;
+    --input-bg: #F9FAFB;
+    --border: #E5E7EB;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=2075&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+/* --- GLASS CARD --- */
+.container {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- HEADER --- */
+.card-header {
+    padding: 30px 40px;
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.brand-area { display: flex; align-items: center; gap: 15px; }
+.brand-logo { width: 40px; filter: invert(1) brightness(0.2); }
+.brand-text h2 { font-size: 20px; font-weight: 700; color: var(--text-dark); }
+.brand-text p { font-size: 13px; color: var(--text-muted); }
+
+.close-btn img {
+    width: 20px; height: 20px; opacity: 0.5; cursor: pointer; transition: 0.2s;
+}
+.close-btn img:hover { opacity: 1; transform: rotate(90deg); }
+
+/* --- BODY --- */
+.card-body { padding: 40px; }
+
+.input-group { margin-bottom: 24px; }
+.input-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
+.input-wrapper { position: relative; }
+
+.input-icon {
+    position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+    width: 18px; height: 18px; opacity: 0.4; transition: 0.2s;
+}
+
+.form-input {
+    width: 100%; padding: 14px 16px 14px 48px;
+    background: var(--input-bg); border: 1px solid transparent; border-radius: 12px;
+    font-size: 14px; color: var(--text-dark); font-weight: 500; transition: 0.2s;
+    appearance: none;
+}
+
+.form-input:focus {
+    background: #fff; border-color: var(--primary); outline: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-input:focus + .input-icon {
+    opacity: 1;
+    filter: invert(48%) sepia(70%) saturate(2476%) hue-rotate(345deg) brightness(98%) contrast(93%);
+}
+
+/* Grid Layout for Rows */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* --- FOOTER --- */
+.card-footer {
+    padding: 30px 40px; border-top: 1px solid var(--border);
+    display: flex; justify-content: flex-end; gap: 15px;
+}
+
+.btn {
+    padding: 14px 28px; border-radius: 12px; font-weight: 600; font-size: 14px;
+    cursor: pointer; text-decoration: none; border: none; display: inline-block;
+}
+
+.btn-secondary { background: #F3F4F6; color: #4B5563; }
+.btn-secondary:hover { background: #E5E7EB; color: #111827; }
+
+.btn-primary {
+    background: var(--primary); color: #fff;
+    box-shadow: 0 4px 12px rgba(242, 92, 42, 0.3);
+}
+.btn-primary:hover {
+    background: var(--primary-hover); transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(242, 92, 42, 0.4);
+}
+
+@media(max-width: 600px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .card-header, .card-body, .card-footer { padding: 25px; }
+    .card-footer { flex-direction: column-reverse; }
+    .btn { width: 100%; text-align: center; }
+}
+
+/* --- Success Toast --- */
+.success-toast {
+    position: fixed;
+    inset: 0; display: flex; align-items: center; justify-content: center;
+    pointer-events: none; opacity: 0; transition: opacity 0.25s ease;
+}
+.success-toast.visible { opacity: 1; pointer-events: auto; }
+.success-card {
+    display: flex; gap: 12px; align-items: center;
+    background: #fff; padding: 18px 20px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+.success-card i { color: var(--primary); font-size: 28px; }
+.success-card h3 { margin: 0; font-size: 16px; color: var(--text-dark); }
+.success-card p { margin: 0; font-size: 13px; color: var(--text-muted); }

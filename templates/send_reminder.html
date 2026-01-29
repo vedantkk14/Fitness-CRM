@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOF Fitness | Send Payment Reminder</title>
-    <link rel="stylesheet" href="../static/send_reminder.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/send_reminder.css">
 </head>
 
 <body>
@@ -63,10 +63,19 @@
                     <img src="../icons/credit-card-solid-full.svg" alt="Membership" width="20">
                     <span>Membership</span>
                 </a>
-                <a href="payments.html" class="nav-link active">
-                    <img src="../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
-                    <span>Payments</span>
-                </a>
+                <div class="nav-item-dropdown">
+                    <a href="payments.html" class="nav-link active">
+                        <img src="../icons/indian-rupee-sign-solid-full.svg" alt="Payments" width="20">
+                        <span>Payments</span>
+                        <i class="fa-solid fa-chevron-right ms-auto nav-arrow"></i>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <a href="payments.html">View Payments</a>
+                        <a href="payment_installments.html">Installment Payments</a>
+                        <a href="outstanding_dues.html">Outstanding Dues</a>
+                        <a href="payment_recovery_communication.html">Recovery Communication</a>
+                    </div>
+                </div>
                 <div class="nav-item-dropdown">
                     <a href="sales_leads.html" class="nav-link">
                         <img src="../icons/chart-line-solid-full.svg" alt="Sales" width="20">
